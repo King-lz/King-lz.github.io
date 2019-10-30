@@ -62,6 +62,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Request案例代码" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/30/Request案例代码/" class="article-date">
+  <time datetime="2019-10-30T10:40:06.000Z" itemprop="datePublished">2019-10-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/30/Request案例代码/">Request案例代码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Demo-jsp"><a href="#Demo-jsp" class="headerlink" title="Demo.jsp"></a>Demo.jsp</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;</span><br><span class="line">    pageEncoding=&quot;UTF-8&quot;%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</span><br><span class="line">&lt;title&gt;Insert title here&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;Text.jsp&quot; meshod=&quot;post&quot;&gt;</span><br><span class="line">		用户名：&lt;input type=&quot;text&quot; name=&quot;user&quot;&gt;&lt;br&gt;</span><br><span class="line">		密码：&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;br&gt;</span><br><span class="line">		多选：&lt;br&gt;</span><br><span class="line">		&lt;input type=&quot;checkbox&quot; name=&quot;dx&quot; value=&quot;唱&quot;&gt;唱</span><br><span class="line">		&lt;input type=&quot;checkbox&quot; name=&quot;dx&quot; value=&quot;跳&quot;&gt;跳</span><br><span class="line">		&lt;input type=&quot;checkbox&quot; name=&quot;dx&quot; value=&quot;rap&quot;&gt;rap</span><br><span class="line">		&lt;input type=&quot;checkbox&quot; name=&quot;dx&quot; value=&quot;篮球&quot;&gt;篮球</span><br><span class="line">		&lt;br&gt;</span><br><span class="line">		&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">		&lt;input type=&quot;reset&quot; name=&quot;reset&quot; value=&quot;取消&quot;&gt;</span><br><span class="line">	&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Text-jsp-跳转页面"><a href="#Text-jsp-跳转页面" class="headerlink" title="Text.jsp  跳转页面"></a>Text.jsp  跳转页面</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;</span><br><span class="line">    pageEncoding=&quot;UTF-8&quot;%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</span><br><span class="line">&lt;% </span><br><span class="line">request.setCharacterEncoding(&quot;UTF-8&quot;);</span><br><span class="line">String name=request.getParameter(&quot;user&quot;);</span><br><span class="line">String pwd=request.getParameter(&quot;password&quot;);</span><br><span class="line">String [] y=request.getParameterValues(&quot;dx&quot;);</span><br><span class="line">%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</span><br><span class="line">&lt;title&gt;Insert title here&lt;/title&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	用户名是：&lt;%=name %&gt;&lt;br&gt;</span><br><span class="line">	密码是：&lt;%=pwd %&gt;&lt;br&gt;</span><br><span class="line">	信息来源是：&lt;% for(int i=0;i&lt;y.length;i++)&#123;</span><br><span class="line">		out.println(y[i]);</span><br><span class="line">	&#125; %&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="输入页面"><a href="#输入页面" class="headerlink" title="输入页面"></a>输入页面</h4><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\1572432373461.png" alt="1572432373461" style="zoom:75%;">
+
+<h4 id="输入数据跳转页面"><a href="#输入数据跳转页面" class="headerlink" title="输入数据跳转页面"></a>输入数据跳转页面</h4><p><img src="C:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1572432454851.png" alt="1572432454851"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/30/Request案例代码/" data-id="ck2d5r00c0000hwuvk70sbnz7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-MySQL知识点总结" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/10/25/MySQL知识点总结/" class="article-date">
@@ -140,7 +183,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/25/MySQL知识点总结/" data-id="ck2d5151j0000z0uv7whby63g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/25/MySQL知识点总结/" data-id="ck2d5r01z0003hwuvw4pzr92y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -339,7 +382,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/11/JAVA知识点总结/" data-id="ck2d5153k0002z0uv99hbgsnt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/11/JAVA知识点总结/" data-id="ck2d5r01u0002hwuvj4ejr8fk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -377,7 +420,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/10/我的第一篇博客/" data-id="ck2d515260001z0uv721y43dg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/10/我的第一篇博客/" data-id="ck2d5r00p0001hwuv3p8fqf0u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -416,6 +459,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/10/30/Request案例代码/">Request案例代码</a>
+          </li>
         
           <li>
             <a href="/2019/10/25/MySQL知识点总结/">MySQL知识点总结</a>
