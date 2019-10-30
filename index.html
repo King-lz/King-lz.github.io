@@ -1,299 +1,464 @@
 <!DOCTYPE html>
-<html lang="en">
-
-
-
-
-
+<html>
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="description" content>
-  <meta name="author" content="John Doe">
-  <meta name="keywords" content>
+  <meta charset="utf-8">
+  
+
+  
   <title>Hexo</title>
-  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
-  <link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css">
-  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
   
-  <link rel="stylesheet" href="/css/main.css">
-
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
 </head>
-
-
+</html>
 <body>
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>生而为人</strong>&nbsp;</a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
         
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-MySQL-基础总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/18/MySQL-基础总结/" class="article-date">
+  <time datetime="2019-10-18T13:51:29.561Z" itemprop="datePublished">2019-10-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>title: MySQL 基础总结</p>
+<p>date: 2019-10-18 21:51:29</p>
+<h2 id="一-关于数据库操作"><a href="#一-关于数据库操作" class="headerlink" title="一.关于数据库操作"></a>一.关于数据库操作</h2><h4 id="1-创建数据库"><a href="#1-创建数据库" class="headerlink" title="1.创建数据库"></a>1.创建数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database 数据库名称;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-删除数据库"><a href="#2-删除数据库" class="headerlink" title="2.删除数据库"></a>2.删除数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database  数据库名称;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-查看数据库"><a href="#3-查看数据库" class="headerlink" title="3.查看数据库"></a>3.查看数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-进入数据库"><a href="#4-进入数据库" class="headerlink" title="4.进入数据库"></a>4.进入数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use  数据库名称;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-查看创建数据库的详细信息"><a href="#5-查看创建数据库的详细信息" class="headerlink" title="5.查看创建数据库的详细信息"></a>5.查看创建数据库的详细信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show create databases 数据库名称;</span><br></pre></td></tr></table></figure>
+
+<h2 id="二-关于表的基本操作"><a href="#二-关于表的基本操作" class="headerlink" title="二.关于表的基本操作"></a>二.关于表的基本操作</h2><h4 id="1-显示数据库中的表"><a href="#1-显示数据库中的表" class="headerlink" title="1.显示数据库中的表"></a>1.显示数据库中的表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-创建数据表"><a href="#2-创建数据表" class="headerlink" title="2.创建数据表"></a>2.创建数据表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table  表名称（字段1 类型1，字段2 类型2）;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-显示表的字段"><a href="#3-显示表的字段" class="headerlink" title="3.显示表的字段"></a>3.显示表的字段</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc  表名称;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-删除数据表"><a href="#4-删除数据表" class="headerlink" title="4.删除数据表"></a>4.删除数据表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table  表名称;</span><br></pre></td></tr></table></figure>
+
+<h2 id="三-修改表结构的操作"><a href="#三-修改表结构的操作" class="headerlink" title="三.修改表结构的操作"></a>三.修改表结构的操作</h2><h4 id="1-修改字段类型"><a href="#1-修改字段类型" class="headerlink" title="1.修改字段类型"></a>1.修改字段类型</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 modify 列名 数据类型;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-修改表名"><a href="#2-修改表名" class="headerlink" title="2.修改表名"></a>2.修改表名</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 旧表名 rename [to] 新表名;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-修改列名"><a href="#3-修改列名" class="headerlink" title="3.修改列名"></a>3.修改列名</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 change 旧列名 新列名 新数据类型;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-添加表的字段"><a href="#4-添加表的字段" class="headerlink" title="4.添加表的字段"></a>4.添加表的字段</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table  表名称  add 字段 字段类型;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-添加字段到指定位置"><a href="#5-添加字段到指定位置" class="headerlink" title="5.添加字段到指定位置"></a>5.添加字段到指定位置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名称  add  字段  字段类型  after 字段;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-删除表字段"><a href="#6-删除表字段" class="headerlink" title="6.删除表字段"></a>6.删除表字段</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 drop 列名;</span><br></pre></td></tr></table></figure>
+
+<h2 id="四-基本操作"><a href="#四-基本操作" class="headerlink" title="四.基本操作"></a>四.基本操作</h2><h4 id="1-一次添加一行数据"><a href="#1-一次添加一行数据" class="headerlink" title="1.一次添加一行数据"></a>1.一次添加一行数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名 (字段1,字段2,字段3,...)</span><br><span class="line">values (值1,值2,值3,...);</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-对一行所有字段增加数据"><a href="#2-对一行所有字段增加数据" class="headerlink" title="2.对一行所有字段增加数据"></a>2.对一行所有字段增加数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名称  values（值1，值2，……）;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-一次添加多行数据"><a href="#3-一次添加多行数据" class="headerlink" title="3.一次添加多行数据"></a>3.一次添加多行数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名 (字段1,字段2,字段3,...)</span><br><span class="line"> values (值1,值2,值3,...),</span><br><span class="line">  values (值1,值2,值3,...),</span><br><span class="line">   values (值1,值2,值3,...);</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-对指定字段增加数据"><a href="#4-对指定字段增加数据" class="headerlink" title="4.对指定字段增加数据"></a>4.对指定字段增加数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名称 （字段1，字段2，……） values （值1，值2，……）;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-删除表中指定数据"><a href="#5-删除表中指定数据" class="headerlink" title="5.删除表中指定数据"></a>5.删除表中指定数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from 表名称 where条件表达式;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-删除表中全部数据"><a href="#6-删除表中全部数据" class="headerlink" title="6.删除表中全部数据"></a>6.删除表中全部数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from 表名称;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-修改表中现存数据"><a href="#7-修改表中现存数据" class="headerlink" title="7.修改表中现存数据"></a>7.修改表中现存数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update 表名称 set 字段1=值1,字段2=值2 where条件;</span><br></pre></td></tr></table></figure>
+
+<h2 id="五-四种全连接"><a href="#五-四种全连接" class="headerlink" title="五. 四种全连接"></a>五. 四种全连接</h2><h4 id="1-内连接"><a href="#1-内连接" class="headerlink" title="1.内连接"></a>1.内连接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名 1,列名 2… FROM 表 1，表 2 WHERE 条件;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-另一种写法"><a href="#2-另一种写法" class="headerlink" title="2.另一种写法"></a>2.另一种写法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名 1,列名 2… FROM 表 1 INNER JOIN 表 2 ON 条件;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-左连接"><a href="#3-左连接" class="headerlink" title="3.左连接"></a>3.左连接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名 1,列名 2… FROM 表 1 LEFT JOIN 表 2 ON 条件;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-右连接"><a href="#4-右连接" class="headerlink" title="4.右连接"></a>4.右连接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名 1,列名 2… FROM 表 1 RIGHT JOIN 表 2 ON 条件;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/18/MySQL-基础总结/" data-id="ck2d3xtd00000p8uv75hie6jz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JAVA知识点总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/11/JAVA知识点总结/" class="article-date">
+  <time datetime="2019-10-11T03:21:21.000Z" itemprop="datePublished">2019-10-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/11/JAVA知识点总结/">JAVA知识点总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第二章面向对象"><a href="#第二章面向对象" class="headerlink" title="第二章面向对象"></a>第二章面向对象</h2><p>1.面向对象：面向对象思想就是把一个项目，一件事情分成更小的项目，每一部分负责什么功能，最后再有这些部分组合成一个整体。</p>
+<p>2.类的创建</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	语法：<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 类名</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">​      File---&gt;<span class="keyword">new</span>---&gt;<span class="class"><span class="keyword">class</span>---&gt;类名</span></span><br></pre></td></tr></table></figure>
+
+<p>​      </p>
+<p>3.创建对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">类名 对象名=new 类名();</span><br><span class="line"></span><br><span class="line">​      对象名.方法名(); 对象名.属性</span><br></pre></td></tr></table></figure>
+
+<p>4.构造方法：方法名和类名相同,没有返回值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">	 public class 类名&#123;</span><br><span class="line"></span><br><span class="line">​         public 类名()&#123;&#125;//主要的做用是初始化操作</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br></pre></td></tr></table></figure>
+
+<p>5.构造方法重载</p>
+<p>（1）构造方法的重载：方法名与类名相同，参数列表不同</p>
+<p>（2）方法的重载：在同一个类中包含了两个或者两个以上的方法，它们的方法名相同，方法的参数个数，顺序，类型不同，则称这个方法被重载了，这个过程称为方法的重载。</p>
+<p>（3）构造方法的作用：用来实现多种初始化行为。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">	public class 类名&#123;</span><br><span class="line"></span><br><span class="line">​         public 类名()&#123;&#125;</span><br><span class="line"></span><br><span class="line">​         public 类名(String name,int age)&#123;&#125;</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br></pre></td></tr></table></figure>
+
+<p>6.构造方法的执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	 new 类名();---&gt;执行构造方法</span><br><span class="line"></span><br><span class="line">​      super();---&gt;执行了父类的构造方法</span><br></pre></td></tr></table></figure>
+
+<p>7.static静态修饰符</p>
+<p>   （1）含义：static可以用来修饰属性，方法，和代码块。static修饰的变量属于这个类所有，即由这个类创建的所有对象共用一个static变量。通常把static修饰的属性和方法称为类属性（也可以称为类变量），类方法。不使用static修饰的属性和方法属于单个对象，通常称为实例属性，实例方法。</p>
+<p>（2）要点：</p>
+<p>​    1.在加载类的过程中，完成静态变量的内存分配，再执行静态代码块，两者是在创建对象之前执行的。</p>
+<p>​    2.类属性和类方法可以通过类名和对象名访问，实例属性和实例方法只能通过对象名访问。</p>
+<p>​    3.类方法只能访问类属性和其他类方法，</p>
+<p>注意：静态方法中不能使用this和super关键字。</p>
+<p>8.java内存（栈和堆，static，方法区，gc（垃圾回收机制））</p>
+<p>9.八种基本数据类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">byte  short   int   long</span><br><span class="line"></span><br><span class="line">float   double   Boolean   char</span><br></pre></td></tr></table></figure>
+
+<h3 id><a href="#" class="headerlink" title></a></h3><h2 id="第三章-面向对象三大特征—封装"><a href="#第三章-面向对象三大特征—封装" class="headerlink" title="第三章 面向对象三大特征—封装"></a>第三章 面向对象三大特征—封装</h2><p>1.封装的概念：封装是指将对象的状态信息隐藏在对象内部，不允许外部程序直接访问对象内部的信息，而是通过该类所提供的方法来实现对内部信息的操作访问。</p>
+<p>2.封装的步骤</p>
+<p>​      1.把属性私有化（private）</p>
+<p>​      2.对这些属性设置get和set方法</p>
+<p>​      3.调用处理这些方法</p>
+<p>3.封装的作用与好处：</p>
+<p>作用：避免一些用一些不合乎常理的操作</p>
+<p>好处：</p>
+<p>（1） 提高了安全性</p>
+<p>（2） 提高了复用性</p>
+<p>（3） 隐藏了实现细节</p>
+<p>4.封装的案例:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 文件名: EncapTest.java */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EncapTest</span></span>&#123;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> String idNum;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​      <span class="keyword">return</span> age;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​      <span class="keyword">return</span> name;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> String <span class="title">getIdNum</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​      <span class="keyword">return</span> idNum;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">( <span class="keyword">int</span> newAge)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​      age = newAge;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String newName)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​      name = newName;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setIdNum</span><span class="params">( String newId)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​      idNum = newId;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* F文件名 : RunEncap.java */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RunEncap</span></span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​      EncapTest encap = <span class="keyword">new</span> EncapTest();</span><br><span class="line"></span><br><span class="line">​      encap.setName(<span class="string">"James"</span>);</span><br><span class="line"></span><br><span class="line">​      encap.setAge(<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">​      encap.setIdNum(<span class="string">"12343ms"</span>);</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">​      System.out.print(<span class="string">"Name : "</span> + encap.getName()+ </span><br><span class="line"></span><br><span class="line">​                             <span class="string">" Age : "</span>+ encap.getAge());</span><br><span class="line"></span><br><span class="line">​    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>5.修饰符</p>
+<p>​      public—&gt;公共的：在一个项目中都可以访问，权限最高</p>
+<p>​      private—&gt;私有的：只能在本类中进行访问，权限最低</p>
+<p>​      protected—&gt;安全的，受保护的：同一个包能进行访问，继承中之类可以访问父类</p>
+<p>​      default—&gt;默认的：同一个包能访问</p>
+<h2 id="第四章-面向对象三大特征—继承"><a href="#第四章-面向对象三大特征—继承" class="headerlink" title="第四章 面向对象三大特征—继承"></a>第四章 面向对象三大特征—继承</h2><p>1.继承的概念：父亲儿子</p>
+<p>2.继承的关键字：extends</p>
+<p>3.继承的好处：</p>
+<p>   （1）提高了代码的重用性</p>
+<p>   （2）提高了代码的可扩展性</p>
+<p>3.继承的语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class 类名  extends 父类&#123;    代码块   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>4.继承的使用与说明：</p>
+<p>   （1）使用：</p>
+<p>可以直接调用父类的非私有属性和方法</p>
+<p>​         可以用super.方法     super.属性</p>
+<p>   （2）说明： Java中的继承只能单继承，</p>
+<p>5.父类构造方法调用：super();</p>
+<p>​     //super指代的是父类对象，this指代的是本类对象</p>
+<p>​      调用父类的构造方法必须在之类中调用</p>
+<p>​      必须实在之类构造方法的第一行代码</p>
+<p>6.继承中的构造方法要点：</p>
+<p>   （1）执行子类的构造方法，会默认执行父类的无参构造方法</p>
+<p>  （2）当子类没有无参构造方法，但是有有参构造方法,子类的构造方法需手动添加</p>
+<p>  （3）父类没有定义无参构造方法，定义了带参构造方法，子类的构造方法必须调用父类的带参构造方法。</p>
+<p>  （4）无论是super还是this调用构造方法，只能放在第一行，构造方法只能调用一个</p>
+<p>  （5）构造方法只能在构造方法中调用</p>
+<p>7.重写@Override</p>
+<p>​      必须继承</p>
+<p>​      方法名一致，参数个数，顺序，类型全部一致</p>
+<p>8.重载与重写的区别：</p>
+<p>重载:一定发生在同一类中，方法名相同，参数不同（类型不同，数量不同）</p>
+<p>重写：一定发生在父类和子类中，方法名相同，参数相同，方法体不同</p>
+<h3 id="-1"><a href="#-1" class="headerlink" title></a></h3><h2 id="第五章-面向对象—多态"><a href="#第五章-面向对象—多态" class="headerlink" title="第五章 面向对象—多态"></a>第五章 面向对象—多态</h2><p>1.多态的概念：不同对象对同一消息产生不同的响应。</p>
+<p>2.多态的必要条件</p>
+<p>   （1）继承</p>
+<p>   （2）重写</p>
+<p>   （3）父类引用指向子类对象（向上转型）</p>
+<p>3.多态的优点：</p>
+<p>   （1）消除类型之间的耦合关系</p>
+<p>   （2）可替换性</p>
+<p>   （3）可扩展性</p>
+<p>   （4）接口性</p>
+<p>   （5）灵活性</p>
+<p>   （6）简化性</p>
+<p>3.多态的使用</p>
+<p>   （1）第一个例子</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Father</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​         <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cooking</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​            System.out.println(<span class="string">"米饭"</span>);</span><br><span class="line"></span><br><span class="line">​         &#125;</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​      <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​         <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line">​         <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cooking</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​            System.out.println(<span class="string">"熬粥"</span>);</span><br><span class="line"></span><br><span class="line">​         &#125;</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​      <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">​         <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">​            Father son=<span class="keyword">new</span> Son();</span><br><span class="line"></span><br><span class="line">​            son.cooking();</span><br><span class="line"></span><br><span class="line">​         &#125;</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br></pre></td></tr></table></figure>
+
+<p>   （2）第二个例子</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">​    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">​      show(<span class="keyword">new</span> Cat());  <span class="comment">// 以 Cat 对象调用 show 方法</span></span><br><span class="line"></span><br><span class="line">​      show(<span class="keyword">new</span> Dog());  <span class="comment">// 以 Dog 对象调用 show 方法</span></span><br><span class="line"></span><br><span class="line">​                </span><br><span class="line"></span><br><span class="line">​      Animal a = <span class="keyword">new</span> Cat();  <span class="comment">// 向上转型  </span></span><br><span class="line"></span><br><span class="line">​      a.eat();               <span class="comment">// 调用的是 Cat 的 eat</span></span><br><span class="line"></span><br><span class="line">​      Cat c = (Cat)a;        <span class="comment">// 向下转型  </span></span><br><span class="line"></span><br><span class="line">​      c.work();        <span class="comment">// 调用的是 Cat 的 work</span></span><br><span class="line"></span><br><span class="line">  &#125;  </span><br><span class="line"></span><br><span class="line">​            </span><br><span class="line"></span><br><span class="line">​    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(Animal a)</span>  </span>&#123;</span><br><span class="line"></span><br><span class="line">​      a.eat();  </span><br><span class="line"></span><br><span class="line">​        <span class="comment">// 类型判断</span></span><br><span class="line"></span><br><span class="line">​        <span class="keyword">if</span> (a <span class="keyword">instanceof</span> Cat)  &#123;  <span class="comment">// 猫做的事情 </span></span><br><span class="line"></span><br><span class="line">​            Cat c = (Cat)a;  </span><br><span class="line"></span><br><span class="line">​            c.work();  </span><br><span class="line"></span><br><span class="line">​        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (a <span class="keyword">instanceof</span> Dog) &#123; <span class="comment">// 狗做的事情 </span></span><br><span class="line"></span><br><span class="line">​            Dog c = (Dog)a;  </span><br><span class="line"></span><br><span class="line">​            c.work();  </span><br><span class="line"></span><br><span class="line">​        &#125;  </span><br><span class="line"></span><br><span class="line">​    &#125;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;  </span><br><span class="line"></span><br><span class="line">​    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;  </span><br><span class="line"></span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;  </span><br><span class="line"></span><br><span class="line">​    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;  </span><br><span class="line"></span><br><span class="line">​        System.out.println(<span class="string">"吃鱼"</span>);  </span><br><span class="line"></span><br><span class="line">​    &#125;  </span><br><span class="line"></span><br><span class="line">​    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">work</span><span class="params">()</span> </span>&#123;  </span><br><span class="line"></span><br><span class="line">​        System.out.println(<span class="string">"抓老鼠"</span>);  </span><br><span class="line"></span><br><span class="line">​    &#125;  </span><br><span class="line"></span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;  </span><br><span class="line"></span><br><span class="line">​    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;  </span><br><span class="line"></span><br><span class="line">​        System.out.println(<span class="string">"吃骨头"</span>);  </span><br><span class="line"></span><br><span class="line">​    &#125;  </span><br><span class="line"></span><br><span class="line">​    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">work</span><span class="params">()</span> </span>&#123;  </span><br><span class="line"></span><br><span class="line">​        System.out.println(<span class="string">"看家"</span>);  </span><br><span class="line"></span><br><span class="line">​    &#125;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 4.向上转型（子类向父类的转换）  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> 语法 ：</span><br><span class="line"></span><br><span class="line">​      &lt;父类型&gt;  &lt;引用变量名&gt; = new  &lt;子类型&gt;（）；</span><br><span class="line"></span><br><span class="line">​      例如：Animal an1=new Dog（）；</span><br></pre></td></tr></table></figure>
+
+<p>5.向下转型（必须基于向上转型）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">例如：Son son=(Son)father;</span><br></pre></td></tr></table></figure>
+
+<p>6.注意：</p>
+<p>   （1）属性无多态这个属性，只看“=”左边的类型</p>
+<p>   （2）编译时，能“.”出来，能调用的看“=”左边</p>
+<p>7.Instanceof运算符：</p>
+<p>8.异常的处理（Try-catch-finally块）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">语法：</span><br><span class="line"></span><br><span class="line">​      Try&#123;</span><br><span class="line"></span><br><span class="line">​         代码块；</span><br><span class="line"></span><br><span class="line">&#125;catch（Exception  e）&#123;</span><br><span class="line"></span><br><span class="line">   代码块；</span><br><span class="line"></span><br><span class="line">&#125;finally&#123;</span><br><span class="line"></span><br><span class="line">   代码块；</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<p>（1） catch（Exception  e）一定放在所有catch块的最后</p>
+<p>（2） finally{}块里面的代码一定会执行</p>
+<p>结束的语句：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">（1）return；</span><br><span class="line"></span><br><span class="line">（2）system.exit（0）;</span><br></pre></td></tr></table></figure>
+
+<h3 id="-2"><a href="#-2" class="headerlink" title></a></h3><h2 id="第六章-抽象"><a href="#第六章-抽象" class="headerlink" title="第六章 抽象"></a>第六章 抽象</h2><p>1.抽象的概念:当一个类没有足够的信息去描述一个具体的对象，那么我们称之为抽象类。</p>
+<p>2.抽象的关键字</p>
+<p>​      abstract</p>
+<p>​      可以修饰类，可以修饰方法</p>
+<p>3.抽象类的作用：</p>
+<p>   （1）抽象类是用来继承的</p>
+<p>   （2）抽象类无法new出对象</p>
+<p>4.抽象的用法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">	 //抽象类</span><br><span class="line"></span><br><span class="line">​      public abstract class 类名&#123;</span><br><span class="line"></span><br><span class="line">​         //抽象方法没有方法体</span><br><span class="line"></span><br><span class="line">​         public abstract void 方法名();   </span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line">	 //当父类是抽象类的时候，子类必须重写父类里面的抽象方法</span><br></pre></td></tr></table></figure>
+
+<p>​     </p>
+<p>5.final修饰符：最终的</p>
+<p>   修饰变量，修饰方法，修饰类</p>
+<p>   （1）.当修饰变量时，变量转换成常量，常量的值不能改变</p>
+<p>​      final int a=18;//a=18;不能改变,必须给一个初始值</p>
+<p>   （2）.当修饰方法时，该方法不能被重写</p>
+<p>   （3）.当修饰类时，该类不能被继承</p>
+<h3 id="-3"><a href="#-3" class="headerlink" title></a></h3><h2 id="第七章-接口"><a href="#第七章-接口" class="headerlink" title="第七章 接口"></a>第七章 接口</h2><p>为什么要用接口？：因为JAVA只支持单继承。</p>
+<ol>
+<li>接口的概念</li>
+</ol>
+<p>2.接口的关键字</p>
+<p>​      interface</p>
+<p>3.接口的语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	  public interface 接口名&#123;&#125;</span><br><span class="line"></span><br><span class="line">​      File---&gt;new---&gt;interface//创建接口</span><br></pre></td></tr></table></figure>
+
+<p>4.接口的用法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">      实现接口的关键字  implements</span><br><span class="line"></span><br><span class="line">​      public interface 接口名&#123;</span><br><span class="line"></span><br><span class="line">​         //接口是纯抽象类</span><br><span class="line"></span><br><span class="line">​         //接口里面的方法都是抽象方法</span><br><span class="line"></span><br><span class="line">​         void setData();</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​      public class Play implements 接口名&#123;</span><br><span class="line"></span><br><span class="line">​         @Override</span><br><span class="line"></span><br><span class="line">​         void setData()&#123;</span><br><span class="line"></span><br><span class="line">​         &#125;</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​      public class Test &#123;</span><br><span class="line"></span><br><span class="line">​         public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">​            Play play=new Play();</span><br><span class="line"></span><br><span class="line">​            play.setData();</span><br><span class="line"></span><br><span class="line">​         &#125;</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​      注意接口可以进行多继承</span><br><span class="line"></span><br><span class="line">​      public interface 接口名 extends 接口名，接口名&#123;&#125;</span><br><span class="line"></span><br><span class="line">​      一般用法</span><br><span class="line"></span><br><span class="line">​      public class 类名 extends 父类 implements 接口，接口&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>多态与接口的区别：</p>
+<p>（1） 多态：难</p>
+<p>（2） 接口：简单，不能随意定义属性和方法，只能定义抽象方法，并且实现对口必须重写。</p>
+<h3 id="-4"><a href="#-4" class="headerlink" title></a></h3><h2 id="第八章-集合框架"><a href="#第八章-集合框架" class="headerlink" title="第八章 集合框架"></a>第八章 集合框架</h2><p>1.ArrayList</p>
+<p>  1.用法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ArrayList list=new ArrayList();</span><br><span class="line"></span><br><span class="line">  list.add();//添加数据</span><br><span class="line"></span><br><span class="line">  list.get();//获取数据</span><br></pre></td></tr></table></figure>
+
+<p>2.Map的用法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">	   Map map=new HasMap();</span><br><span class="line"></span><br><span class="line">​      map.put(key,value);//key不能重复</span><br><span class="line"></span><br><span class="line">​      map.get(key);//获取key对象的value</span><br></pre></td></tr></table></figure>
+
+<p>3.泛型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;String&gt; list=new ArrayList&gt;&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">   Map&lt;String,String&gt; map=new HasMap&lt;String,String&gt;();</span><br><span class="line"></span><br><span class="line">   ArrayList&lt;Map&lt;String,String&gt;&gt; list=new ArrayList&gt;&lt;Map&lt;String,String&gt;&gt;();</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/11/JAVA知识点总结/" data-id="ck2d3xtdh0002p8uvi8qgi1hi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-我的第一篇博客" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/10/我的第一篇博客/" class="article-date">
+  <time datetime="2019-10-10T11:51:00.000Z" itemprop="datePublished">2019-10-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/10/我的第一篇博客/">我的第一篇博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="菠菜——贱卖！"><a href="#菠菜——贱卖！" class="headerlink" title="菠菜——贱卖！"></a>菠菜——贱卖！</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.printIn(&quot;菠菜--贱卖！&quot;);</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/10/我的第一篇博客/" data-id="ck2d3xtdf0001p8uvgpcsz9ei" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/18/MySQL-基础总结/">(no title)</a>
           </li>
         
-          
-          
-          
-          
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/about/">About</a>
+          <li>
+            <a href="/2019/10/11/JAVA知识点总结/">JAVA知识点总结</a>
           </li>
         
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          <li>
+            <a href="/2019/10/10/我的第一篇博客/">我的第一篇博客</a>
           </li>
         
       </ul>
     </div>
   </div>
 
-
-</nav>
-
-    <div class="view intro-2" id="background"
-         style="background: url('/img/default.jpg')no-repeat center center;
-           background-size: cover;
-           background-attachment: fixed;">
-      <div class="full-bg-img">
-        <div class="mask rgba-black-light flex-center">
-          <div class="container text-center white-text fadeInUp">
-            <span class="h2" id="subtitle">
-              
-            </span>
-
-            
-          </div>
-
-          
-            <div class="scroll-down-bar">
-              <i class="fa fa-angle-down scroll-down-arrow"></i>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/10/11/JAVA知识点总结/">
-        <p class="h4 index-header">JAVA知识点总结</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">第二章面向对象1.面向对象：面向对象思想就是把一个项目，一件事情分成更小的项目，每一部分负责什么功能，最后再有这些部分组合成一个整体。
-2.类的创建
-123	语法：public class 类名&#123;&#125;​      File---&gt;new---&gt;class---&gt;类名
-
-​      
-3.创建对象
-123类名 对象名=new 类名();​      对象名.方法名(); 对象名.属性
-
-4.构造方法：方法名和类名相同,没有返回值
-12345	 public class 类名&#123;​         public 类名()&#123;&#125;//主要的做用是初始化操作​      &#125;
-
-5.构造方法重载
-（1）构造方法的重载：方法名与类名相同，参数列表不同
-（2）方法的重载：在同一个类中包含了两个或者两个以上的方法，它们的方法名相同，方法的参数个数，顺序，类型不同，则称这个方法被重载了，这个过程称为方法的重载。
-（3）构造方法的作用：用来实现多种初始化行为。
-1234567	public class 类名&#123;​       </div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-11&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/10/10/我的第一篇博客/">
-        <p class="h4 index-header">我的第一篇博客</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">菠菜——贱卖！1System.out.printIn(&quot;菠菜--贱卖！&quot;);
-
-</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-10&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-  </main>
-
   
-    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
-      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
-    </a>
-  
-
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+</aside>
+        
       </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">keyword</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
-  </div>
-</div>
-  
-
-  <footer class="mt-5">
-  <div class="text-center py-3">
-    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
-    <i class="iconfont icon-love"></i>
-    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
-    <br>
-    
   </div>
 </footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
 
-<!-- SCRIPTS -->
-<script src="/lib/jquery/jquery.min.js" ></script>
-<script src="/lib/popper/popper.min.js" ></script>
-<script src="/lib/bootstrap/js/bootstrap.min.js" ></script>
-<script src="/lib/mdbootstrap/js/mdb.min.js" ></script>
-<script src="/js/main.js" ></script>
-
-  <script src="/js/lazyload.js" ></script>
-
-
-
-
-  <script src="/lib/typed/typed.min.js" ></script>
-  <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        "&nbsp;",
-      ],
-      cursorChar: "愿你出走半生，归来仍是少年",
-      typeSpeed: 70,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
-  </script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <script src="/lib/anchor/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
-      placement: "right",
-      visible: "false",
-      
-    };
-    var el = "h1,h2,h3,h4,h5,h6".split(",");
-    var res = [];
-    for (item of el) {
-      res.push(".markdown-body > " + item)
-    }
-    anchors.add(res.join(", "))
-  </script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
 
 
 
-  <script src="/js/local-search.js" ></script>
-  <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      getSearchFile(path);
-      this.onclick = null
-    }
-  </script>
-
-
-
-  <script>
-    if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent) || (/Safari/i.test(navigator.userAgent) && !/Chrome/i.test(navigator.userAgent))) {
-      $("#background").css("background-attachment", "scroll");
-    }
-  </script>
-
+  </div>
 </body>
 </html>
