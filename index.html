@@ -62,6 +62,70 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-AJAX请求" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/28/AJAX请求/" class="article-date">
+  <time datetime="2019-10-28T14:14:09.000Z" itemprop="datePublished">2019-10-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/28/AJAX请求/">AJAX请求</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>AJAX的意思就是异步的JavaScript和XML。简而言之，它是使用XMLHttpRequest对象与服务器端通信的脚本语言。它可以发送及接收各种格式的信息，包括JSON、XML、HTML和文本文件。AJAX最为吸引人的就是它的“异步”特性，AJAX可以无需刷新页面而与服务器端进行通信。</p>
+<h2 id="原生ajax请求的五个步骤"><a href="#原生ajax请求的五个步骤" class="headerlink" title="原生ajax请求的五个步骤"></a>原生ajax请求的五个步骤</h2><h4 id="第一步，创建XMLHttpRequest对象"><a href="#第一步，创建XMLHttpRequest对象" class="headerlink" title="第一步，创建XMLHttpRequest对象"></a><em>第一步，创建XMLHttpRequest对象</em></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">if(window.XMLHttpRequest) &#123;</span><br><span class="line">xmlHttp = new XMLHttpRequest();</span><br><span class="line">if(xmlHttp.overrideMimeType) &#123;</span><br><span class="line">xmlHttp.overrideMimeType(&quot;text/xml&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&#125; else if(window.ActiveXobject) &#123;</span><br><span class="line">var activeName = [&quot;MSXML2.XMLHTTP&quot;, &quot;Microsoft.XMLHTTP&quot;];</span><br><span class="line">for(var i = 0; i &lt; activeName.length; i++) &#123;</span><br><span class="line">try &#123;</span><br><span class="line">xmlHttp = new ActiveXobject(activeName[i]);</span><br><span class="line">break;</span><br><span class="line">&#125; catch(e) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">if(!xmlHttp) &#123;</span><br><span class="line">alert(&quot;创建xmlhttprequest对象失败&quot;);</span><br><span class="line">&#125; else &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="第二步，注册回调函数"><a href="#第二步，注册回调函数" class="headerlink" title="第二步，注册回调函数"></a><em>第二步，注册回调函数</em></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xmlHttp.onreadystatechange= callback;</span><br><span class="line">  function callback()&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="第三步，使用OPEN方法与服务器建立连接，open-get"><a href="#第三步，使用OPEN方法与服务器建立连接，open-get" class="headerlink" title="第三步，使用OPEN方法与服务器建立连接，open(),get"></a><em>第三步，使用OPEN方法与服务器建立连接，open(),get</em></h4><p>此步注意设置http的请求方式（post/get）,如果是POST方式，注意设置请求头信息xmlHttp.setRequestHeader(“Content-Type”,”application/x-www-form-urlencoded”)</p>
+<pre><code>xmlHttp.open(&quot;get&quot;,&quot;ajax?name=&quot;+ name,true)</code></pre><h4 id="第四步，向服务器端发送数据"><a href="#第四步，向服务器端发送数据" class="headerlink" title="第四步，向服务器端发送数据"></a><em>第四步，向服务器端发送数据</em></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xmlHttp.send(null);</span><br></pre></td></tr></table></figure>
+
+<p>如果是POST方式就不为空。</p>
+<h4 id="第五步，在回调函数中针对不同的响应状态进行处理"><a href="#第五步，在回调函数中针对不同的响应状态进行处理" class="headerlink" title="第五步，在回调函数中针对不同的响应状态进行处理"></a><em>第五步，在回调函数中针对不同的响应状态进行处理</em></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if(xmlHttp.readyState == 4)&#123;       //判断交互是否成功</span><br><span class="line">     if(xmlHttp.status == 200)&#123;         //获取服务器返回的数据         //获取纯文本数据</span><br><span class="line">       var responseText =xmlHttp.responseText;</span><br><span class="line">      document.getElementById(&quot;info&quot;).innerHTML = responseText;</span><br><span class="line">     &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="后台方法"><a href="#后台方法" class="headerlink" title="后台方法"></a><em>后台方法</em></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">private  void GetAllComment(HttpContext context)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            //Params可以取得get与post方式传递过来的值。</span><br><span class="line">            string methodName = context.Request.Params[&quot;methodName&quot;];</span><br><span class="line"></span><br><span class="line">            //QueryString只能取得get方式传递过来的值。</span><br><span class="line">            string str1 = context.Request.Form[&quot;str1&quot;];</span><br><span class="line"></span><br><span class="line">            //取得httpRequest传来的值，包括get与post方式</span><br><span class="line">            string str2 = context.Request[&quot;str2&quot;];</span><br><span class="line"></span><br><span class="line">            List&lt;string&gt; comments = new List&lt;string&gt;();</span><br><span class="line"></span><br><span class="line">            comments.Add(methodName);</span><br><span class="line"></span><br><span class="line">            comments.Add(str1);</span><br><span class="line"></span><br><span class="line">            comments.Add(str2);</span><br></pre></td></tr></table></figure>
+
+<h4 id="ajax接受的是json类型，需要把返回的数据转给json格式"><a href="#ajax接受的是json类型，需要把返回的数据转给json格式" class="headerlink" title="ajax接受的是json类型，需要把返回的数据转给json格式"></a><em>ajax接受的是json类型，需要把返回的数据转给json格式</em></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string commentsJson = new JavaScriptSerializer().Serialize(comments);</span><br><span class="line">            context.Response.Write(commentsJson);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>Ajax优缺点</p>
+<p>优点：</p>
+<p>1、异步请求，不妨碍用户浏览页面或者其他操作。</p>
+<p>2、局部刷新，无需重新刷新页面。</p>
+<p>3、界面与应用分离。有利于分工合作、减少非技术人员对页面的修改造成的WEB应用程序错误、提高效率、也更加适用于现在的发布系统。</p>
+<p>4、基于标准被广泛支持。</p>
+<p>5、前端和后端负载平衡。最大程度的减少冗余请求和响应对服务器造成的负担，提升站点性能。</p>
+<p>缺点：</p>
+<p>1、back和History,对浏览器机制的破坏。</p>
+<p>2、安全问题。易受到黑客攻击。</p>
+<p>3、对搜索引擎支持较弱。</p>
+<p>4、不能很好支持移动设备。</p>
+<p>5、违背URL和资源定位的初衷。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/28/AJAX请求/" data-id="ck2et5pap0000ysuvl2cbk7q2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-jsp页面组成" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/10/27/jsp页面组成/" class="article-date">
@@ -147,7 +211,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/27/jsp页面组成/" data-id="ck2e48jma0001couv4yixsb9i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/27/jsp页面组成/" data-id="ck2et5pe40005ysuvtqpwsdsy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -211,7 +275,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/26/Request案例代码/" data-id="ck2e48jm30000couvk9m79pbg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/26/Request案例代码/" data-id="ck2et5pcx0003ysuvyt45s8rc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -299,7 +363,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/25/MySQL知识点总结/" data-id="ck2e48jni0004couv5embw4td" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/25/MySQL知识点总结/" data-id="ck2et5pco0001ysuvedw4w1vu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -498,7 +562,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/11/JAVA知识点总结/" data-id="ck2e48jmk0003couvrbfca72d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/11/JAVA知识点总结/" data-id="ck2et5pdf0004ysuvn3fvd21v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -536,7 +600,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/10/我的第一篇博客/" data-id="ck2e48jmc0002couv5ib54amo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/10/我的第一篇博客/" data-id="ck2et5pcs0002ysuvv52tehpu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -577,6 +641,10 @@
       <ul>
         
           <li>
+            <a href="/2019/10/28/AJAX请求/">AJAX请求</a>
+          </li>
+        
+          <li>
             <a href="/2019/10/27/jsp页面组成/">jsp页面组成</a>
           </li>
         
@@ -590,10 +658,6 @@
         
           <li>
             <a href="/2019/10/11/JAVA知识点总结/">JAVA知识点总结</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/10/我的第一篇博客/">我的第一篇博客</a>
           </li>
         
       </ul>
