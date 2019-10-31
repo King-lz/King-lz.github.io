@@ -62,6 +62,101 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-jsp页面组成" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/27/jsp页面组成/" class="article-date">
+  <time datetime="2019-10-27T01:15:37.000Z" itemprop="datePublished">2019-10-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/27/jsp页面组成/">jsp页面组成</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Jsp页面元素构成"><a href="#Jsp页面元素构成" class="headerlink" title="Jsp页面元素构成"></a>Jsp页面元素构成</h1><p>jsp页面组成部分：指令  注释  脚本  声明  表达式  jsp页面生命周期</p>
+<h2 id="一-指令"><a href="#一-指令" class="headerlink" title="一.指令"></a>一.指令</h2><p>JSP指令用来设置整个JSP页面相关的属性</p>
+<p>指令可以有多个属性，以键值对的形式表示，并用逗号隔开，语法格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ directive attribute=&quot;value&quot; %&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-与页面属性相关的page指令"><a href="#1-与页面属性相关的page指令" class="headerlink" title="1.与页面属性相关的page指令"></a>1.与页面属性相关的page指令</h4><p>通常位于JSP页面顶端，同一个页面可以有多个page指令</p>
+<h3 id="page指令语法："><a href="#page指令语法：" class="headerlink" title="page指令语法："></a>page指令语法：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page属性1=&quot;属性值&quot;属性2=&quot;属性值1,属性值2&quot;...属性n=&quot;属性值n&quot;%&gt;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>language</td>
+<td>制定JSP页面使用的脚本语言</td>
+<td>java</td>
+</tr>
+<tr>
+<td>import</td>
+<td>通过该属性来引用脚本语言中使用到的类文件</td>
+<td>无</td>
+</tr>
+<tr>
+<td>contentType</td>
+<td>用来制定JSP页面所采用的编码方式</td>
+<td>text/html，ISO-8859-1</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; contentType=&quot;text/html;charset=utf-8&quot;%&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-引入文件的include指令"><a href="#2-引入文件的include指令" class="headerlink" title="2.引入文件的include指令"></a>2.引入文件的include指令</h4><p>将一个外部文件嵌入到当前JSP文件中，同时解析这个页面中的JSP语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ include file=&quot;hh.html&quot; %&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-与标签相关的taglib指令"><a href="#3-与标签相关的taglib指令" class="headerlink" title="3.与标签相关的taglib指令"></a><strong>3.与标签相关的taglib指令</strong></h4><p>使用标签库定义新的自定义标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib uri=&quot;taglibburl&quot; prefix=&quot;tagpre&quot; %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>uri属性表示自定义标签库的存放位置，prefix属性是为了区分不同标签库的标签名，在页面中引用标签也是以prefix开头的</p>
+<h2 id="二-注释"><a href="#二-注释" class="headerlink" title="二. 注释"></a><strong>二. 注释</strong></h2><p>三种注释：</p>
+<h3 id="HTML的注释："><a href="#HTML的注释：" class="headerlink" title="HTML的注释："></a>HTML的注释：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--html注释--&gt;客户端可见</span><br></pre></td></tr></table></figure>
+
+<h3 id="JSP的注释："><a href="#JSP的注释：" class="headerlink" title="JSP的注释："></a>JSP的注释：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--html注释--%&gt;客户端不可见</span><br></pre></td></tr></table></figure>
+
+<h3 id="JSP脚本注释："><a href="#JSP脚本注释：" class="headerlink" title="JSP脚本注释："></a>JSP脚本注释：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//单行注释</span><br><span class="line">/**/多行注释</span><br></pre></td></tr></table></figure>
+
+<h2 id="三-脚本"><a href="#三-脚本" class="headerlink" title="三. 脚本"></a><strong>三. 脚本</strong></h2><p>在JSP页面中执行的Java代码<br>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;% Java代码 %&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="四-声明"><a href="#四-声明" class="headerlink" title="四. 声明"></a><strong>四. 声明</strong></h2><p>在JSP页面中定义变量,方法或类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;%!  String s = &quot;zhansan&quot; ;</span><br><span class="line">     int  add(int x,int y )&#123;</span><br><span class="line">         return x+y;</span><br><span class="line">     &#125;</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="五-表达式"><a href="#五-表达式" class="headerlink" title="五. 表达式"></a><strong>五. 表达式</strong></h2><p>可以将动态信息显示在页面上<br>&lt;%= 变量或表达式%&gt;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h1&gt;当前时间： &lt;/h1&gt;</span><br><span class="line">    &lt;%= new Date() %&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="六-JSP生命周期"><a href="#六-JSP生命周期" class="headerlink" title="六.JSP生命周期"></a><strong>六.JSP生命周期</strong></h2><p><img src="C:%5CUsers%5CLenovo%5CDesktop%5C1.jpg" alt></p>
+<p>JspSercice()方法被调用来处理客户端的请求。对于每一个请求，JSP引擎创建一个新的线程来处理该请求。如果有多个客户端同时请求该JSP文件，则JSP引擎会创建多个线程。每个客户端请求对应一个线程。以多线程方式执行可以大大降低系统地资源需求，提高系统地并发量及响应时间</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/27/jsp页面组成/" data-id="ck2e48jma0001couv4yixsb9i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Request案例代码" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/10/26/Request案例代码/" class="article-date">
@@ -116,7 +211,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/26/Request案例代码/" data-id="ck2dxzni30000xguv9azel4nu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/26/Request案例代码/" data-id="ck2e48jm30000couvk9m79pbg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -204,7 +299,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/25/MySQL知识点总结/" data-id="ck2dxznkh0003xguvyuvozqdy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/25/MySQL知识点总结/" data-id="ck2e48jni0004couv5embw4td" class="article-share-link">Share</a>
       
       
     </footer>
@@ -403,7 +498,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/11/JAVA知识点总结/" data-id="ck2dxznkf0002xguv4nl2zrui" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/11/JAVA知识点总结/" data-id="ck2e48jmk0003couvrbfca72d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -441,7 +536,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/10/我的第一篇博客/" data-id="ck2dxznio0001xguvi634hm55" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/10/我的第一篇博客/" data-id="ck2e48jmc0002couv5ib54amo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -480,6 +575,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/10/27/jsp页面组成/">jsp页面组成</a>
+          </li>
         
           <li>
             <a href="/2019/10/26/Request案例代码/">Request案例代码</a>
