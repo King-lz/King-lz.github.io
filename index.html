@@ -62,6 +62,88 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Jsp九大内置对象" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/05/Jsp九大内置对象/" class="article-date">
+  <time datetime="2019-11-05T13:49:57.000Z" itemprop="datePublished">2019-11-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/05/Jsp九大内置对象/">Jsp九大内置对象</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JSP九大内置对象详解"><a href="#JSP九大内置对象详解" class="headerlink" title="JSP九大内置对象详解"></a><strong>JSP九大内置对象详解</strong></h2><h4 id="JSP内置对象-9个内置对象"><a href="#JSP内置对象-9个内置对象" class="headerlink" title="JSP内置对象(9个内置对象):"></a>JSP内置对象(9个内置对象):</h4><p>1.PageContext  javax.servlet.jsp.PageContext    JSP的页面容器<br>2.request       javax.servlet.http.HttpServletrequest  获取用户的请求信息<br>3.response     javax.servlet.http.HttpServletResponse 服务器向客户端的回应信息<br>4.session      javax.servlet.http.HttpSession    用来保存每一个用户的信息<br>5.application  javax.servlet.ServletContext  表示所有用户的共享信息<br>6.config       javax.servlet.ServletConfig 服务器配置信息，可以取得初始化参数<br>7.out          javax.servlet.jsp.jspWriter  页面输出<br>8.page         java.lang.object)<br>9.exception    java.lang.Throwable </p>
+<p>四种属性范围:</p>
+<p>page(pageContext):只在一个页面中保存属性。                      跳转之后无效。<br>request:只在一次请求中有效，服务器跳转之后有效。                    客户端跳无效<br>session:再一次会话中有效。服务器跳转、客户端跳转都有效。    网页关闭重新打开无效<br>application:在整个服务器上保存，所有用户都可使用。            重启服务器后无效<br>注意：如果设置过多的application属性范围会影响服务器性能。<br>pageContext.PAGE_SCOPE<br>pageContext.REQUEST_SCOPE<br>pageContext.SESSION_SCOPE<br>pageContext.APPLICATION_SCOPE<br>pageContext.setAttribute(“name”, “liuyang”, pageContext.APPLICATION_SCOPE);</p>
+<ul>
+<li>Request常用的方法：</li>
+</ul>
+<p>getParameter(String strTextName) 获取表单提交的信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String strName＝request.getParameter(&quot;name&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>getProtocol() 获取客户使用的协议。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String strProtocol=request.getProtocol();</span><br></pre></td></tr></table></figure>
+
+<p>getServletPath() 获取客户提交信息的页面。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String strServlet=request.getServletPath();</span><br></pre></td></tr></table></figure>
+
+<p>getMethod() 获取客户提交信息的方式，get|post。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String strHeader = request.getHeader(&quot;accept&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>getRermoteAddr() 获取客户的IP地址。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String strIP = request.getRemoteAddr();</span><br></pre></td></tr></table></figure>
+
+<p>getRemoteHost() 获取客户机的名称。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String clientName = request.getRemoteHost();</span><br></pre></td></tr></table></figure>
+
+<p>getServerName() 获取服务器名称。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String serverName = request.getServerName();</span><br></pre></td></tr></table></figure>
+
+<p>getServerPort() 获取服务器的端口号。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int serverPort = request.getServerPort();</span><br></pre></td></tr></table></figure>
+
+<p>getParameterNames() 获取客户端提交的所有参数的名字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Enumeration enum = request.getParameterNames();</span><br><span class="line">while(enum.hasMoreElements())&#123;</span><br><span class="line">    String s=(String)enum.nextElement();</span><br><span class="line">    out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>getHeaderNames()     取出全部头信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">　　Enumeration enu = request.getHeaderNames();//取出全部头信息</span><br><span class="line">　　while(enu.hasMoreElements())&#123;</span><br><span class="line">　　String name = (String)enu.nextElement();</span><br><span class="line">　　String value = request.getHeader(name);</span><br><span class="line">　　%&gt;</span><br><span class="line">　　&lt;h1&gt;&lt;%=name %&gt;--&lt;%=value %&gt;&lt;/h1&gt;</span><br><span class="line">　　&lt;%    </span><br><span class="line">　　&#125;</span><br><span class="line">　　%&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1、request对象"><a href="#1、request对象" class="headerlink" title="1、request对象"></a>1、request对象</h4><p>equest 对象是 javax.servlet.httpServletRequest类型的对象。 该对象代表了客户端的请求信息，主要用于接受通过HTTP协议传送到服务器的数据。（包括头信息、系统信息、请求方式以及请求参数等）。request对象的作用域为一次请求。</p>
+<h4 id="2、response对象"><a href="#2、response对象" class="headerlink" title="2、response对象"></a><strong><em>2、response对象</em></strong></h4><p>response 代表的是对客户端的响应，主要是将JSP容器处理过的对象传回到客户端。response对象也具有作用域，它只在JSP页面内有效。</p>
+<h4 id="3、session对象"><a href="#3、session对象" class="headerlink" title="3、session对象"></a><strong>3、session对象</strong></h4><p>session 对象是由服务器自动创建的与用户请求相关的对象。服务器为每个用户都生成一个session对象，用于保存该用户的信息，跟踪用户的操作状态。session对象内部使用Map类来保存数据，因此保存数据的格式为 “Key/value”。 session对象的value可以使复杂的对象类型，而不仅仅局限于字符串类型。</p>
+<h4 id="4、application对象"><a href="#4、application对象" class="headerlink" title="4、application对象"></a><strong>4、application对象</strong></h4><p>application 对象可将信息保存在服务器中，直到服务器关闭，否则application对象中保存的信息会在整个应用中都有效。与session对象相比，application对象生命周期更长，类似于系统的“全局变量”。</p>
+<h4 id="5、out-对象"><a href="#5、out-对象" class="headerlink" title="5、out 对象"></a><strong>5、out 对象</strong></h4><p>out 对象用于在Web浏览器内输出信息，并且管理应用服务器上的输出缓冲区。在使用 out 对象输出数据时，可以对数据缓冲区进行操作，及时清除缓冲区中的残余数据，为其他的输出让出缓冲空间。待数据输出完毕后，要及时关闭输出流。</p>
+<h4 id="6、pageContext-对象"><a href="#6、pageContext-对象" class="headerlink" title="6、pageContext 对象"></a><strong>6、pageContext 对象</strong></h4><p>pageContext 对象的作用是取得任何范围的参数，通过它可以获取 JSP页面的out、request、reponse、session、application 等对象。pageContext对象的创建和初始化都是由容器来完成的，在JSP页面中可以直接使用 pageContext对象。</p>
+<h4 id="7、config-对象"><a href="#7、config-对象" class="headerlink" title="7、config 对象"></a><strong>7、config 对象</strong></h4><p>config 对象的主要作用是取得服务器的配置信息。通过 pageConext对象的 getServletConfig() 方法可以获取一个config对象。当一个Servlet 初始化时，容器把某些信息通过 config对象传递给这个 Servlet。 开发者可以在web.xml 文件中为应用程序环境中的Servlet程序和JSP页面提供初始化参数。</p>
+<h4 id="8、page-对象"><a href="#8、page-对象" class="headerlink" title="8、page 对象"></a><strong>8、page 对象</strong></h4><p>page 对象代表JSP本身，只有在JSP页面内才是合法的。 page隐含对象本质上包含当前 Servlet接口引用的变量，类似于Java编程中的 this 指针。</p>
+<h4 id="9、exception-对象"><a href="#9、exception-对象" class="headerlink" title="9、exception 对象"></a><strong>9、exception 对象</strong></h4><p>exception 对象的作用是显示异常信息，只有在包含 isErrorPage=”true” 的页面中才可以被使用，在一般的JSP页面中使用该对象将无法编译JSP文件。excepation对象和Java的所有对象一样，都具有系统提供的继承结构。exception 对象几乎定义了所有异常情况。在Java程序中，可以使用try/catch关键字来处理异常情况； 如果在JSP页面中出现没有捕获到的异常，就会生成 exception 对象，并把 exception 对象传送到在page指令中设定的错误页面中，然后在错误页面中处理相应的 exception 对象。</p>
+<p>JSP有九个内置对象（又叫隐含对象），不需要预先声明就可以在脚本代码和表达式中随意使用</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/05/Jsp九大内置对象/" data-id="ck2lxqbag0000f4uvl005fsea" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Cookie对象常用方法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/11/01/Cookie对象常用方法/" class="article-date">
@@ -133,7 +215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/01/Cookie对象常用方法/" data-id="ck2g78d7s00008ouvia1cjj8k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/01/Cookie对象常用方法/" data-id="ck2lxqbao0001f4uvq8d30iep" class="article-share-link">Share</a>
       
       
     </footer>
@@ -197,7 +279,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/28/AJAX请求/" data-id="ck2g78d8p00058ouv9rx6exb4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/28/AJAX请求/" data-id="ck2lxqbci0006f4uvk4rjmocq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -292,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/27/jsp页面组成/" data-id="ck2g78d8r00068ouvpaaecifj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/27/jsp页面组成/" data-id="ck2lxqbcj0007f4uv9y7do4hp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -356,7 +438,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/26/Request案例代码/" data-id="ck2g78d8600028ouvo8pumobr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/26/Request案例代码/" data-id="ck2lxqbc80005f4uvepmsjb7w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -444,7 +526,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/25/MySQL知识点总结/" data-id="ck2g78d8500018ouv0jrwk8y3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/25/MySQL知识点总结/" data-id="ck2lxqbbu0002f4uvbpv2xokc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -643,7 +725,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/11/JAVA知识点总结/" data-id="ck2g78d8d00048ouvszyj64fj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/11/JAVA知识点总结/" data-id="ck2lxqbc60004f4uv10vfskty" class="article-share-link">Share</a>
       
       
     </footer>
@@ -681,7 +763,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/10/我的第一篇博客/" data-id="ck2g78d8c00038ouvflll8jii" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/10/我的第一篇博客/" data-id="ck2lxqbbv0003f4uva0mu4d0d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -722,6 +804,10 @@
       <ul>
         
           <li>
+            <a href="/2019/11/05/Jsp九大内置对象/">Jsp九大内置对象</a>
+          </li>
+        
+          <li>
             <a href="/2019/11/01/Cookie对象常用方法/">Cookie对象常用方法</a>
           </li>
         
@@ -735,10 +821,6 @@
         
           <li>
             <a href="/2019/10/26/Request案例代码/">Request案例代码</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/25/MySQL知识点总结/">MySQL知识点总结</a>
           </li>
         
       </ul>
