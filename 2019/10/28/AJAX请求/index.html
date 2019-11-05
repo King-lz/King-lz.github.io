@@ -5,21 +5,21 @@
   
 
   
-  <title>AJAX请求 | Hexo</title>
+  <title>AJAX请求 | pink</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="AJAX的意思就是异步的JavaScript和XML。简而言之，它是使用XMLHttpRequest对象与服务器端通信的脚本语言。它可以发送及接收各种格式的信息，包括JSON、XML、HTML和文本文件。AJAX最为吸引人的就是它的“异步”特性，AJAX可以无需刷新页面而与服务器端进行通信。 原生ajax请求的五个步骤第一步，创建XMLHttpRequest对象123456789101112131">
+  <meta name="description" content="AJAX的意思就是异步的JavaScript和XML。简而言之，它是使用XMLHttpRequest对象与服务器端通信的脚本语言。它可以发送及接收各种格式的信息，包括JSON、XML、HTML和文本文件。AJAX最为吸引人的就是它的“异步”特性，AJAX可以无需刷新页面而与服务器端进行通信。 原生ajax请求的五个步骤">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AJAX请求">
 <meta property="og:url" content="http://yoursite.com/2019/10/28/AJAX请求/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="AJAX的意思就是异步的JavaScript和XML。简而言之，它是使用XMLHttpRequest对象与服务器端通信的脚本语言。它可以发送及接收各种格式的信息，包括JSON、XML、HTML和文本文件。AJAX最为吸引人的就是它的“异步”特性，AJAX可以无需刷新页面而与服务器端进行通信。 原生ajax请求的五个步骤第一步，创建XMLHttpRequest对象123456789101112131">
+<meta property="og:site_name" content="pink">
+<meta property="og:description" content="AJAX的意思就是异步的JavaScript和XML。简而言之，它是使用XMLHttpRequest对象与服务器端通信的脚本语言。它可以发送及接收各种格式的信息，包括JSON、XML、HTML和文本文件。AJAX最为吸引人的就是它的“异步”特性，AJAX可以无需刷新页面而与服务器端进行通信。 原生ajax请求的五个步骤">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-31T14:31:41.651Z">
+<meta property="og:updated_time" content="2019-11-05T14:28:05.246Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AJAX请求">
-<meta name="twitter:description" content="AJAX的意思就是异步的JavaScript和XML。简而言之，它是使用XMLHttpRequest对象与服务器端通信的脚本语言。它可以发送及接收各种格式的信息，包括JSON、XML、HTML和文本文件。AJAX最为吸引人的就是它的“异步”特性，AJAX可以无需刷新页面而与服务器端进行通信。 原生ajax请求的五个步骤第一步，创建XMLHttpRequest对象123456789101112131">
+<meta name="twitter:description" content="AJAX的意思就是异步的JavaScript和XML。简而言之，它是使用XMLHttpRequest对象与服务器端通信的脚本语言。它可以发送及接收各种格式的信息，包括JSON、XML、HTML和文本文件。AJAX最为吸引人的就是它的“异步”特性，AJAX可以无需刷新页面而与服务器端进行通信。 原生ajax请求的五个步骤">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="pink" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -38,7 +38,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">pink</a>
       </h1>
       
     </div>
@@ -87,9 +87,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>AJAX的意思就是异步的JavaScript和XML。简而言之，它是使用XMLHttpRequest对象与服务器端通信的脚本语言。它可以发送及接收各种格式的信息，包括JSON、XML、HTML和文本文件。AJAX最为吸引人的就是它的“异步”特性，AJAX可以无需刷新页面而与服务器端进行通信。</p>
-<h2 id="原生ajax请求的五个步骤"><a href="#原生ajax请求的五个步骤" class="headerlink" title="原生ajax请求的五个步骤"></a>原生ajax请求的五个步骤</h2><h4 id="第一步，创建XMLHttpRequest对象"><a href="#第一步，创建XMLHttpRequest对象" class="headerlink" title="第一步，创建XMLHttpRequest对象"></a><em>第一步，创建XMLHttpRequest对象</em></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">if(window.XMLHttpRequest) &#123;</span><br><span class="line">xmlHttp = new XMLHttpRequest();</span><br><span class="line">if(xmlHttp.overrideMimeType) &#123;</span><br><span class="line">xmlHttp.overrideMimeType(&quot;text/xml&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&#125; else if(window.ActiveXobject) &#123;</span><br><span class="line">var activeName = [&quot;MSXML2.XMLHTTP&quot;, &quot;Microsoft.XMLHTTP&quot;];</span><br><span class="line">for(var i = 0; i &lt; activeName.length; i++) &#123;</span><br><span class="line">try &#123;</span><br><span class="line">xmlHttp = new ActiveXobject(activeName[i]);</span><br><span class="line">break;</span><br><span class="line">&#125; catch(e) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">if(!xmlHttp) &#123;</span><br><span class="line">alert(&quot;创建xmlhttprequest对象失败&quot;);</span><br><span class="line">&#125; else &#123;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="原生ajax请求的五个步骤"><a href="#原生ajax请求的五个步骤" class="headerlink" title="原生ajax请求的五个步骤"></a>原生ajax请求的五个步骤</h2><a id="more"></a>
 
-<h4 id="第二步，注册回调函数"><a href="#第二步，注册回调函数" class="headerlink" title="第二步，注册回调函数"></a><em>第二步，注册回调函数</em></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xmlHttp.onreadystatechange= callback;</span><br><span class="line">  function callback()&#123;&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="第一步，创建XMLHttpRequest对象"><a href="#第一步，创建XMLHttpRequest对象" class="headerlink" title="第一步，创建XMLHttpRequest对象"></a><em>第一步，创建XMLHttpRequest对象</em></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">if(window.XMLHttpRequest) &#123;</span><br><span class="line">xmlHttp = new XMLHttpRequest();</span><br><span class="line">if(xmlHttp.overrideMimeType) &#123;</span><br><span class="line">xmlHttp.overrideMimeType(&quot;text/xml&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&#125; else if(window.ActiveXobject) &#123;</span><br><span class="line">var activeName = [&quot;MSXML2.XMLHTTP&quot;, &quot;Microsoft.XMLHTTP&quot;];</span><br><span class="line">for(var i = 0; i &lt; activeName.length; i++) &#123;</span><br><span class="line">try &#123;</span><br><span class="line">xmlHttp = new ActiveXobject(activeName[i]);</span><br><span class="line">break;</span><br><span class="line">&#125; catch(e) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">if(!xmlHttp) &#123;</span><br><span class="line">alert(&quot;创建xmlhttprequest对象失败&quot;);</span><br><span class="line">&#125; else &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="第二步，注册回调函数"><a href="#第二步，注册回调函数" class="headerlink" title="第二步，注册回调函数*"></a>第二步，注册回调函数*</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xmlHttp.onreadystatechange= callback;</span><br><span class="line">  function callback()&#123;&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="第三步，使用OPEN方法与服务器建立连接，open-get"><a href="#第三步，使用OPEN方法与服务器建立连接，open-get" class="headerlink" title="第三步，使用OPEN方法与服务器建立连接，open(),get"></a><em>第三步，使用OPEN方法与服务器建立连接，open(),get</em></h4><p>此步注意设置http的请求方式（post/get）,如果是POST方式，注意设置请求头信息xmlHttp.setRequestHeader(“Content-Type”,”application/x-www-form-urlencoded”)</p>
 <pre><code>xmlHttp.open(&quot;get&quot;,&quot;ajax?name=&quot;+ name,true)</code></pre><h4 id="第四步，向服务器端发送数据"><a href="#第四步，向服务器端发送数据" class="headerlink" title="第四步，向服务器端发送数据"></a><em>第四步，向服务器端发送数据</em></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xmlHttp.send(null);</span><br></pre></td></tr></table></figure>
@@ -118,7 +120,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/28/AJAX请求/" data-id="ck2lxtpu90000y8uvr2edkrh3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/28/AJAX请求/" data-id="ck2lytsia0000b8uvxy3lumwh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -207,7 +209,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 John Doe<br>
+      &copy; 2019 king<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

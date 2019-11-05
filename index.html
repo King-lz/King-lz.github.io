@@ -5,17 +5,17 @@
   
 
   
-  <title>Hexo</title>
+  <title>pink</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="pink">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="pink">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="pink">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="pink" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -34,7 +34,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">pink</a>
       </h1>
       
     </div>
@@ -84,57 +84,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="JSP九大内置对象详解"><a href="#JSP九大内置对象详解" class="headerlink" title="JSP九大内置对象详解"></a><strong>JSP九大内置对象详解</strong></h2><h4 id="JSP内置对象-9个内置对象"><a href="#JSP内置对象-9个内置对象" class="headerlink" title="JSP内置对象(9个内置对象):"></a>JSP内置对象(9个内置对象):</h4><p>1.PageContext  javax.servlet.jsp.PageContext    JSP的页面容器<br>2.request       javax.servlet.http.HttpServletrequest  获取用户的请求信息<br>3.response     javax.servlet.http.HttpServletResponse 服务器向客户端的回应信息<br>4.session      javax.servlet.http.HttpSession    用来保存每一个用户的信息<br>5.application  javax.servlet.ServletContext  表示所有用户的共享信息<br>6.config       javax.servlet.ServletConfig 服务器配置信息，可以取得初始化参数<br>7.out          javax.servlet.jsp.jspWriter  页面输出<br>8.page         java.lang.object)<br>9.exception    java.lang.Throwable </p>
-<p>四种属性范围:</p>
-<p>page(pageContext):只在一个页面中保存属性。                      跳转之后无效。<br>request:只在一次请求中有效，服务器跳转之后有效。                    客户端跳无效<br>session:再一次会话中有效。服务器跳转、客户端跳转都有效。    网页关闭重新打开无效<br>application:在整个服务器上保存，所有用户都可使用。            重启服务器后无效<br>注意：如果设置过多的application属性范围会影响服务器性能。<br>pageContext.PAGE_SCOPE<br>pageContext.REQUEST_SCOPE<br>pageContext.SESSION_SCOPE<br>pageContext.APPLICATION_SCOPE<br>pageContext.setAttribute(“name”, “liuyang”, pageContext.APPLICATION_SCOPE);</p>
-<ul>
-<li>Request常用的方法：</li>
-</ul>
-<p>getParameter(String strTextName) 获取表单提交的信息。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String strName＝request.getParameter(&quot;name&quot;);</span><br></pre></td></tr></table></figure>
-
-<p>getProtocol() 获取客户使用的协议。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String strProtocol=request.getProtocol();</span><br></pre></td></tr></table></figure>
-
-<p>getServletPath() 获取客户提交信息的页面。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String strServlet=request.getServletPath();</span><br></pre></td></tr></table></figure>
-
-<p>getMethod() 获取客户提交信息的方式，get|post。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String strHeader = request.getHeader(&quot;accept&quot;);</span><br></pre></td></tr></table></figure>
-
-<p>getRermoteAddr() 获取客户的IP地址。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String strIP = request.getRemoteAddr();</span><br></pre></td></tr></table></figure>
-
-<p>getRemoteHost() 获取客户机的名称。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String clientName = request.getRemoteHost();</span><br></pre></td></tr></table></figure>
-
-<p>getServerName() 获取服务器名称。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String serverName = request.getServerName();</span><br></pre></td></tr></table></figure>
-
-<p>getServerPort() 获取服务器的端口号。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int serverPort = request.getServerPort();</span><br></pre></td></tr></table></figure>
-
-<p>getParameterNames() 获取客户端提交的所有参数的名字。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Enumeration enum = request.getParameterNames();</span><br><span class="line">while(enum.hasMoreElements())&#123;</span><br><span class="line">    String s=(String)enum.nextElement();</span><br><span class="line">    out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>getHeaderNames()     取出全部头信息。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">　　Enumeration enu = request.getHeaderNames();//取出全部头信息</span><br><span class="line">　　while(enu.hasMoreElements())&#123;</span><br><span class="line">　　String name = (String)enu.nextElement();</span><br><span class="line">　　String value = request.getHeader(name);</span><br><span class="line">　　%&gt;</span><br><span class="line">　　&lt;h1&gt;&lt;%=name %&gt;--&lt;%=value %&gt;&lt;/h1&gt;</span><br><span class="line">　　&lt;%    </span><br><span class="line">　　&#125;</span><br><span class="line">　　%&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="1、request对象"><a href="#1、request对象" class="headerlink" title="1、request对象"></a>1、request对象</h4><p>equest 对象是 javax.servlet.httpServletRequest类型的对象。 该对象代表了客户端的请求信息，主要用于接受通过HTTP协议传送到服务器的数据。（包括头信息、系统信息、请求方式以及请求参数等）。request对象的作用域为一次请求。</p>
-<h4 id="2、response对象"><a href="#2、response对象" class="headerlink" title="2、response对象"></a><strong><em>2、response对象</em></strong></h4><p>response 代表的是对客户端的响应，主要是将JSP容器处理过的对象传回到客户端。response对象也具有作用域，它只在JSP页面内有效。</p>
-<h4 id="3、session对象"><a href="#3、session对象" class="headerlink" title="3、session对象"></a><strong>3、session对象</strong></h4><p>session 对象是由服务器自动创建的与用户请求相关的对象。服务器为每个用户都生成一个session对象，用于保存该用户的信息，跟踪用户的操作状态。session对象内部使用Map类来保存数据，因此保存数据的格式为 “Key/value”。 session对象的value可以使复杂的对象类型，而不仅仅局限于字符串类型。</p>
-<h4 id="4、application对象"><a href="#4、application对象" class="headerlink" title="4、application对象"></a><strong>4、application对象</strong></h4><p>application 对象可将信息保存在服务器中，直到服务器关闭，否则application对象中保存的信息会在整个应用中都有效。与session对象相比，application对象生命周期更长，类似于系统的“全局变量”。</p>
-<h4 id="5、out-对象"><a href="#5、out-对象" class="headerlink" title="5、out 对象"></a><strong>5、out 对象</strong></h4><p>out 对象用于在Web浏览器内输出信息，并且管理应用服务器上的输出缓冲区。在使用 out 对象输出数据时，可以对数据缓冲区进行操作，及时清除缓冲区中的残余数据，为其他的输出让出缓冲空间。待数据输出完毕后，要及时关闭输出流。</p>
-<h4 id="6、pageContext-对象"><a href="#6、pageContext-对象" class="headerlink" title="6、pageContext 对象"></a><strong>6、pageContext 对象</strong></h4><p>pageContext 对象的作用是取得任何范围的参数，通过它可以获取 JSP页面的out、request、reponse、session、application 等对象。pageContext对象的创建和初始化都是由容器来完成的，在JSP页面中可以直接使用 pageContext对象。</p>
-<h4 id="7、config-对象"><a href="#7、config-对象" class="headerlink" title="7、config 对象"></a><strong>7、config 对象</strong></h4><p>config 对象的主要作用是取得服务器的配置信息。通过 pageConext对象的 getServletConfig() 方法可以获取一个config对象。当一个Servlet 初始化时，容器把某些信息通过 config对象传递给这个 Servlet。 开发者可以在web.xml 文件中为应用程序环境中的Servlet程序和JSP页面提供初始化参数。</p>
-<h4 id="8、page-对象"><a href="#8、page-对象" class="headerlink" title="8、page 对象"></a><strong>8、page 对象</strong></h4><p>page 对象代表JSP本身，只有在JSP页面内才是合法的。 page隐含对象本质上包含当前 Servlet接口引用的变量，类似于Java编程中的 this 指针。</p>
-<h4 id="9、exception-对象"><a href="#9、exception-对象" class="headerlink" title="9、exception 对象"></a><strong>9、exception 对象</strong></h4><p>exception 对象的作用是显示异常信息，只有在包含 isErrorPage=”true” 的页面中才可以被使用，在一般的JSP页面中使用该对象将无法编译JSP文件。excepation对象和Java的所有对象一样，都具有系统提供的继承结构。exception 对象几乎定义了所有异常情况。在Java程序中，可以使用try/catch关键字来处理异常情况； 如果在JSP页面中出现没有捕获到的异常，就会生成 exception 对象，并把 exception 对象传送到在page指令中设定的错误页面中，然后在错误页面中处理相应的 exception 对象。</p>
-<p>JSP有九个内置对象（又叫隐含对象），不需要预先声明就可以在脚本代码和表达式中随意使用</p>
-
+        <h2 id="JSP九大内置对象详解"><a href="#JSP九大内置对象详解" class="headerlink" title="JSP九大内置对象详解"></a><strong>JSP九大内置对象详解</strong></h2><h4 id="JSP内置对象-9个内置对象"><a href="#JSP内置对象-9个内置对象" class="headerlink" title="JSP内置对象(9个内置对象):"></a>JSP内置对象(9个内置对象):</h4><p>1.PageContext  javax.servlet.jsp.PageContext    JSP的页面容器    </p>
+<p>2.request       javax.servlet.http.HttpServletrequest  获取用户的请求信息</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/11/05/Jsp九大内置对象/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/05/Jsp九大内置对象/" data-id="ck2lxtpuk0004y8uvjtuiy4w7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/05/Jsp九大内置对象/" data-id="ck2lytsii0002b8uv1z0qlq40" class="article-share-link">Share</a>
       
       
     </footer>
@@ -167,55 +127,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="JSP中创建使用Cookie"><a href="#JSP中创建使用Cookie" class="headerlink" title="JSP中创建使用Cookie"></a>JSP中创建使用Cookie</h4><h4 id="一-语法"><a href="#一-语法" class="headerlink" title="一 语法"></a>一 语法</h4><h2 id="创建Cookie对象"><a href="#创建Cookie对象" class="headerlink" title="创建Cookie对象"></a>创建Cookie对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cookie newCookie = new Cookie(String key,object value);</span><br></pre></td></tr></table></figure>
-
-<h2 id="写入Cookie对象"><a href="#写入Cookie对象" class="headerlink" title="写入Cookie对象"></a>写入Cookie对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">responce.addCookie(newCookie);</span><br></pre></td></tr></table></figure>
-
-<h2 id="读取Cookie对象"><a href="#读取Cookie对象" class="headerlink" title="读取Cookie对象"></a>读取Cookie对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cookie[]cookies = request.getCookie();</span><br></pre></td></tr></table></figure>
-
-<h4 id="二-常用方法"><a href="#二-常用方法" class="headerlink" title="二 常用方法"></a>二 常用方法</h4><table>
-<thead>
-<tr>
-<th>方法名称</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>void setMaxAge(int expiry)</td>
-<td>设置cookie的有效期,以秒为单位</td>
-</tr>
-<tr>
-<td>void setValue(String value)</td>
-<td>在cookie创建后,对cookie进行赋值</td>
-</tr>
-<tr>
-<td>String getName()</td>
-<td>获取cookie的名称</td>
-</tr>
-<tr>
-<td>String getValue()</td>
-<td>获取cookie的值</td>
-</tr>
-<tr>
-<td>int getMaxAge()</td>
-<td>获取cookie的有效时间，以秒为单位</td>
-</tr>
-</tbody></table>
-<p>自动登录实例</p>
-<p>cookie过期时间</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">       //在javaweb规范中使用Cookie类代表Cookie</span><br><span class="line">       //获取cookie</span><br><span class="line">       Cookie[] cookies = request.getCookies();</span><br><span class="line">       if(cookies != null &amp;&amp; cookies.length &gt; 0)&#123;</span><br><span class="line">           for(Cookie cookie : cookies)&#123;</span><br><span class="line">               out.println(cookie.getName()+&quot; : &quot;+cookie.getValue());</span><br><span class="line">               out.println(&quot;&lt;br&gt;&quot;);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;else&#123;</span><br><span class="line">           out.println(&quot;没有一个Cookie，正在创建并返回...&quot;);</span><br><span class="line">           //1.创建一个Cookie对象</span><br><span class="line">           Cookie cookie =new Cookie(&quot;name&quot;,&quot;Test&quot;);</span><br><span class="line"></span><br><span class="line">           //2.setMaxAge：设置Cookie的最大时效，以秒为单位，若为0，表示立即删除该Cookie，为负数，表示不存储，为正数，表示存储时间</span><br><span class="line">           cookie.setMaxAge(30);</span><br><span class="line"></span><br><span class="line">           //调用response的一个方法把Cookie传给客户端</span><br><span class="line">           response.addCookie(cookie);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   %&gt;</span><br></pre></td></tr></table></figure>
-
-<p>自动登录</p>
-<p>登录login。jsp</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;form action=&quot;index.jsp&quot; method=&quot;post&quot;&gt; </span><br><span class="line">        name:&lt;input type=&quot;text&quot; name=&quot;name&quot;/&gt;</span><br><span class="line">        &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;/&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-
-<p>index.jsp显示登录信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 自动登录 --&gt;</span><br><span class="line">        &lt;!-- 此服务端 --&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        //若可以获取到请求参数name，则打印出欢迎信息，把登录信息存储到Cookie中，并设置Cookie的最大时效为30S</span><br><span class="line">        String name = request.getParameter(&quot;name&quot;);</span><br><span class="line">        //输入账号提交表单，获取到name字段，创建Cookie并发送到客户端中</span><br><span class="line">        if(name != null &amp;&amp; !name.trim().equals(&quot;&quot;))&#123;</span><br><span class="line">            //创建一个Cookie，name为login.jsp页面传进来的账号</span><br><span class="line">            Cookie cookie = new Cookie(&quot;name&quot;,name);</span><br><span class="line">            cookie.setMaxAge(30);</span><br><span class="line">            response.addCookie(cookie);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">        //没有输入账号，自动登录，账号从Cookie中获取到</span><br><span class="line">            //从Cookieh中获取用户信息，若存在则打印欢迎信息</span><br><span class="line">            Cookie[] cookies = request.getCookies();</span><br><span class="line">            if(cookies != null &amp;&amp; cookies.length &gt; 0)&#123;</span><br><span class="line">                for(Cookie cookie : cookies)&#123;</span><br><span class="line">                    String cookieName = cookie.getName();</span><br><span class="line">                    if(&quot;name&quot;.equals(cookieName))&#123;</span><br><span class="line">                        String val = cookie.getValue();</span><br><span class="line">                        name = val;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if(name != null &amp;&amp; !name.trim().equals(&quot;&quot;))&#123;</span><br><span class="line">            //显示欢迎信息</span><br><span class="line">            out.println(&quot;Hello：&quot;+name);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            out.println(&quot;Hello&quot;);</span><br><span class="line">            //既没有表单提交，又没有Cookie，则重定向到index.jsp</span><br><span class="line">            response.sendRedirect(&quot;login.jsp&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    %&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-
-
+        
+          <p class="article-more-link">
+            <a href="/2019/11/01/Cookie对象常用方法/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/01/Cookie对象常用方法/" data-id="ck2lxtpuf0001y8uv8xjncaay" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/01/Cookie对象常用方法/" data-id="ck2lytsig0001b8uv8qge77nq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -248,38 +168,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>AJAX的意思就是异步的JavaScript和XML。简而言之，它是使用XMLHttpRequest对象与服务器端通信的脚本语言。它可以发送及接收各种格式的信息，包括JSON、XML、HTML和文本文件。AJAX最为吸引人的就是它的“异步”特性，AJAX可以无需刷新页面而与服务器端进行通信。</p>
-<h2 id="原生ajax请求的五个步骤"><a href="#原生ajax请求的五个步骤" class="headerlink" title="原生ajax请求的五个步骤"></a>原生ajax请求的五个步骤</h2><h4 id="第一步，创建XMLHttpRequest对象"><a href="#第一步，创建XMLHttpRequest对象" class="headerlink" title="第一步，创建XMLHttpRequest对象"></a><em>第一步，创建XMLHttpRequest对象</em></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">if(window.XMLHttpRequest) &#123;</span><br><span class="line">xmlHttp = new XMLHttpRequest();</span><br><span class="line">if(xmlHttp.overrideMimeType) &#123;</span><br><span class="line">xmlHttp.overrideMimeType(&quot;text/xml&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&#125; else if(window.ActiveXobject) &#123;</span><br><span class="line">var activeName = [&quot;MSXML2.XMLHTTP&quot;, &quot;Microsoft.XMLHTTP&quot;];</span><br><span class="line">for(var i = 0; i &lt; activeName.length; i++) &#123;</span><br><span class="line">try &#123;</span><br><span class="line">xmlHttp = new ActiveXobject(activeName[i]);</span><br><span class="line">break;</span><br><span class="line">&#125; catch(e) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">if(!xmlHttp) &#123;</span><br><span class="line">alert(&quot;创建xmlhttprequest对象失败&quot;);</span><br><span class="line">&#125; else &#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="第二步，注册回调函数"><a href="#第二步，注册回调函数" class="headerlink" title="第二步，注册回调函数"></a><em>第二步，注册回调函数</em></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xmlHttp.onreadystatechange= callback;</span><br><span class="line">  function callback()&#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="第三步，使用OPEN方法与服务器建立连接，open-get"><a href="#第三步，使用OPEN方法与服务器建立连接，open-get" class="headerlink" title="第三步，使用OPEN方法与服务器建立连接，open(),get"></a><em>第三步，使用OPEN方法与服务器建立连接，open(),get</em></h4><p>此步注意设置http的请求方式（post/get）,如果是POST方式，注意设置请求头信息xmlHttp.setRequestHeader(“Content-Type”,”application/x-www-form-urlencoded”)</p>
-<pre><code>xmlHttp.open(&quot;get&quot;,&quot;ajax?name=&quot;+ name,true)</code></pre><h4 id="第四步，向服务器端发送数据"><a href="#第四步，向服务器端发送数据" class="headerlink" title="第四步，向服务器端发送数据"></a><em>第四步，向服务器端发送数据</em></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xmlHttp.send(null);</span><br></pre></td></tr></table></figure>
-
-<p>如果是POST方式就不为空。</p>
-<h4 id="第五步，在回调函数中针对不同的响应状态进行处理"><a href="#第五步，在回调函数中针对不同的响应状态进行处理" class="headerlink" title="第五步，在回调函数中针对不同的响应状态进行处理"></a><em>第五步，在回调函数中针对不同的响应状态进行处理</em></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if(xmlHttp.readyState == 4)&#123;       //判断交互是否成功</span><br><span class="line">     if(xmlHttp.status == 200)&#123;         //获取服务器返回的数据         //获取纯文本数据</span><br><span class="line">       var responseText =xmlHttp.responseText;</span><br><span class="line">      document.getElementById(&quot;info&quot;).innerHTML = responseText;</span><br><span class="line">     &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="后台方法"><a href="#后台方法" class="headerlink" title="后台方法"></a><em>后台方法</em></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">private  void GetAllComment(HttpContext context)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            //Params可以取得get与post方式传递过来的值。</span><br><span class="line">            string methodName = context.Request.Params[&quot;methodName&quot;];</span><br><span class="line"></span><br><span class="line">            //QueryString只能取得get方式传递过来的值。</span><br><span class="line">            string str1 = context.Request.Form[&quot;str1&quot;];</span><br><span class="line"></span><br><span class="line">            //取得httpRequest传来的值，包括get与post方式</span><br><span class="line">            string str2 = context.Request[&quot;str2&quot;];</span><br><span class="line"></span><br><span class="line">            List&lt;string&gt; comments = new List&lt;string&gt;();</span><br><span class="line"></span><br><span class="line">            comments.Add(methodName);</span><br><span class="line"></span><br><span class="line">            comments.Add(str1);</span><br><span class="line"></span><br><span class="line">            comments.Add(str2);</span><br></pre></td></tr></table></figure>
-
-<h4 id="ajax接受的是json类型，需要把返回的数据转给json格式"><a href="#ajax接受的是json类型，需要把返回的数据转给json格式" class="headerlink" title="ajax接受的是json类型，需要把返回的数据转给json格式"></a><em>ajax接受的是json类型，需要把返回的数据转给json格式</em></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string commentsJson = new JavaScriptSerializer().Serialize(comments);</span><br><span class="line">            context.Response.Write(commentsJson);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-<p>Ajax优缺点</p>
-<p>优点：</p>
-<p>1、异步请求，不妨碍用户浏览页面或者其他操作。</p>
-<p>2、局部刷新，无需重新刷新页面。</p>
-<p>3、界面与应用分离。有利于分工合作、减少非技术人员对页面的修改造成的WEB应用程序错误、提高效率、也更加适用于现在的发布系统。</p>
-<p>4、基于标准被广泛支持。</p>
-<p>5、前端和后端负载平衡。最大程度的减少冗余请求和响应对服务器造成的负担，提升站点性能。</p>
-<p>缺点：</p>
-<p>1、back和History,对浏览器机制的破坏。</p>
-<p>2、安全问题。易受到黑客攻击。</p>
-<p>3、对搜索引擎支持较弱。</p>
-<p>4、不能很好支持移动设备。</p>
-<p>5、违背URL和资源定位的初衷。</p>
-
+<h2 id="原生ajax请求的五个步骤"><a href="#原生ajax请求的五个步骤" class="headerlink" title="原生ajax请求的五个步骤"></a>原生ajax请求的五个步骤</h2>
+        
+          <p class="article-more-link">
+            <a href="/2019/10/28/AJAX请求/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/28/AJAX请求/" data-id="ck2lxtpu90000y8uvr2edkrh3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/28/AJAX请求/" data-id="ck2lytsia0000b8uvxy3lumwh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -315,66 +213,15 @@
 <h2 id="一-指令"><a href="#一-指令" class="headerlink" title="一.指令"></a>一.指令</h2><p>JSP指令用来设置整个JSP页面相关的属性</p>
 <p>指令可以有多个属性，以键值对的形式表示，并用逗号隔开，语法格式为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ directive attribute=&quot;value&quot; %&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="1-与页面属性相关的page指令"><a href="#1-与页面属性相关的page指令" class="headerlink" title="1.与页面属性相关的page指令"></a>1.与页面属性相关的page指令</h4><p>通常位于JSP页面顶端，同一个页面可以有多个page指令</p>
-<h3 id="page指令语法："><a href="#page指令语法：" class="headerlink" title="page指令语法："></a>page指令语法：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page属性1=&quot;属性值&quot;属性2=&quot;属性值1,属性值2&quot;...属性n=&quot;属性值n&quot;%&gt;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>language</td>
-<td>制定JSP页面使用的脚本语言</td>
-<td>java</td>
-</tr>
-<tr>
-<td>import</td>
-<td>通过该属性来引用脚本语言中使用到的类文件</td>
-<td>无</td>
-</tr>
-<tr>
-<td>contentType</td>
-<td>用来制定JSP页面所采用的编码方式</td>
-<td>text/html，ISO-8859-1</td>
-</tr>
-</tbody></table>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; contentType=&quot;text/html;charset=utf-8&quot;%&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-引入文件的include指令"><a href="#2-引入文件的include指令" class="headerlink" title="2.引入文件的include指令"></a>2.引入文件的include指令</h4><p>将一个外部文件嵌入到当前JSP文件中，同时解析这个页面中的JSP语句</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ include file=&quot;hh.html&quot; %&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-与标签相关的taglib指令"><a href="#3-与标签相关的taglib指令" class="headerlink" title="3.与标签相关的taglib指令"></a><strong>3.与标签相关的taglib指令</strong></h4><p>使用标签库定义新的自定义标签</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib uri=&quot;taglibburl&quot; prefix=&quot;tagpre&quot; %&gt;</span><br></pre></td></tr></table></figure>
-
-<p>uri属性表示自定义标签库的存放位置，prefix属性是为了区分不同标签库的标签名，在页面中引用标签也是以prefix开头的</p>
-<h2 id="二-注释"><a href="#二-注释" class="headerlink" title="二. 注释"></a><strong>二. 注释</strong></h2><p>三种注释：</p>
-<h3 id="HTML的注释："><a href="#HTML的注释：" class="headerlink" title="HTML的注释："></a>HTML的注释：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--html注释--&gt;客户端可见</span><br></pre></td></tr></table></figure>
-
-<h3 id="JSP的注释："><a href="#JSP的注释：" class="headerlink" title="JSP的注释："></a>JSP的注释：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--html注释--%&gt;客户端不可见</span><br></pre></td></tr></table></figure>
-
-<h3 id="JSP脚本注释："><a href="#JSP脚本注释：" class="headerlink" title="JSP脚本注释："></a>JSP脚本注释：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//单行注释</span><br><span class="line">/**/多行注释</span><br></pre></td></tr></table></figure>
-
-<h2 id="三-脚本"><a href="#三-脚本" class="headerlink" title="三. 脚本"></a><strong>三. 脚本</strong></h2><p>在JSP页面中执行的Java代码<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;% Java代码 %&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="四-声明"><a href="#四-声明" class="headerlink" title="四. 声明"></a><strong>四. 声明</strong></h2><p>在JSP页面中定义变量,方法或类</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;%!  String s = &quot;zhansan&quot; ;</span><br><span class="line">     int  add(int x,int y )&#123;</span><br><span class="line">         return x+y;</span><br><span class="line">     &#125;</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="五-表达式"><a href="#五-表达式" class="headerlink" title="五. 表达式"></a><strong>五. 表达式</strong></h2><p>可以将动态信息显示在页面上<br>&lt;%= 变量或表达式%&gt;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h1&gt;当前时间： &lt;/h1&gt;</span><br><span class="line">    &lt;%= new Date() %&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="六-JSP生命周期"><a href="#六-JSP生命周期" class="headerlink" title="六.JSP生命周期"></a><strong>六.JSP生命周期</strong></h2><p><img src="C:%5CUsers%5CLenovo%5CDesktop%5C1.jpg" alt></p>
-<p>JspSercice()方法被调用来处理客户端的请求。对于每一个请求，JSP引擎创建一个新的线程来处理该请求。如果有多个客户端同时请求该JSP文件，则JSP引擎会创建多个线程。每个客户端请求对应一个线程。以多线程方式执行可以大大降低系统地资源需求，提高系统地并发量及响应时间</p>
-
+        
+          <p class="article-more-link">
+            <a href="/2019/10/27/jsp页面组成/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/27/jsp页面组成/" data-id="ck2lxtpul0005y8uvystozwgt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/27/jsp页面组成/" data-id="ck2lytsj20006b8uvjgwslvza" class="article-share-link">Share</a>
       
       
     </footer>
@@ -408,37 +255,15 @@
       
         <h2 id="request对象"><a href="#request对象" class="headerlink" title="request对象"></a>request对象</h2><p>request对象封装了由客户端生成的HTTP请求的所有细节，主要包括HTTP头信息、系统信息、请求方式和请求参数等。通过request对象提供的相应方法可以处理客户端浏览器提交的HTTP请求中的各项参数。</p>
 <p>request对象的常用方法：</p>
-<ul>
-<li>String getParameter(String name)：根据页面表单组件名称获取页面提交数据。</li>
-<li>String[] getParameterValues(String name)：获取一个页面表单组件对于多个值时的用户的请求数据。</li>
-<li>void setCharacterEncoding(String env)：指定每个请求的编码，在调用 request.getParameter() 方法之前进行设定，可以用于解决中文乱码问题。</li>
-<li>request.getRequestDispatcher(String path)：返回一个 javax.servlet.RequestDispatcher 对象，该对象的 forward 方法用于转发请求。</li>
-<li>void setAttribute(String name,Object object)：方法将数据保存到request范围内的变量中。</li>
-<li>Object getAttribute(String name)：获取request范围内的变量中的数据。</li>
-<li>void removeAttribute(String name)：删除request范围内的变量中的数据。</li>
-<li>Cookie[] getCookies()：获取到所有cookie对象的集合。</li>
-</ul>
-<h4 id="注册页面Demo-jsp"><a href="#注册页面Demo-jsp" class="headerlink" title="注册页面Demo.jsp"></a>注册页面Demo.jsp</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;</span><br><span class="line">    pageEncoding=&quot;UTF-8&quot;%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</span><br><span class="line">&lt;title&gt;Insert title here&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;Text.jsp&quot; meshod=&quot;post&quot;&gt;</span><br><span class="line">		用户名：&lt;input type=&quot;text&quot; name=&quot;user&quot;&gt;&lt;br&gt;</span><br><span class="line">		密码：&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;br&gt;</span><br><span class="line">		多选：&lt;br&gt;</span><br><span class="line">		&lt;input type=&quot;checkbox&quot; name=&quot;dx&quot; value=&quot;唱&quot;&gt;唱</span><br><span class="line">		&lt;input type=&quot;checkbox&quot; name=&quot;dx&quot; value=&quot;跳&quot;&gt;跳</span><br><span class="line">		&lt;input type=&quot;checkbox&quot; name=&quot;dx&quot; value=&quot;rap&quot;&gt;rap</span><br><span class="line">		&lt;input type=&quot;checkbox&quot; name=&quot;dx&quot; value=&quot;篮球&quot;&gt;篮球</span><br><span class="line">		&lt;br&gt;</span><br><span class="line">		&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">		&lt;input type=&quot;reset&quot; name=&quot;reset&quot; value=&quot;取消&quot;&gt;</span><br><span class="line">	&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="注册提交页面Text-jsp"><a href="#注册提交页面Text-jsp" class="headerlink" title="注册提交页面Text.jsp"></a>注册提交页面Text.jsp</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;</span><br><span class="line">    pageEncoding=&quot;UTF-8&quot;%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</span><br><span class="line">&lt;% </span><br><span class="line">request.setCharacterEncoding(&quot;UTF-8&quot;);</span><br><span class="line">String name=request.getParameter(&quot;user&quot;);</span><br><span class="line">String pwd=request.getParameter(&quot;password&quot;);</span><br><span class="line">String [] y=request.getParameterValues(&quot;dx&quot;);</span><br><span class="line">%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</span><br><span class="line">&lt;title&gt;Insert title here&lt;/title&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	用户名是：&lt;%=name %&gt;&lt;br&gt;</span><br><span class="line">	密码是：&lt;%=pwd %&gt;&lt;br&gt;</span><br><span class="line">	信息来源是：&lt;% for(int i=0;i&lt;y.length;i++)&#123;</span><br><span class="line">		out.println(y[i]);</span><br><span class="line">	&#125; %&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="在作用域中管理属性"><a href="#在作用域中管理属性" class="headerlink" title="在作用域中管理属性"></a>在作用域中管理属性</h4><p>在进行请求转发时，需要把一些数据传递到转发后的页面进行处理。这时，就需要使用request对象的setAttribute()方法将数据保存到request范围内的变量中。request对象的setAttribute()方法的语法格式如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.setAttribute(String name,Object object);</span><br></pre></td></tr></table></figure>
-
-<p>在将数据保存到request范围内的变量中后，可以通过request对象的getAttribute()方法获取该变量的值，具体的语法格式如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.getAttribute(String name)</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取cookie"><a href="#获取cookie" class="headerlink" title="获取cookie"></a>获取cookie</h3><p>通过cookie的getCookies()方法即可获取到所有cookie对象的集合；通过cookie对象的getName()方法可以获取到指定名称的cookie；通过getValue()方法即可获取到cookie对象的值。另外将一个cookie对象发送到客户端使用了response对象的addCookie()方法。<br>写入cookie对象页面 index.jsp</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;</span><br><span class="line">	pageEncoding=&quot;UTF-8&quot;%&gt;&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">&lt;title&gt;写入cookie对象&lt;/title&gt;</span><br><span class="line">&lt;meta name=&quot;author&quot; content=&quot;pan_junbiao的博客&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;%</span><br><span class="line">		//写入cookie对象	request.setCharacterEncoding(&quot;UTF-8&quot;);  //设置请求的编码	Cookie cookie = new Cookie(&quot;userCookie&quot;,&quot;pan_junbiao的博客&quot;);  //创建并实例化cookie对象	cookie.setMaxAge(60*60*24*30);  //设置cookie有效期为30天	response.addCookie(cookie);  //保存cookie对象</span><br><span class="line">	%&gt;</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">		window.location.href = &quot;deal.jsp&quot;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<p>读取cookie值页面 deal.jsp</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;</span><br><span class="line">	pageEncoding=&quot;UTF-8&quot;%&gt;&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">&lt;title&gt;读取cookie值&lt;/title&gt;</span><br><span class="line">&lt;meta name=&quot;author&quot; content=&quot;pan_junbiao的博客&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;%</span><br><span class="line">		//读取cookie值	Cookie[] cookies = request.getCookies();  //从request中获取cookie对象的集合	String user = &quot;&quot;;	if(cookies != null)	&#123;		//遍历cookie对象集合		for(Cookie cookieItem : cookies)		&#123;			if(cookieItem.getName().equals(&quot;userCookie&quot;))			&#123;				user = cookieItem.getValue();  //读取cookie对象的的值			&#125;		&#125;	&#125;</span><br><span class="line">	%&gt;</span><br><span class="line">	用户信息：&lt;%=user%&gt;&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-
+        
+          <p class="article-more-link">
+            <a href="/2019/10/26/Request案例代码/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/26/Request案例代码/" data-id="ck2lxtpui0003y8uveg0b46c8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/26/Request案例代码/" data-id="ck2lytsim0005b8uv2aaf4wdo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -473,60 +298,15 @@
         <h2 id="一-关于数据库操作"><a href="#一-关于数据库操作" class="headerlink" title="一.关于数据库操作"></a>一.关于数据库操作</h2><h4 id="1-创建数据库"><a href="#1-创建数据库" class="headerlink" title="1.创建数据库"></a>1.创建数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database 数据库名称;</span><br></pre></td></tr></table></figure>
 
 <h4 id="2-删除数据库"><a href="#2-删除数据库" class="headerlink" title="2.删除数据库"></a>2.删除数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database  数据库名称;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-查看数据库"><a href="#3-查看数据库" class="headerlink" title="3.查看数据库"></a>3.查看数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-进入数据库"><a href="#4-进入数据库" class="headerlink" title="4.进入数据库"></a>4.进入数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use  数据库名称;</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-查看创建数据库的详细信息"><a href="#5-查看创建数据库的详细信息" class="headerlink" title="5.查看创建数据库的详细信息"></a>5.查看创建数据库的详细信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show create databases 数据库名称;</span><br></pre></td></tr></table></figure>
-
-<h2 id="二-关于表的基本操作"><a href="#二-关于表的基本操作" class="headerlink" title="二.关于表的基本操作"></a>二.关于表的基本操作</h2><h4 id="1-显示数据库中的表"><a href="#1-显示数据库中的表" class="headerlink" title="1.显示数据库中的表"></a>1.显示数据库中的表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-创建数据表"><a href="#2-创建数据表" class="headerlink" title="2.创建数据表"></a>2.创建数据表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table  表名称（字段1 类型1，字段2 类型2）;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-显示表的字段"><a href="#3-显示表的字段" class="headerlink" title="3.显示表的字段"></a>3.显示表的字段</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc  表名称;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-删除数据表"><a href="#4-删除数据表" class="headerlink" title="4.删除数据表"></a>4.删除数据表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table  表名称;</span><br></pre></td></tr></table></figure>
-
-<h2 id="三-修改表结构的操作"><a href="#三-修改表结构的操作" class="headerlink" title="三.修改表结构的操作"></a>三.修改表结构的操作</h2><h4 id="1-修改字段类型"><a href="#1-修改字段类型" class="headerlink" title="1.修改字段类型"></a>1.修改字段类型</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 modify 列名 数据类型;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-修改表名"><a href="#2-修改表名" class="headerlink" title="2.修改表名"></a>2.修改表名</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 旧表名 rename [to] 新表名;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-修改列名"><a href="#3-修改列名" class="headerlink" title="3.修改列名"></a>3.修改列名</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 change 旧列名 新列名 新数据类型;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-添加表的字段"><a href="#4-添加表的字段" class="headerlink" title="4.添加表的字段"></a>4.添加表的字段</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table  表名称  add 字段 字段类型;</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-添加字段到指定位置"><a href="#5-添加字段到指定位置" class="headerlink" title="5.添加字段到指定位置"></a>5.添加字段到指定位置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名称  add  字段  字段类型  after 字段;</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-删除表字段"><a href="#6-删除表字段" class="headerlink" title="6.删除表字段"></a>6.删除表字段</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 drop 列名;</span><br></pre></td></tr></table></figure>
-
-<h2 id="四-基本操作"><a href="#四-基本操作" class="headerlink" title="四.基本操作"></a>四.基本操作</h2><h4 id="1-一次添加一行数据"><a href="#1-一次添加一行数据" class="headerlink" title="1.一次添加一行数据"></a>1.一次添加一行数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名 (字段1,字段2,字段3,...)</span><br><span class="line">values (值1,值2,值3,...);</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-对一行所有字段增加数据"><a href="#2-对一行所有字段增加数据" class="headerlink" title="2.对一行所有字段增加数据"></a>2.对一行所有字段增加数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名称  values（值1，值2，……）;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-一次添加多行数据"><a href="#3-一次添加多行数据" class="headerlink" title="3.一次添加多行数据"></a>3.一次添加多行数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名 (字段1,字段2,字段3,...)</span><br><span class="line"> values (值1,值2,值3,...),</span><br><span class="line">  values (值1,值2,值3,...),</span><br><span class="line">   values (值1,值2,值3,...);</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-对指定字段增加数据"><a href="#4-对指定字段增加数据" class="headerlink" title="4.对指定字段增加数据"></a>4.对指定字段增加数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名称 （字段1，字段2，……） values （值1，值2，……）;</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-删除表中指定数据"><a href="#5-删除表中指定数据" class="headerlink" title="5.删除表中指定数据"></a>5.删除表中指定数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from 表名称 where条件表达式;</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-删除表中全部数据"><a href="#6-删除表中全部数据" class="headerlink" title="6.删除表中全部数据"></a>6.删除表中全部数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from 表名称;</span><br></pre></td></tr></table></figure>
-
-<h4 id="7-修改表中现存数据"><a href="#7-修改表中现存数据" class="headerlink" title="7.修改表中现存数据"></a>7.修改表中现存数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update 表名称 set 字段1=值1,字段2=值2 where条件;</span><br></pre></td></tr></table></figure>
-
-<h2 id="五-四种全连接"><a href="#五-四种全连接" class="headerlink" title="五. 四种全连接"></a>五. 四种全连接</h2><h4 id="1-内连接"><a href="#1-内连接" class="headerlink" title="1.内连接"></a>1.内连接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名 1,列名 2… FROM 表 1，表 2 WHERE 条件;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-另一种写法"><a href="#2-另一种写法" class="headerlink" title="2.另一种写法"></a>2.另一种写法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名 1,列名 2… FROM 表 1 INNER JOIN 表 2 ON 条件;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-左连接"><a href="#3-左连接" class="headerlink" title="3.左连接"></a>3.左连接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名 1,列名 2… FROM 表 1 LEFT JOIN 表 2 ON 条件;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-右连接"><a href="#4-右连接" class="headerlink" title="4.右连接"></a>4.右连接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名 1,列名 2… FROM 表 1 RIGHT JOIN 表 2 ON 条件;</span><br></pre></td></tr></table></figure>
-
-
+        
+          <p class="article-more-link">
+            <a href="/2019/10/25/MySQL知识点总结/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/25/MySQL知识点总结/" data-id="ck2lxtpuh0002y8uv95za7n3k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/25/MySQL知识点总结/" data-id="ck2lytsik0003b8uvs1b8awj3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -559,173 +339,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="第二章面向对象"><a href="#第二章面向对象" class="headerlink" title="第二章面向对象"></a>第二章面向对象</h2><p>1.面向对象：面向对象思想就是把一个项目，一件事情分成更小的项目，每一部分负责什么功能，最后再有这些部分组合成一个整体。</p>
-<p>2.类的创建</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	语法：<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 类名</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">​      File---&gt;<span class="keyword">new</span>---&gt;<span class="class"><span class="keyword">class</span>---&gt;类名</span></span><br></pre></td></tr></table></figure>
-
-<p>​      </p>
-<p>3.创建对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">类名 对象名=new 类名();</span><br><span class="line"></span><br><span class="line">​      对象名.方法名(); 对象名.属性</span><br></pre></td></tr></table></figure>
-
-<p>4.构造方法：方法名和类名相同,没有返回值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">	 public class 类名&#123;</span><br><span class="line"></span><br><span class="line">​         public 类名()&#123;&#125;//主要的做用是初始化操作</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br></pre></td></tr></table></figure>
-
-<p>5.构造方法重载</p>
-<p>（1）构造方法的重载：方法名与类名相同，参数列表不同</p>
-<p>（2）方法的重载：在同一个类中包含了两个或者两个以上的方法，它们的方法名相同，方法的参数个数，顺序，类型不同，则称这个方法被重载了，这个过程称为方法的重载。</p>
-<p>（3）构造方法的作用：用来实现多种初始化行为。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">	public class 类名&#123;</span><br><span class="line"></span><br><span class="line">​         public 类名()&#123;&#125;</span><br><span class="line"></span><br><span class="line">​         public 类名(String name,int age)&#123;&#125;</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br></pre></td></tr></table></figure>
-
-<p>6.构造方法的执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	 new 类名();---&gt;执行构造方法</span><br><span class="line"></span><br><span class="line">​      super();---&gt;执行了父类的构造方法</span><br></pre></td></tr></table></figure>
-
-<p>7.static静态修饰符</p>
-<p>   （1）含义：static可以用来修饰属性，方法，和代码块。static修饰的变量属于这个类所有，即由这个类创建的所有对象共用一个static变量。通常把static修饰的属性和方法称为类属性（也可以称为类变量），类方法。不使用static修饰的属性和方法属于单个对象，通常称为实例属性，实例方法。</p>
-<p>（2）要点：</p>
-<p>​    1.在加载类的过程中，完成静态变量的内存分配，再执行静态代码块，两者是在创建对象之前执行的。</p>
-<p>​    2.类属性和类方法可以通过类名和对象名访问，实例属性和实例方法只能通过对象名访问。</p>
-<p>​    3.类方法只能访问类属性和其他类方法，</p>
-<p>注意：静态方法中不能使用this和super关键字。</p>
-<p>8.java内存（栈和堆，static，方法区，gc（垃圾回收机制））</p>
-<p>9.八种基本数据类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">byte  short   int   long</span><br><span class="line"></span><br><span class="line">float   double   Boolean   char</span><br></pre></td></tr></table></figure>
-
-<h3 id><a href="#" class="headerlink" title></a></h3><h2 id="第三章-面向对象三大特征—封装"><a href="#第三章-面向对象三大特征—封装" class="headerlink" title="第三章 面向对象三大特征—封装"></a>第三章 面向对象三大特征—封装</h2><p>1.封装的概念：封装是指将对象的状态信息隐藏在对象内部，不允许外部程序直接访问对象内部的信息，而是通过该类所提供的方法来实现对内部信息的操作访问。</p>
-<p>2.封装的步骤</p>
-<p>​      1.把属性私有化（private）</p>
-<p>​      2.对这些属性设置get和set方法</p>
-<p>​      3.调用处理这些方法</p>
-<p>3.封装的作用与好处：</p>
-<p>作用：避免一些用一些不合乎常理的操作</p>
-<p>好处：</p>
-<p>（1） 提高了安全性</p>
-<p>（2） 提高了复用性</p>
-<p>（3） 隐藏了实现细节</p>
-<p>4.封装的案例:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 文件名: EncapTest.java */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EncapTest</span></span>&#123;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> String idNum;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​      <span class="keyword">return</span> age;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​      <span class="keyword">return</span> name;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> String <span class="title">getIdNum</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​      <span class="keyword">return</span> idNum;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">( <span class="keyword">int</span> newAge)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​      age = newAge;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String newName)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​      name = newName;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setIdNum</span><span class="params">( String newId)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​      idNum = newId;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* F文件名 : RunEncap.java */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RunEncap</span></span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​      EncapTest encap = <span class="keyword">new</span> EncapTest();</span><br><span class="line"></span><br><span class="line">​      encap.setName(<span class="string">"James"</span>);</span><br><span class="line"></span><br><span class="line">​      encap.setAge(<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">​      encap.setIdNum(<span class="string">"12343ms"</span>);</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">​      System.out.print(<span class="string">"Name : "</span> + encap.getName()+ </span><br><span class="line"></span><br><span class="line">​                             <span class="string">" Age : "</span>+ encap.getAge());</span><br><span class="line"></span><br><span class="line">​    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>5.修饰符</p>
-<p>​      public—&gt;公共的：在一个项目中都可以访问，权限最高</p>
-<p>​      private—&gt;私有的：只能在本类中进行访问，权限最低</p>
-<p>​      protected—&gt;安全的，受保护的：同一个包能进行访问，继承中之类可以访问父类</p>
-<p>​      default—&gt;默认的：同一个包能访问</p>
-<h2 id="第四章-面向对象三大特征—继承"><a href="#第四章-面向对象三大特征—继承" class="headerlink" title="第四章 面向对象三大特征—继承"></a>第四章 面向对象三大特征—继承</h2><p>1.继承的概念：父亲儿子</p>
-<p>2.继承的关键字：extends</p>
-<p>3.继承的好处：</p>
-<p>   （1）提高了代码的重用性</p>
-<p>   （2）提高了代码的可扩展性</p>
-<p>3.继承的语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public class 类名  extends 父类&#123;    代码块   &#125;</span><br></pre></td></tr></table></figure>
-
-<p>4.继承的使用与说明：</p>
-<p>   （1）使用：</p>
-<p>可以直接调用父类的非私有属性和方法</p>
-<p>​         可以用super.方法     super.属性</p>
-<p>   （2）说明： Java中的继承只能单继承，</p>
-<p>5.父类构造方法调用：super();</p>
-<p>​     //super指代的是父类对象，this指代的是本类对象</p>
-<p>​      调用父类的构造方法必须在之类中调用</p>
-<p>​      必须实在之类构造方法的第一行代码</p>
-<p>6.继承中的构造方法要点：</p>
-<p>   （1）执行子类的构造方法，会默认执行父类的无参构造方法</p>
-<p>  （2）当子类没有无参构造方法，但是有有参构造方法,子类的构造方法需手动添加</p>
-<p>  （3）父类没有定义无参构造方法，定义了带参构造方法，子类的构造方法必须调用父类的带参构造方法。</p>
-<p>  （4）无论是super还是this调用构造方法，只能放在第一行，构造方法只能调用一个</p>
-<p>  （5）构造方法只能在构造方法中调用</p>
-<p>7.重写@Override</p>
-<p>​      必须继承</p>
-<p>​      方法名一致，参数个数，顺序，类型全部一致</p>
-<p>8.重载与重写的区别：</p>
-<p>重载:一定发生在同一类中，方法名相同，参数不同（类型不同，数量不同）</p>
-<p>重写：一定发生在父类和子类中，方法名相同，参数相同，方法体不同</p>
-<h3 id="-1"><a href="#-1" class="headerlink" title></a></h3><h2 id="第五章-面向对象—多态"><a href="#第五章-面向对象—多态" class="headerlink" title="第五章 面向对象—多态"></a>第五章 面向对象—多态</h2><p>1.多态的概念：不同对象对同一消息产生不同的响应。</p>
-<p>2.多态的必要条件</p>
-<p>   （1）继承</p>
-<p>   （2）重写</p>
-<p>   （3）父类引用指向子类对象（向上转型）</p>
-<p>3.多态的优点：</p>
-<p>   （1）消除类型之间的耦合关系</p>
-<p>   （2）可替换性</p>
-<p>   （3）可扩展性</p>
-<p>   （4）接口性</p>
-<p>   （5）灵活性</p>
-<p>   （6）简化性</p>
-<p>3.多态的使用</p>
-<p>   （1）第一个例子</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Father</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​         <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cooking</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​            System.out.println(<span class="string">"米饭"</span>);</span><br><span class="line"></span><br><span class="line">​         &#125;</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​      <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​         <span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line">​         <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cooking</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">​            System.out.println(<span class="string">"熬粥"</span>);</span><br><span class="line"></span><br><span class="line">​         &#125;</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​      <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">​         <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">​            Father son=<span class="keyword">new</span> Son();</span><br><span class="line"></span><br><span class="line">​            son.cooking();</span><br><span class="line"></span><br><span class="line">​         &#125;</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br></pre></td></tr></table></figure>
-
-<p>   （2）第二个例子</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">​    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">​      show(<span class="keyword">new</span> Cat());  <span class="comment">// 以 Cat 对象调用 show 方法</span></span><br><span class="line"></span><br><span class="line">​      show(<span class="keyword">new</span> Dog());  <span class="comment">// 以 Dog 对象调用 show 方法</span></span><br><span class="line"></span><br><span class="line">​                </span><br><span class="line"></span><br><span class="line">​      Animal a = <span class="keyword">new</span> Cat();  <span class="comment">// 向上转型  </span></span><br><span class="line"></span><br><span class="line">​      a.eat();               <span class="comment">// 调用的是 Cat 的 eat</span></span><br><span class="line"></span><br><span class="line">​      Cat c = (Cat)a;        <span class="comment">// 向下转型  </span></span><br><span class="line"></span><br><span class="line">​      c.work();        <span class="comment">// 调用的是 Cat 的 work</span></span><br><span class="line"></span><br><span class="line">  &#125;  </span><br><span class="line"></span><br><span class="line">​            </span><br><span class="line"></span><br><span class="line">​    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(Animal a)</span>  </span>&#123;</span><br><span class="line"></span><br><span class="line">​      a.eat();  </span><br><span class="line"></span><br><span class="line">​        <span class="comment">// 类型判断</span></span><br><span class="line"></span><br><span class="line">​        <span class="keyword">if</span> (a <span class="keyword">instanceof</span> Cat)  &#123;  <span class="comment">// 猫做的事情 </span></span><br><span class="line"></span><br><span class="line">​            Cat c = (Cat)a;  </span><br><span class="line"></span><br><span class="line">​            c.work();  </span><br><span class="line"></span><br><span class="line">​        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (a <span class="keyword">instanceof</span> Dog) &#123; <span class="comment">// 狗做的事情 </span></span><br><span class="line"></span><br><span class="line">​            Dog c = (Dog)a;  </span><br><span class="line"></span><br><span class="line">​            c.work();  </span><br><span class="line"></span><br><span class="line">​        &#125;  </span><br><span class="line"></span><br><span class="line">​    &#125;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;  </span><br><span class="line"></span><br><span class="line">​    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;  </span><br><span class="line"></span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;  </span><br><span class="line"></span><br><span class="line">​    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;  </span><br><span class="line"></span><br><span class="line">​        System.out.println(<span class="string">"吃鱼"</span>);  </span><br><span class="line"></span><br><span class="line">​    &#125;  </span><br><span class="line"></span><br><span class="line">​    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">work</span><span class="params">()</span> </span>&#123;  </span><br><span class="line"></span><br><span class="line">​        System.out.println(<span class="string">"抓老鼠"</span>);  </span><br><span class="line"></span><br><span class="line">​    &#125;  </span><br><span class="line"></span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;  </span><br><span class="line"></span><br><span class="line">​    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;  </span><br><span class="line"></span><br><span class="line">​        System.out.println(<span class="string">"吃骨头"</span>);  </span><br><span class="line"></span><br><span class="line">​    &#125;  </span><br><span class="line"></span><br><span class="line">​    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">work</span><span class="params">()</span> </span>&#123;  </span><br><span class="line"></span><br><span class="line">​        System.out.println(<span class="string">"看家"</span>);  </span><br><span class="line"></span><br><span class="line">​    &#125;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p> 4.向上转型（子类向父类的转换）  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> 语法 ：</span><br><span class="line"></span><br><span class="line">​      &lt;父类型&gt;  &lt;引用变量名&gt; = new  &lt;子类型&gt;（）；</span><br><span class="line"></span><br><span class="line">​      例如：Animal an1=new Dog（）；</span><br></pre></td></tr></table></figure>
-
-<p>5.向下转型（必须基于向上转型）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">例如：Son son=(Son)father;</span><br></pre></td></tr></table></figure>
-
-<p>6.注意：</p>
-<p>   （1）属性无多态这个属性，只看“=”左边的类型</p>
-<p>   （2）编译时，能“.”出来，能调用的看“=”左边</p>
-<p>7.Instanceof运算符：</p>
-<p>8.异常的处理（Try-catch-finally块）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">语法：</span><br><span class="line"></span><br><span class="line">​      Try&#123;</span><br><span class="line"></span><br><span class="line">​         代码块；</span><br><span class="line"></span><br><span class="line">&#125;catch（Exception  e）&#123;</span><br><span class="line"></span><br><span class="line">   代码块；</span><br><span class="line"></span><br><span class="line">&#125;finally&#123;</span><br><span class="line"></span><br><span class="line">   代码块；</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意：</p>
-<p>（1） catch（Exception  e）一定放在所有catch块的最后</p>
-<p>（2） finally{}块里面的代码一定会执行</p>
-<p>结束的语句：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">（1）return；</span><br><span class="line"></span><br><span class="line">（2）system.exit（0）;</span><br></pre></td></tr></table></figure>
-
-<h3 id="-2"><a href="#-2" class="headerlink" title></a></h3><h2 id="第六章-抽象"><a href="#第六章-抽象" class="headerlink" title="第六章 抽象"></a>第六章 抽象</h2><p>1.抽象的概念:当一个类没有足够的信息去描述一个具体的对象，那么我们称之为抽象类。</p>
-<p>2.抽象的关键字</p>
-<p>​      abstract</p>
-<p>​      可以修饰类，可以修饰方法</p>
-<p>3.抽象类的作用：</p>
-<p>   （1）抽象类是用来继承的</p>
-<p>   （2）抽象类无法new出对象</p>
-<p>4.抽象的用法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">	 //抽象类</span><br><span class="line"></span><br><span class="line">​      public abstract class 类名&#123;</span><br><span class="line"></span><br><span class="line">​         //抽象方法没有方法体</span><br><span class="line"></span><br><span class="line">​         public abstract void 方法名();   </span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line">	 //当父类是抽象类的时候，子类必须重写父类里面的抽象方法</span><br></pre></td></tr></table></figure>
-
-<p>​     </p>
-<p>5.final修饰符：最终的</p>
-<p>   修饰变量，修饰方法，修饰类</p>
-<p>   （1）.当修饰变量时，变量转换成常量，常量的值不能改变</p>
-<p>​      final int a=18;//a=18;不能改变,必须给一个初始值</p>
-<p>   （2）.当修饰方法时，该方法不能被重写</p>
-<p>   （3）.当修饰类时，该类不能被继承</p>
-<h3 id="-3"><a href="#-3" class="headerlink" title></a></h3><h2 id="第七章-接口"><a href="#第七章-接口" class="headerlink" title="第七章 接口"></a>第七章 接口</h2><p>为什么要用接口？：因为JAVA只支持单继承。</p>
-<ol>
-<li>接口的概念</li>
-</ol>
-<p>2.接口的关键字</p>
-<p>​      interface</p>
-<p>3.接口的语法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	  public interface 接口名&#123;&#125;</span><br><span class="line"></span><br><span class="line">​      File---&gt;new---&gt;interface//创建接口</span><br></pre></td></tr></table></figure>
-
-<p>4.接口的用法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">      实现接口的关键字  implements</span><br><span class="line"></span><br><span class="line">​      public interface 接口名&#123;</span><br><span class="line"></span><br><span class="line">​         //接口是纯抽象类</span><br><span class="line"></span><br><span class="line">​         //接口里面的方法都是抽象方法</span><br><span class="line"></span><br><span class="line">​         void setData();</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​      public class Play implements 接口名&#123;</span><br><span class="line"></span><br><span class="line">​         @Override</span><br><span class="line"></span><br><span class="line">​         void setData()&#123;</span><br><span class="line"></span><br><span class="line">​         &#125;</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​      public class Test &#123;</span><br><span class="line"></span><br><span class="line">​         public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">​            Play play=new Play();</span><br><span class="line"></span><br><span class="line">​            play.setData();</span><br><span class="line"></span><br><span class="line">​         &#125;</span><br><span class="line"></span><br><span class="line">​      &#125;</span><br><span class="line"></span><br><span class="line">​      注意接口可以进行多继承</span><br><span class="line"></span><br><span class="line">​      public interface 接口名 extends 接口名，接口名&#123;&#125;</span><br><span class="line"></span><br><span class="line">​      一般用法</span><br><span class="line"></span><br><span class="line">​      public class 类名 extends 父类 implements 接口，接口&#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>多态与接口的区别：</p>
-<p>（1） 多态：难</p>
-<p>（2） 接口：简单，不能随意定义属性和方法，只能定义抽象方法，并且实现对口必须重写。</p>
-<h3 id="-4"><a href="#-4" class="headerlink" title></a></h3><h2 id="第八章-集合框架"><a href="#第八章-集合框架" class="headerlink" title="第八章 集合框架"></a>第八章 集合框架</h2><p>1.ArrayList</p>
-<p>  1.用法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ArrayList list=new ArrayList();</span><br><span class="line"></span><br><span class="line">  list.add();//添加数据</span><br><span class="line"></span><br><span class="line">  list.get();//获取数据</span><br></pre></td></tr></table></figure>
-
-<p>2.Map的用法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">	   Map map=new HasMap();</span><br><span class="line"></span><br><span class="line">​      map.put(key,value);//key不能重复</span><br><span class="line"></span><br><span class="line">​      map.get(key);//获取key对象的value</span><br></pre></td></tr></table></figure>
-
-<p>3.泛型</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;String&gt; list=new ArrayList&gt;&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">   Map&lt;String,String&gt; map=new HasMap&lt;String,String&gt;();</span><br><span class="line"></span><br><span class="line">   ArrayList&lt;Map&lt;String,String&gt;&gt; list=new ArrayList&gt;&lt;Map&lt;String,String&gt;&gt;();</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
+        
+          <p class="article-more-link">
+            <a href="/2019/10/11/JAVA知识点总结/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/11/JAVA知识点总结/" data-id="ck2lxtpux0007y8uvmk218skf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/11/JAVA知识点总结/" data-id="ck2lytsj30007b8uvvbwm5ew4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -763,7 +385,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/10/我的第一篇博客/" data-id="ck2lxtpum0006y8uvonbd5uqu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/10/我的第一篇博客/" data-id="ck2lytsil0004b8uv5jp6iyg1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -835,7 +457,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 John Doe<br>
+      &copy; 2019 king<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

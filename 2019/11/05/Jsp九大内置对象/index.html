@@ -5,21 +5,21 @@
   
 
   
-  <title>Jsp九大内置对象 | Hexo</title>
+  <title>Jsp九大内置对象 | pink</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JSP九大内置对象详解JSP内置对象(9个内置对象):1.PageContext  javax.servlet.jsp.PageContext    JSP的页面容器2.request       javax.servlet.http.HttpServletrequest  获取用户的请求信息3.response     javax.servlet.http.HttpServletResponse">
+  <meta name="description" content="JSP九大内置对象详解JSP内置对象(9个内置对象):1.PageContext  javax.servlet.jsp.PageContext    JSP的页面容器     2.request       javax.servlet.http.HttpServletrequest  获取用户的请求信息">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jsp九大内置对象">
 <meta property="og:url" content="http://yoursite.com/2019/11/05/Jsp九大内置对象/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JSP九大内置对象详解JSP内置对象(9个内置对象):1.PageContext  javax.servlet.jsp.PageContext    JSP的页面容器2.request       javax.servlet.http.HttpServletrequest  获取用户的请求信息3.response     javax.servlet.http.HttpServletResponse">
+<meta property="og:site_name" content="pink">
+<meta property="og:description" content="JSP九大内置对象详解JSP内置对象(9个内置对象):1.PageContext  javax.servlet.jsp.PageContext    JSP的页面容器     2.request       javax.servlet.http.HttpServletrequest  获取用户的请求信息">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-05T14:16:35.852Z">
+<meta property="og:updated_time" content="2019-11-05T14:41:02.440Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jsp九大内置对象">
-<meta name="twitter:description" content="JSP九大内置对象详解JSP内置对象(9个内置对象):1.PageContext  javax.servlet.jsp.PageContext    JSP的页面容器2.request       javax.servlet.http.HttpServletrequest  获取用户的请求信息3.response     javax.servlet.http.HttpServletResponse">
+<meta name="twitter:description" content="JSP九大内置对象详解JSP内置对象(9个内置对象):1.PageContext  javax.servlet.jsp.PageContext    JSP的页面容器     2.request       javax.servlet.http.HttpServletrequest  获取用户的请求信息">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="pink" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -38,7 +38,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">pink</a>
       </h1>
       
     </div>
@@ -86,7 +86,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="JSP九大内置对象详解"><a href="#JSP九大内置对象详解" class="headerlink" title="JSP九大内置对象详解"></a><strong>JSP九大内置对象详解</strong></h2><h4 id="JSP内置对象-9个内置对象"><a href="#JSP内置对象-9个内置对象" class="headerlink" title="JSP内置对象(9个内置对象):"></a>JSP内置对象(9个内置对象):</h4><p>1.PageContext  javax.servlet.jsp.PageContext    JSP的页面容器<br>2.request       javax.servlet.http.HttpServletrequest  获取用户的请求信息<br>3.response     javax.servlet.http.HttpServletResponse 服务器向客户端的回应信息<br>4.session      javax.servlet.http.HttpSession    用来保存每一个用户的信息<br>5.application  javax.servlet.ServletContext  表示所有用户的共享信息<br>6.config       javax.servlet.ServletConfig 服务器配置信息，可以取得初始化参数<br>7.out          javax.servlet.jsp.jspWriter  页面输出<br>8.page         java.lang.object)<br>9.exception    java.lang.Throwable </p>
+        <h2 id="JSP九大内置对象详解"><a href="#JSP九大内置对象详解" class="headerlink" title="JSP九大内置对象详解"></a><strong>JSP九大内置对象详解</strong></h2><h4 id="JSP内置对象-9个内置对象"><a href="#JSP内置对象-9个内置对象" class="headerlink" title="JSP内置对象(9个内置对象):"></a>JSP内置对象(9个内置对象):</h4><p>1.PageContext  javax.servlet.jsp.PageContext    JSP的页面容器    </p>
+<p>2.request       javax.servlet.http.HttpServletrequest  获取用户的请求信息</p>
+<a id="more"></a>
+
+<p>3.response     javax.servlet.http.HttpServletResponse 服务器向客户端的回应信息</p>
+<p>4.session      javax.servlet.http.HttpSession    用来保存每一个用户的信息   </p>
+<p>5.application  javax.servlet.ServletContext  表示所有用户的共享信息</p>
+<p>6.config       javax.servlet.ServletConfig 服务器配置信息，可以取得初始化参数</p>
+<p>7.out          javax.servlet.jsp.jspWriter  页面输出</p>
+<p>8.page         java.lang.object)</p>
+<p>9.exception    java.lang.Throwable </p>
 <p>四种属性范围:</p>
 <p>page(pageContext):只在一个页面中保存属性。                      跳转之后无效。<br>request:只在一次请求中有效，服务器跳转之后有效。                    客户端跳无效<br>session:再一次会话中有效。服务器跳转、客户端跳转都有效。    网页关闭重新打开无效<br>application:在整个服务器上保存，所有用户都可使用。            重启服务器后无效<br>注意：如果设置过多的application属性范围会影响服务器性能。<br>pageContext.PAGE_SCOPE<br>pageContext.REQUEST_SCOPE<br>pageContext.SESSION_SCOPE<br>pageContext.APPLICATION_SCOPE<br>pageContext.setAttribute(“name”, “liuyang”, pageContext.APPLICATION_SCOPE);</p>
 <ul>
@@ -136,7 +146,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/05/Jsp九大内置对象/" data-id="ck2lxtpuk0004y8uvjtuiy4w7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/05/Jsp九大内置对象/" data-id="ck2lytsii0002b8uv1z0qlq40" class="article-share-link">Share</a>
       
       
     </footer>
@@ -216,7 +226,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 John Doe<br>
+      &copy; 2019 king<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
