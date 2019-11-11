@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      jsp页面组成 | pink
+      Java Servlet简介 | pink
     
   </title>
   <meta name="author" content="king">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			Current post&nbsp;:&nbsp;《jsp页面组成》
+			Current post&nbsp;:&nbsp;《Java Servlet简介》
 		
 	</p>
 
@@ -277,8 +277,8 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/2019/10/27/jsp页面组成/" itemprop="url">
-		jsp页面组成
+	<a href="/2019/11/11/Java-Servlet简介/" itemprop="url">
+		Java Servlet简介
 	</a>
 
 	</div>
@@ -291,9 +291,9 @@
 
 	Posted on
 
-	<a href="/2019/10/27/jsp页面组成/" itemprop="url">
-		<time datetime="2019-10-27T01:15:37.000Z" itemprop="datePublished">
-	  		2019-10-27
+	<a href="/2019/11/11/Java-Servlet简介/" itemprop="url">
+		<time datetime="2019-11-11T13:25:28.000Z" itemprop="datePublished">
+	  		2019-11-11
 	  </time>
 	</a>
 	&nbsp;
@@ -309,9 +309,9 @@
 
 	Updated on
 
-	<a href="/2019/10/27/jsp页面组成/" itemprop="url">
-		<time datetime="2019-10-27T01:15:37.000Z" itemprop="dateUpdated">
-	  		2019-11-05
+	<a href="/2019/11/11/Java-Servlet简介/" itemprop="url">
+		<time datetime="2019-11-11T13:25:28.000Z" itemprop="dateUpdated">
+	  		2019-11-11
 	  </time>
 	</a> 
 
@@ -330,67 +330,48 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h1 id="Jsp页面元素构成"><a href="#Jsp页面元素构成" class="headerlink" title="Jsp页面元素构成"></a>Jsp页面元素构成</h1><p>jsp页面组成部分：指令  注释  脚本  声明  表达式  jsp页面生命周期</p>
-<h2 id="一-指令"><a href="#一-指令" class="headerlink" title="一.指令"></a>一.指令</h2><p>JSP指令用来设置整个JSP页面相关的属性</p>
-<p>指令可以有多个属性，以键值对的形式表示，并用逗号隔开，语法格式为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ directive attribute=&quot;value&quot; %&gt;</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-
-<h4 id="1-与页面属性相关的page指令"><a href="#1-与页面属性相关的page指令" class="headerlink" title="1.与页面属性相关的page指令"></a>1.与页面属性相关的page指令</h4><p>通常位于JSP页面顶端，同一个页面可以有多个page指令</p>
-<h3 id="page指令语法："><a href="#page指令语法：" class="headerlink" title="page指令语法："></a>page指令语法：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page属性1=&quot;属性值&quot;属性2=&quot;属性值1,属性值2&quot;...属性n=&quot;属性值n&quot;%&gt;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>language</td>
-<td>制定JSP页面使用的脚本语言</td>
-<td>java</td>
-</tr>
-<tr>
-<td>import</td>
-<td>通过该属性来引用脚本语言中使用到的类文件</td>
-<td>无</td>
-</tr>
-<tr>
-<td>contentType</td>
-<td>用来制定JSP页面所采用的编码方式</td>
-<td>text/html，ISO-8859-1</td>
-</tr>
-</tbody></table>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; contentType=&quot;text/html;charset=utf-8&quot;%&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-引入文件的include指令"><a href="#2-引入文件的include指令" class="headerlink" title="2.引入文件的include指令"></a>2.引入文件的include指令</h4><p>将一个外部文件嵌入到当前JSP文件中，同时解析这个页面中的JSP语句</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ include file=&quot;hh.html&quot; %&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-与标签相关的taglib指令"><a href="#3-与标签相关的taglib指令" class="headerlink" title="3.与标签相关的taglib指令"></a><strong>3.与标签相关的taglib指令</strong></h4><p>使用标签库定义新的自定义标签</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib uri=&quot;taglibburl&quot; prefix=&quot;tagpre&quot; %&gt;</span><br></pre></td></tr></table></figure>
-
-<p>uri属性表示自定义标签库的存放位置，prefix属性是为了区分不同标签库的标签名，在页面中引用标签也是以prefix开头的</p>
-<h2 id="二-注释"><a href="#二-注释" class="headerlink" title="二. 注释"></a><strong>二. 注释</strong></h2><p>三种注释：</p>
-<h3 id="HTML的注释："><a href="#HTML的注释：" class="headerlink" title="HTML的注释："></a>HTML的注释：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--html注释--&gt;客户端可见</span><br></pre></td></tr></table></figure>
-
-<h3 id="JSP的注释："><a href="#JSP的注释：" class="headerlink" title="JSP的注释："></a>JSP的注释：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--html注释--%&gt;客户端不可见</span><br></pre></td></tr></table></figure>
-
-<h3 id="JSP脚本注释："><a href="#JSP脚本注释：" class="headerlink" title="JSP脚本注释："></a>JSP脚本注释：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//单行注释</span><br><span class="line">/**/多行注释</span><br></pre></td></tr></table></figure>
-
-<h2 id="三-脚本"><a href="#三-脚本" class="headerlink" title="三. 脚本"></a><strong>三. 脚本</strong></h2><p>在JSP页面中执行的Java代码<br>语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;% Java代码 %&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="四-声明"><a href="#四-声明" class="headerlink" title="四. 声明"></a><strong>四. 声明</strong></h2><p>在JSP页面中定义变量,方法或类</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;%!  String s = &quot;zhansan&quot; ;</span><br><span class="line">     int  add(int x,int y )&#123;</span><br><span class="line">         return x+y;</span><br><span class="line">     &#125;</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="五-表达式"><a href="#五-表达式" class="headerlink" title="五. 表达式"></a><strong>五. 表达式</strong></h2><p>可以将动态信息显示在页面上<br>&lt;%= 变量或表达式%&gt;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h1&gt;当前时间： &lt;/h1&gt;</span><br><span class="line">    &lt;%= new Date() %&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="六-JSP生命周期"><a href="#六-JSP生命周期" class="headerlink" title="六.JSP生命周期"></a><strong>六.JSP生命周期</strong></h2><p><img src="C:%5CUsers%5CLenovo%5CDesktop%5C1.jpg" alt></p>
-<p>JspSercice()方法被调用来处理客户端的请求。对于每一个请求，JSP引擎创建一个新的线程来处理该请求。如果有多个客户端同时请求该JSP文件，则JSP引擎会创建多个线程。每个客户端请求对应一个线程。以多线程方式执行可以大大降低系统地资源需求，提高系统地并发量及响应时间</p>
+		<h4 id="一、了解Servlet的概念"><a href="#一、了解Servlet的概念" class="headerlink" title="一、了解Servlet的概念"></a><strong>一、了解Servlet的概念</strong></h4><p>Servlet定义</p>
+<p><strong>Servlet是基于Java技术的Web组件，由容器管理并产生动态的内容。Servlet引擎作为WEB服务器的扩展提供支持Servlet的功能。Servlet与客户端通过Servlet容器实现的请求/响应模型进行交互。</strong></p>
+<p>注意：Servlet不是从命令行启动的，而是由包含Java虚拟机的Web服务器进行加载。</p>
+<p>Servlet是按照Servlet规范编写的Java类。</p>
+<p>Servlet应用请求/响应模型，扩展了服务器的功能。</p>
+<p>Servlet是WEB应用程序中的一个组件。</p>
+<p>Servlet是在JSP之前就存在的运行在服务端的一种Java技术，它是用Java语言编写的服务器端程序在JSP技术出现之前，Servlet被广泛地应用来开发动态的Web应用程序.如今在J2EE项目的开发中，Servlet仍然被广泛的使用。</p>
+<p>Servlet是一种独立于平台和协议的服务器端的Java技术，可以用来生成动态的Web页面与传统的。</p>
+<p>CGI（公共网关接口）和许多其他类似CGI技术相比，Servlet具有更好的可移植性、更强大的功能，更少的投资，更高的效率，更好的安全性等特点。</p>
+<h4 id="二、Servlet技术功能"><a href="#二、Servlet技术功能" class="headerlink" title="二、Servlet技术功能"></a><strong>二、Servlet技术功能</strong></h4><p>Servlet通过创建一个框架来扩展服务器的能力，以提供在Web上进行请求和响应的服务。当客户机发送请求至服务器时，服务器可以将请求信息发送给Servlet，并让Servlet建立起服务器返回给客户机的响应当启动Web服务器或客户机第一次请求服务时，可以自动装入Servlet，之后，Servlet继续运行直到其他客户机发出请求。</p>
+<p><strong>Servlet的功能涉及范围很广:</strong></p>
+<ul>
+<li><p>创建并返回一个包含基于客户请求性质的动态内容的完整的HTML页面；</p>
+</li>
+<li><p>创建可嵌入到现有HTML页面中的一部分HTML页面（HTML片段）；</p>
+</li>
+<li><p>与其他服务器资源（包括数据库和基于Java的应用程序）进行通信；</p>
+</li>
+<li><p>用多个客户机处理连接，接收多个客户机的输入，并将结果传递到多个客户机上，例如，Servlet可以是多参与者的游戏服务器；</p>
+</li>
+<li><p>当允许在单连接方式下传送数据的情况下，在浏览器上打开服务器至applet的新连接，并将该连接保持在打开状态；当允许客户机和服务器简单、高效地执行会话的情况下，applet也可以启动客户浏览器和服务器之间的连接</p>
+</li>
+<li><p>可以通过定制协议进行通信；</p>
+</li>
+<li><p>将订制的处理提供给所有服务器的标准程序。</p>
+<h4 id="三、-Servlet技术特点"><a href="#三、-Servlet技术特点" class="headerlink" title="三、 Servlet技术特点"></a><strong>三、 Servlet技术特点</strong></h4><p>Servlet技术带给程序员最大的优势是它可以处理客户端传来的HTTP请求，并返回一个响应Servlet是一个Java类，Java语言能够实现的功能，Servlet基本上都可以实现（图形界面除外）。</p>
+<p>总的来说，Servlet技术具有以下特点:</p>
+<ol>
+<li>高效。在服务器上仅有一个Java虚拟机在运行，它的优势在于当多个来自客户端的请求进行访问时，Servlet为每个请求分配一个线程而不是进程。</li>
+<li>方便。Servlet提供了大量的实用工具例程，例如处理很难完成的HTML表单数据、读取和设置HTTP头、处理Cookie和跟踪会话等。</li>
+<li>跨平台。Servlet是用Java类编写的，它可以在不同的操作系统平台和不同的应用服务器平台下运行。</li>
+<li>灵活性和可扩展性。采用Servlet开发的Web应用程序，由于Java类的继承性、构造函数等特点，使得其应用灵活，可随意扩展。</li>
+<li>共享数据。Servlet之间通过共享数据可以很容易地实现数据库连接池。它能方便地实现管理用户请求，简化Session和获取前一页面信息的操作。而在CGI之间通信则很差。由于每个CGI程序的调用都开始一个新的进程，调用间通信通常要通过文件进行，因而相当缓慢。同一台服务器上的不同CGI程序之间的通信也相当麻烦。</li>
+<li>安全。有些CGI版本有明显的安全弱点。即使是使用最新的标准和PERL等语言，系统也没有基本安全框架。而Java定义有完整的安全机制，包括SSL\CA认证、安全政策等规范。</li>
+</ol>
+</li>
+</ul>
+<h4 id="四、-Servlet生命周期"><a href="#四、-Servlet生命周期" class="headerlink" title="四、 Servlet生命周期"></a><strong>四、 Servlet生命周期</strong></h4><p>跟客户端的Applet相似，Servlet（这里Servlet的概念又回到了最原始的含义）也遵循严格的生命周期。在每个Servlet实例的生命中有三种类型的事件，这三种事件分别对应于由Servlet引擎所唤醒的三个方法：</p>
+<p>1．init()。当Servlet第一次被装载时，Servlet引擎调用这个Servlet的init()方法，只调用一次。如果某个Sevlet需要特殊的初始化需要。那么Servlet编写人员可以重写该方法来执行初始化任务。这是一个可选的方法。如果某个 Servlet不需要初始化，那么默认情况下将调用它父类的init方法。系统保证，在init方法成功完成以前，是不会调用Servlet去处理任何请求的。</p>
+<p> 2．service()。这是Servlet最重要的方法，是真正处理请求的地方。对于每个请求，Servlet引擎将调用Servlet的service方法，并把Servlet请求对象和Servlet响应对象最为参数传递给它。</p>
+<p> 3．destroy()。这是相对于init的可选方法，当Servlet即将被卸载时由Servlet引擎来调用，这个方法用来清除并释放在init方法中所分配的资源。<br> Servlet的生命周期可以被归纳为以下几步：</p>
+<p>​        （1） 装载Servlet，这一项操作一般是动态执行的。然而，Servlet通常会提供一个管理的选项，用于在Servlet启动时强制装载和初始化特定的Servlet<br> 　　（2） Server创建一个Servlet实例<br> 　　（3） Server调用Servlet的init方法<br> 　　（4） 一个客户端请求到达Server<br> 　　（5） Server创建一个请求对象<br> 　　（6） Server创建一个响应对象<br> 　　（7） Server激活Servlet的service方法，传递请求和响应对象作为参数<br> 　　（8） service方法获得关于请求对象的信息，处理请求，访问其他资源，获得需要的信息<br> 　　（9） service方法使用响应对象的方法。将响应传回Server，最终到达客户端。Service方法可能激活其他方法以处理请求。如doGet，doPost或其他程序员自己开发的方法<br> 　　（10） 对于更多的客户端请求，Server创建新的请求和响应对象，仍然激活此servlet的service方法，将这两个对象作为参数传递给它，如此重复以上的循环，但无需再次调用init方法，Servlet一般只初始化一次<br> 　　（11） 当Server不再需要Servlet时，比如当Server要关闭时，Server调用Servlet的destroy</p>
 	
 	</div>
 	
@@ -409,12 +390,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">To Top</a>
 		
-			<a href="/2019/10/28/AJAX请求/" title="AJAX请求" rel="prev">
-				&laquo;Pre post
-			</a>
 		
-		
-			<a href="/2019/10/26/Request案例代码/" title="Request案例代码" rel="next">
+			<a href="/2019/11/05/Jsp九大内置对象/" title="Jsp九大内置对象" rel="next">
 				Next post&raquo;
 			</a>
 			
@@ -432,30 +409,6 @@
 <div class="relate-post">
 	
 		<ul>
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/11/11/Java-Servlet简介/" title="Java Servlet简介">
-								Java Servlet简介			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								十一月 11日, 2019				
-							</p>
-							<p class="relate-post-content">
-								一、了解Servlet的概念Servlet定义
-Servlet是基于Java技术的Web组件，由容器管理并产生动态的内容。Servlet引擎作为WEB服务器的扩展提供支持Servlet的功能。Servlet与客户端通过Servlet容...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/11/11/Java-Servlet简介/" title="Java Servlet简介">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="Java Servlet简介"/>
-							</a>
-						</div>
-					</li>											
-			
 			
 					<li>
 						<div class="relate-post-text">
@@ -554,6 +507,32 @@ Servlet是基于Java技术的Web组件，由容器管理并产生动态的内容
 							<a href="/2019/10/28/AJAX请求/" title="AJAX请求">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="AJAX请求"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/10/27/jsp页面组成/" title="jsp页面组成">
+								jsp页面组成			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 27日, 2019				
+							</p>
+							<p class="relate-post-content">
+								Jsp页面元素构成jsp页面组成部分：指令  注释  脚本  声明  表达式  jsp页面生命周期
+一.指令JSP指令用来设置整个JSP页面相关的属性
+指令可以有多个属性，以键值对的形式表示，并用逗号隔开，语法格式为：
+1&lt;%@...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/10/27/jsp页面组成/" title="jsp页面组成">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="jsp页面组成"/>
 							</a>
 						</div>
 					</li>											
