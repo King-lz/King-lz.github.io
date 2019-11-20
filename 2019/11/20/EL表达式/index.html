@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      Jsp九大内置对象 | pink
+      EL表达式 | pink
     
   </title>
   <meta name="author" content="king">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			Current post&nbsp;:&nbsp;《Jsp九大内置对象》
+			Current post&nbsp;:&nbsp;《EL表达式》
 		
 	</p>
 
@@ -277,8 +277,8 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/2019/11/05/Jsp九大内置对象/" itemprop="url">
-		Jsp九大内置对象
+	<a href="/2019/11/20/EL表达式/" itemprop="url">
+		EL表达式
 	</a>
 
 	</div>
@@ -291,9 +291,9 @@
 
 	Posted on
 
-	<a href="/2019/11/05/Jsp九大内置对象/" itemprop="url">
-		<time datetime="2019-11-05T13:49:57.000Z" itemprop="datePublished">
-	  		2019-11-05
+	<a href="/2019/11/20/EL表达式/" itemprop="url">
+		<time datetime="2019-11-20T09:45:01.000Z" itemprop="datePublished">
+	  		2019-11-20
 	  </time>
 	</a>
 	&nbsp;
@@ -309,9 +309,9 @@
 
 	Updated on
 
-	<a href="/2019/11/05/Jsp九大内置对象/" itemprop="url">
-		<time datetime="2019-11-05T13:49:57.000Z" itemprop="dateUpdated">
-	  		2019-11-13
+	<a href="/2019/11/20/EL表达式/" itemprop="url">
+		<time datetime="2019-11-20T09:45:01.000Z" itemprop="dateUpdated">
+	  		2019-11-20
 	  </time>
 	</a> 
 
@@ -330,85 +330,197 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h2 id="JSP九大内置对象详解"><a href="#JSP九大内置对象详解" class="headerlink" title="JSP九大内置对象详解"></a><strong>JSP九大内置对象详解</strong></h2><h4 id="JSP内置对象-9个内置对象"><a href="#JSP内置对象-9个内置对象" class="headerlink" title="JSP内置对象(9个内置对象):"></a>JSP内置对象(9个内置对象):</h4><p>1.PageContext  javax.servlet.jsp.PageContext    JSP的页面容器    </p>
-<p>2.request       javax.servlet.http.HttpServletrequest  获取用户的请求信息</p>
-<a id="more"></a>
+		<h4 id="EL（Expression-Language）-是为了使JSP写起来更加简单。表达式语言的灵感来自于-ECMAScript-和-XPath-表达式语言，它提供了在-JSP-中简化表达式的方法，让Jsp的代码更加简化。"><a href="#EL（Expression-Language）-是为了使JSP写起来更加简单。表达式语言的灵感来自于-ECMAScript-和-XPath-表达式语言，它提供了在-JSP-中简化表达式的方法，让Jsp的代码更加简化。" class="headerlink" title="EL（Expression Language） 是为了使JSP写起来更加简单。表达式语言的灵感来自于 ECMAScript 和 XPath 表达式语言，它提供了在 JSP 中简化表达式的方法，让Jsp的代码更加简化。"></a>EL（Expression Language） 是为了使JSP写起来更加简单。表达式语言的灵感来自于 ECMAScript 和 XPath 表达式语言，它提供了在 JSP 中简化表达式的方法，让Jsp的代码更加简化。</h4><p>以MVC模式设计程序,JSP只是<a href="https://baike.baidu.com/item/视图/1302820" target="_blank" rel="noopener">视图</a>，视图的任务就是显示响应，而不是在JSP中做任何关于程序控制和业务逻辑的事情。所以在JSP页面中应该尽可能少的、或者是完全不出现Java代码。</p>
+<p>在使用JSP标准动作操作 JavaBean时，如果<a href="https://baike.baidu.com/item/JavaBean/529577" target="_blank" rel="noopener">JavaBean</a>的属性是 String类型或者基本类型，则能够实现类型的自动转换,如 JavaBean的属性从String类型可自动转换成int类型。如果 Javabean中的属性不是 String类型和基本类型,而是一个 Object类型,并且属性还有自己的属性，如何获得此 Object类型的属性呢？JSP标准动作中没有提供这种嵌套式访问机制，所以要想实现这个功能,就只能在JSP页面中通过Java代码来读取 Object类型的属性。从JSP2.0之后,可以使用EL表达式来处理这样的的问题。</p>
+<a id="more"></a>  
 
-<p>3.response     javax.servlet.http.HttpServletResponse 服务器向客户端的回应信息</p>
-<p>4.session      javax.servlet.http.HttpSession    用来保存每一个用户的信息   </p>
-<p>5.application  javax.servlet.ServletContext  表示所有用户的共享信息</p>
-<p>6.config       javax.servlet.ServletConfig 服务器配置信息，可以取得初始化参数</p>
-<p>7.out          javax.servlet.jsp.jspWriter  页面输出</p>
-<p>8.page         java.lang.object)</p>
-<p>9.exception    java.lang.Throwable </p>
-<p>四种属性范围:</p>
-<p>page(pageContext):只在一个页面中保存属性。                      跳转之后无效。<br>request:只在一次请求中有效，服务器跳转之后有效。                    客户端跳无效<br>session:再一次会话中有效。服务器跳转、客户端跳转都有效。    网页关闭重新打开无效<br>application:在整个服务器上保存，所有用户都可使用。            重启服务器后无效<br>注意：如果设置过多的application属性范围会影响服务器性能。<br>pageContext.PAGE_SCOPE<br>pageContext.REQUEST_SCOPE<br>pageContext.SESSION_SCOPE<br>pageContext.APPLICATION_SCOPE<br>pageContext.setAttribute(“name”, “liuyang”, pageContext.APPLICATION_SCOPE);</p>
-<ul>
-<li>Request常用的方法：</li>
-</ul>
-<p>getParameter(String strTextName) 获取表单提交的信息。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String strName＝request.getParameter(&quot;name&quot;);</span><br></pre></td></tr></table></figure>
+<p>所以， EL是JSP 2.0增加的技术规范，其全称是表达式语言(Expression Language)。EL语言的灵感来自于ECMAScript和XPath表达式语言。EL表达式语言是一种简单的语言，提供了在<a href="https://baike.baidu.com/item/JSP/141543" target="_blank" rel="noopener">JSP</a>中简化表达式的方法，目的是为了尽量减少JSP页面中的Java代码，使得JSP页面的处理<a href="https://baike.baidu.com/item/程序/71525" target="_blank" rel="noopener">程序</a>编写起来更加简洁，便于开发和维护。</p>
+<h3 id="EL语法"><a href="#EL语法" class="headerlink" title="EL语法"></a>EL语法</h3><p>在JSP中访问模型对象是通过EL表达式的语法来表达。所有EL表达式的格式都是以“${}”表示。例如，${ userinfo}代表获取变量userinfo的值。当EL表达式中的变量不给定范围时，则默认在page范围查找，然后依次在request、session、application范围查找。也可以用范围作为前缀表示属于哪个范围的变量，例如：${ pageScope. userinfo}表示访问page范围中的userinfo<a href="https://baike.baidu.com/item/变量/3956968" target="_blank" rel="noopener">变量</a>。</p>
+<h3 id="与-运算符"><a href="#与-运算符" class="headerlink" title="[ ]与.运算符"></a>[ ]与.运算符</h3><p>EL 提供“.“和“[ ]“两种运算符来存取数据。</p>
+<p>当要存取的属性名称中包含一些特殊字符，如 . 或 - 等并非字母或数字的符号，就一定要使用“[ ]“。例如：</p>
+<p>${ user. My-Name}应当改为${user[“My-Name”]}</p>
+<p>如果要动态取值时，就可以用“[ ]“来做，而“.“无法做到动态取值。例如：</p>
+<p>${sessionScope.user[data]}中data 是一个变量</p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>EL存取变量数据的方法很简单，例如：${username}。它的意思是取出某一范围中名称为username的变量。</p>
+<p>因为我们并没有指定哪一个范围的username，所以它会依序从Page、Request、Session、Application范围查找。</p>
+<p>假如途中找到username，就直接回传，不再继续找下去，但是假如全部的范围都没有找到时，就回传””。EL表达式的属性如下：</p>
+<table>
+<thead>
+<tr>
+<th>属性范围在EL中的名称</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Page</td>
+<td>PageScope</td>
+</tr>
+<tr>
+<td>Request</td>
+<td>RequestScope</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>SessionScope</td>
+</tr>
+<tr>
+<td>Application</td>
+<td>ApplicationScope</td>
+</tr>
+</tbody></table>
+<p>JSP 表达式语言定义可在表达式中使用的以下文字：</p>
+<table>
+<thead>
+<tr>
+<th align="left">文字</th>
+<th align="left">文字的值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Boolean</td>
+<td align="left">true 和 false</td>
+</tr>
+<tr>
+<td align="left">Integer</td>
+<td align="left">与 Java 类似。可以包含任何整数，例如 24、-45、567</td>
+</tr>
+<tr>
+<td align="left">Floating Point</td>
+<td align="left">与 Java 类似。可以包含任何正的或负的浮点数，例如 -1.8E-45、4.567</td>
+</tr>
+<tr>
+<td align="left">String</td>
+<td align="left">任何由单引号或双引号限定的字符串。对于单引号、双引号和反斜杠，使用反斜杠字符作为转义序列。必须注意，如果在字符串两端使用双引号，则单引号不需要转义。</td>
+</tr>
+<tr>
+<td align="left">Null</td>
+<td align="left">null</td>
+</tr>
+</tbody></table>
+<h3 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h3><p>JSP 表达式语言提供以下操作符，其中大部分是 Java 中常用的操作符：</p>
+<table>
+<thead>
+<tr>
+<th align="left">术语</th>
+<th align="left">定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">算术型</td>
+<td align="left">+、-（二元）、*、/、div、%、mod、-（一元）</td>
+</tr>
+<tr>
+<td align="left">逻辑型</td>
+<td align="left">and、&amp;&amp;、or、||、!、not</td>
+</tr>
+<tr>
+<td align="left">关系型</td>
+<td align="left">==、eq、!=、ne、&lt;、lt、&gt;、gt、&lt;=、le、&gt;=、ge。可以与其他值进行比较，或与布尔型、字符串型、整型或浮点型文字进行比较。</td>
+</tr>
+<tr>
+<td align="left">空</td>
+<td align="left">empty 空操作符是前缀操作，可用于确定值是否为空。</td>
+</tr>
+<tr>
+<td align="left">条件型</td>
+<td align="left">A ?B :C。根据 A 赋值的结果来赋值 B 或 C。</td>
+</tr>
+</tbody></table>
+<h3 id="隐式对象"><a href="#隐式对象" class="headerlink" title="隐式对象"></a>隐式对象</h3><p>JSP 表达式语言定义了一组隐式对象，其中许多对象在 JSP scriplet 和表达式中可用：</p>
+<table>
+<thead>
+<tr>
+<th>pageContext</th>
+<th>JSP 页的上下文。它可以用于访问 JSP 隐式对象，如请求、响应、会话、输出、servletContext 等。例如，${pageContext.response} 为页面的响应对象赋值。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>此外，还提供几个隐式对象，允许对以下对象进行简易访问：</p>
+<table>
+<thead>
+<tr>
+<th align="left">术语</th>
+<th align="left">定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">param</td>
+<td align="left">将请求参数名称映射到单个字符串参数值（通过调用 ServletRequest.getParameter (String name) 获得）。getParameter (String) 方法返回带有特定名称的参数。表达式 ${param . name}相当于 request.getParameter (name)。</td>
+</tr>
+<tr>
+<td align="left">paramValues</td>
+<td align="left">将请求参数名称映射到一个数值数组（通过调用 ServletRequest.getParameter (String name) 获得）。它与 param 隐式对象非常类似，但它检索一个字符串数组而不是单个值。表达式 ${paramvalues. name} 相当于 request.getParamterValues(name)。</td>
+</tr>
+<tr>
+<td align="left">header</td>
+<td align="left">将请求头名称映射到单个字符串头值（通过调用 ServletRequest.getHeader(String name) 获得）。表达式 ${header. name} 相当于 request.getHeader(name)。</td>
+</tr>
+<tr>
+<td align="left">headerValues</td>
+<td align="left">将请求头名称映射到一个数值数组（通过调用 ServletRequest.getHeaders(String) 获得）。它与头隐式对象非常类似。表达式 ${headerValues. name} 相当于 request.getHeaderValues(name)。</td>
+</tr>
+<tr>
+<td align="left">cookie</td>
+<td align="left">将 cookie 名称映射到单个 cookie 对象。向服务器发出的客户端请求可以获得一个或多个 cookie。表达式 ${cookie. name .value} 返回带有特定名称的第一个 cookie 值。如果请求包含多个同名的 cookie，则应该使用 ${headerValues. name} 表达式。</td>
+</tr>
+<tr>
+<td align="left">initParam</td>
+<td align="left">将上下文初始化参数名称映射到单个值（通过调用 ServletContext.getInitparameter(String name) 获得）。</td>
+</tr>
+</tbody></table>
+<p>除了上述两种类型的隐式<a href="https://baike.baidu.com/item/对象/17158" target="_blank" rel="noopener">对象</a>之外，还有些对象允许访问多种范围的变量，如 Web 上下文、会话、请求、页面：</p>
+<table>
+<thead>
+<tr>
+<th align="left">术语</th>
+<th align="left">定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">pageScope</td>
+<td align="left">将页面范围的变量名称映射到其值。例如，EL 表达式可以使用 ${pageScope.objectName} 访问一个 JSP 中页面范围的对象，还可以使用 ${pageScope .objectName. attributeName} 访问对象的属性。</td>
+</tr>
+<tr>
+<td align="left">requestScope</td>
+<td align="left">将请求范围的变量名称映射到其值。该对象允许访问请求对象的属性。例如，EL 表达式可以使用 ${requestScope. objectName} 访问一个 JSP 请求范围的对象，还可以使用 ${requestScope. objectName. attributeName} 访问对象的属性。</td>
+</tr>
+<tr>
+<td align="left">sessionScope</td>
+<td align="left">将会话范围的变量名称映射到其值。该对象允许访问会话对象的属性。例如： ${sessionScope. name}</td>
+</tr>
+<tr>
+<td align="left">applicationScope</td>
+<td align="left">将应用程序范围的变量名称映射到其值。该隐式对象允许访问应用程序范围的对象。</td>
+</tr>
+</tbody></table>
+<h2 id="特别强调"><a href="#特别强调" class="headerlink" title="特别强调"></a>特别强调</h2><p>1、注意当表达式根据名称引用这些对象之一时，返回的是相应的对象而不是相应<em>的属性</em>。例如：即使现有的 pageContext 属性包含某些其他值，${pageContext} 也返回 PageContext 对象。</p>
+<p>2、 注意 &lt;%@ page isELIgnored=”true” %&gt; 表示是否禁用EL语言,TRUE表示禁止.FALSE表示不禁止.JSP2.0中默认的启用EL语言。</p>
+<p>3、全局禁用EL表达式，在web.xml中进行如下配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`&lt;jsp-config&gt;``&lt;jsp-property-group&gt;``&lt;url-pattern&gt;*.jsp&lt;/url-pattern&gt;``&lt;el-ignored&gt;``true``&lt;/el-ignored&gt;``&lt;/jsp-property-group&gt;``&lt;/jsp-config&gt;`</span><br></pre></td></tr></table></figure>
 
-<p>getProtocol() 获取客户使用的协议。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String strProtocol=request.getProtocol();</span><br></pre></td></tr></table></figure>
-
-<p>getServletPath() 获取客户提交信息的页面。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String strServlet=request.getServletPath();</span><br></pre></td></tr></table></figure>
-
-<p>getMethod() 获取客户提交信息的方式，get|post。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String strHeader = request.getHeader(&quot;accept&quot;);</span><br></pre></td></tr></table></figure>
-
-<p>getRermoteAddr() 获取客户的IP地址。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String strIP = request.getRemoteAddr();</span><br></pre></td></tr></table></figure>
-
-<p>getRemoteHost() 获取客户机的名称。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String clientName = request.getRemoteHost();</span><br></pre></td></tr></table></figure>
-
-<p>getServerName() 获取服务器名称。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String serverName = request.getServerName();</span><br></pre></td></tr></table></figure>
-
-<p>getServerPort() 获取服务器的端口号。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int serverPort = request.getServerPort();</span><br></pre></td></tr></table></figure>
-
-<p>getParameterNames() 获取客户端提交的所有参数的名字。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Enumeration enum = request.getParameterNames();</span><br><span class="line">while(enum.hasMoreElements())&#123;</span><br><span class="line">    String s=(String)enum.nextElement();</span><br><span class="line">    out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>getHeaderNames()     取出全部头信息。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">　　Enumeration enu = request.getHeaderNames();//取出全部头信息</span><br><span class="line">　　while(enu.hasMoreElements())&#123;</span><br><span class="line">　　String name = (String)enu.nextElement();</span><br><span class="line">　　String value = request.getHeader(name);</span><br><span class="line">　　%&gt;</span><br><span class="line">　　&lt;h1&gt;&lt;%=name %&gt;--&lt;%=value %&gt;&lt;/h1&gt;</span><br><span class="line">　　&lt;%    </span><br><span class="line">　　&#125;</span><br><span class="line">　　%&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="1、request对象"><a href="#1、request对象" class="headerlink" title="1、request对象"></a>1、request对象</h4><p>equest 对象是 javax.servlet.httpServletRequest类型的对象。 该对象代表了客户端的请求信息，主要用于接受通过HTTP协议传送到服务器的数据。（包括头信息、系统信息、请求方式以及请求参数等）。request对象的作用域为一次请求。</p>
-<h4 id="2、response对象"><a href="#2、response对象" class="headerlink" title="2、response对象"></a><strong><em>2、response对象</em></strong></h4><p>response 代表的是对客户端的响应，主要是将JSP容器处理过的对象传回到客户端。response对象也具有作用域，它只在JSP页面内有效。</p>
-<h4 id="3、session对象"><a href="#3、session对象" class="headerlink" title="3、session对象"></a><strong>3、session对象</strong></h4><p>session 对象是由服务器自动创建的与用户请求相关的对象。服务器为每个用户都生成一个session对象，用于保存该用户的信息，跟踪用户的操作状态。session对象内部使用Map类来保存数据，因此保存数据的格式为 “Key/value”。 session对象的value可以使复杂的对象类型，而不仅仅局限于字符串类型。</p>
-<h4 id="4、application对象"><a href="#4、application对象" class="headerlink" title="4、application对象"></a><strong>4、application对象</strong></h4><p>application 对象可将信息保存在服务器中，直到服务器关闭，否则application对象中保存的信息会在整个应用中都有效。与session对象相比，application对象生命周期更长，类似于系统的“全局变量”。</p>
-<h4 id="5、out-对象"><a href="#5、out-对象" class="headerlink" title="5、out 对象"></a><strong>5、out 对象</strong></h4><p>out 对象用于在Web浏览器内输出信息，并且管理应用服务器上的输出缓冲区。在使用 out 对象输出数据时，可以对数据缓冲区进行操作，及时清除缓冲区中的残余数据，为其他的输出让出缓冲空间。待数据输出完毕后，要及时关闭输出流。</p>
-<h4 id="6、pageContext-对象"><a href="#6、pageContext-对象" class="headerlink" title="6、pageContext 对象"></a><strong>6、pageContext 对象</strong></h4><p>pageContext 对象的作用是取得任何范围的参数，通过它可以获取 JSP页面的out、request、reponse、session、application 等对象。pageContext对象的创建和初始化都是由容器来完成的，在JSP页面中可以直接使用 pageContext对象。</p>
-<h4 id="7、config-对象"><a href="#7、config-对象" class="headerlink" title="7、config 对象"></a><strong>7、config 对象</strong></h4><p>config 对象的主要作用是取得服务器的配置信息。通过 pageConext对象的 getServletConfig() 方法可以获取一个config对象。当一个Servlet 初始化时，容器把某些信息通过 config对象传递给这个 Servlet。 开发者可以在web.xml 文件中为应用程序环境中的Servlet程序和JSP页面提供初始化参数。</p>
-<h4 id="8、page-对象"><a href="#8、page-对象" class="headerlink" title="8、page 对象"></a><strong>8、page 对象</strong></h4><p>page 对象代表JSP本身，只有在JSP页面内才是合法的。 page隐含对象本质上包含当前 Servlet接口引用的变量，类似于Java编程中的 this 指针。</p>
-<h4 id="9、exception-对象"><a href="#9、exception-对象" class="headerlink" title="9、exception 对象"></a><strong>9、exception 对象</strong></h4><p>exception 对象的作用是显示异常信息，只有在包含 isErrorPage=”true” 的页面中才可以被使用，在一般的JSP页面中使用该对象将无法编译JSP文件。excepation对象和Java的所有对象一样，都具有系统提供的继承结构。exception 对象几乎定义了所有异常情况。在Java程序中，可以使用try/catch关键字来处理异常情况； 如果在JSP页面中出现没有捕获到的异常，就会生成 exception 对象，并把 exception 对象传送到在page指令中设定的错误页面中，然后在错误页面中处理相应的 exception 对象。</p>
-<p>JSP有九个内置对象（又叫隐含对象），不需要预先声明就可以在脚本代码和表达式中随意使用。</p>
-<p>JSP九大内置对象分为四类：</p>
-<ul>
-<li><p>输入输出对象：out对象、response对象、request对象。</p>
-</li>
-<li><p>通信控制对象：pageContext对象、session对象、application对象。</p>
-</li>
-<li><p>Servlet对象:page对象、config对象。</p>
-</li>
-<li><p>错误处理对象：exception对象</p>
-<p>九种对象简介：</p>
-<ol>
-<li><strong>out对象</strong>：用于向客户端、浏览器输出数据。</li>
-<li><strong>request对象</strong>：封装了来自客户端、浏览器的各种信息。</li>
-<li><strong>response对象</strong>：封装了服务器的响应信息。</li>
-<li><strong>exception对象</strong>：封装了jsp程序执行过程中发生的异常和错误信息。</li>
-<li><strong>config对象</strong>：封装了应用程序的配置信息。</li>
-<li><strong>page对象</strong>：指向了当前jsp程序本身。</li>
-<li><strong>session对象</strong>：用来保存会话信息。也就是说，可以实现在同一用户的不同请求之间共享数。</li>
-<li><strong>application对象</strong>：代表了当前应用程序的上下文。可以在不同的用户之间共享信息。</li>
-<li><strong>pageContext对象</strong>：提供了对jsp页面所有对象以及命名空间的访问。</li>
-</ol>
-</li>
-</ul>
+<p>1、例如：</p>
+<p>&lt; %=request. getParameter(“username”)% &gt; 等价于 ${ param. username } </p>
+<p>2、例如：下面的那句EL语言可以完成如果得到一个username为空，则不显示null,而是不显示值。</p>
+<p> <a href="https://baike.baidu.com/pic/EL表达式/1190845/0/b7fd5266d0160924ca51eaa3d40735fae6cd3415?fr=lemma&ct=single" target="_blank" rel="noopener"> <img src="https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D250/sign=7891c1b6b13533faf1b6942b98d2fdca/b7fd5266d0160924ca51eaa3d40735fae6cd3415.jpg" alt="img"> </a> </p>
+<p>&lt;%=user.getAddr( ) %&gt; 等价于 ${user.addr}。 </p>
+<p>3、例如：</p>
+<p>&lt;%=request.getAttribute(“userlist”) %&gt; 等价于$ { requestScope.userlist }</p>
+<p>4、例如：原理如上例3。</p>
+<p>${requestScope.userlist} 1</p>
+<p>${sessionScope.userlist} 2</p>
+<p>${applicationScope.userlist} 3</p>
+<p>${pageScope.userlist} 4</p>
+<p>${userlist} 含义：执行顺序为4 1 2 3。</p>
+<p>“.”后面的只是一个字符串，并不是真正的内置对象，不能调用对象。</p>
+<p>5、例如：</p>
+<p>&lt;%=user.getAddr( ) %&gt; 等价于 ${user.addr}</p>
+<p>第一句前面的user,为一个变量。</p>
+<p>第二句后面user，必须为在某一个范围里的<a href="https://baike.baidu.com/item/属性/20192958" target="_blank" rel="noopener">属性</a>。</p>
+<p><a href="https://baike.baidu.com/pic/EL表达式/1190845/0/cdbf6c81800a19d89313ccbd33fa828ba61e4671?fr=lemma&ct=single" target="_blank" rel="noopener"><img src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D250/sign=a23d7c613901213fcb3349d964e636f8/cdbf6c81800a19d89313ccbd33fa828ba61e4671.jpg" alt="img"></a></p>
 	
 	</div>
 	
@@ -427,12 +539,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">To Top</a>
 		
-			<a href="/2019/11/11/Java-Servlet简介/" title="Java Servlet简介" rel="prev">
-				&laquo;Pre post
-			</a>
 		
-		
-			<a href="/2019/11/01/Cookie对象常用方法/" title="Cookie对象常用方法" rel="next">
+			<a href="/2019/11/15/Vue-js中前端知识点/" title="Vue.js中前端知识点" rel="next">
 				Next post&raquo;
 			</a>
 			
@@ -450,29 +558,6 @@
 <div class="relate-post">
 	
 		<ul>
-			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/11/20/EL表达式/" title="EL表达式">
-								EL表达式			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								十一月 20日, 2019				
-							</p>
-							<p class="relate-post-content">
-								EL（Expression Language） 是为了使JSP写起来更加简单。表达式语言的灵感来自于 ECMAScript 和 XPath 表达式语言，它提供了在 JSP 中简化表达式的方法，让Jsp的代码更加简化。以MVC模式设计程...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2019/11/20/EL表达式/" title="EL表达式">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="EL表达式"/>
-							</a>
-						</div>
-					</li>											
-			
 			
 					<li>
 						<div class="relate-post-text">
@@ -520,6 +605,30 @@ Servlet是基于Java技术的Web组件，由容器管理并产生动态的内容
 							<a href="/2019/11/11/Java-Servlet简介/" title="Java Servlet简介">				
 								
 								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="Java Servlet简介"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/05/Jsp九大内置对象/" title="Jsp九大内置对象">
+								Jsp九大内置对象			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 5日, 2019				
+							</p>
+							<p class="relate-post-content">
+								JSP九大内置对象详解JSP内置对象(9个内置对象):1.PageContext  javax.servlet.jsp.PageContext    JSP的页面容器    
+2.request       javax.servlet...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/05/Jsp九大内置对象/" title="Jsp九大内置对象">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="Jsp九大内置对象"/>
 							</a>
 						</div>
 					</li>											
