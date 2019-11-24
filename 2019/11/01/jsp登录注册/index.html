@@ -1,0 +1,955 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      jsp登录注册 | pink
+    
+  </title>
+  <meta name="author" content="king">
+  <meta name="keywords" content>
+  <meta name="description" content>
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/Annie.css">
+  
+  <!-- jquery -->
+	<script src="/js/jquery.min.js"></script>
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script>
+</head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/img/logo.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">Home</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">Archive</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">Category</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">Tag</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">About</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">Gallery</a>
+		</li>
+	
+
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
+
+			
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<style type="text/css">
+	.header-date {
+		font-size: 1.6rem;
+		color: #fff;
+		position: absolute;
+		bottom: 5px;
+		right: 1rem;
+		writing-mode: tb-rl;
+	}	
+	
+	.header-date a {
+		border-bottom: none;
+	}
+
+	@media only screen and (max-width: 768 ) {
+		.header-date {
+			font-size: 1rem;
+		}			
+	}
+</style>
+<div class="header-date">
+	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" ></a>
+	<span id="Beijing_z43d"></span>
+</div>
+<script src="//widget.time.is/zh.js"></script>
+<script>
+	time_is_widget.init({
+		Beijing_z43d:{
+			template:"DATE", 
+			date_format:"year年 monthname dnum日"
+		}
+	});
+</script>
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">Catalog</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			Current post&nbsp;:&nbsp;《jsp登录注册》
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">Home</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">Archive</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">Category</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">Tag</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">About</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">Gallery</a>
+		</li>
+	
+
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+	<div class="article-title">
+		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+		
+	<a href="/2019/11/01/jsp登录注册/" itemprop="url">
+		jsp登录注册
+	</a>
+
+	</div>
+
+	<div class="article-meta">
+		<span>
+			<i class="fa fa-calendar"></i>
+			
+
+
+	Posted on
+
+	<a href="/2019/11/01/jsp登录注册/" itemprop="url">
+		<time datetime="2019-11-01T06:22:02.000Z" itemprop="datePublished">
+	  		2019-11-01
+	  </time>
+	</a>
+	&nbsp;
+
+
+
+
+
+			
+
+
+
+
+	Updated on
+
+	<a href="/2019/11/01/jsp登录注册/" itemprop="url">
+		<time datetime="2019-11-01T06:22:02.000Z" itemprop="dateUpdated">
+	  		2019-11-24
+	  </time>
+	</a> 
+
+
+
+		</span>
+		<span>
+			<i class="fa fa-tags"></i>
+					
+		</span>
+		
+		
+
+
+
+	</div>
+
+	<div class="article-content" id="article-content">
+		<p>  注册页面register.jsp</p>
+<a id="more"></a>  
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;</span><br><span class="line">	pageEncoding=&quot;UTF-8&quot;%&gt;</span><br><span class="line"></span><br><span class="line">&lt;%</span><br><span class="line">	String path = request.getContextPath();</span><br><span class="line">	String basePath = request.getScheme() + &quot;://&quot; + request.getServerName() + &quot;:&quot; + request.getServerPort()</span><br><span class="line">			+ path + &quot;/&quot;;</span><br><span class="line">%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</span><br><span class="line">&lt;title&gt;注册页面&lt;/title&gt;</span><br><span class="line">&lt;base href=&quot;&lt;%=basePath%&gt;&quot;&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">* &#123;</span><br><span class="line">	margin: 0;</span><br><span class="line">	padding: 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">html &#123;</span><br><span class="line">	height: 100%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">body &#123;</span><br><span class="line">	height: 100%;</span><br><span class="line">	background: #fff url(images/backgroud.png) 50% 50% no-repeat;</span><br><span class="line">	background-size: cover;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.dowebok &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	left: 50%;</span><br><span class="line">	top: 50%;</span><br><span class="line">	width: 430px;</span><br><span class="line">	height: 550px;</span><br><span class="line">	margin: -300px 0 0 -215px;</span><br><span class="line">	border: 1px solid #fff;</span><br><span class="line">	border-radius: 20px;</span><br><span class="line">	overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.logo &#123;</span><br><span class="line">	width: 104px;</span><br><span class="line">	height: 104px;</span><br><span class="line">	margin: 50px auto 80px;</span><br><span class="line">	background: url(images/login.png) 0 0 no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.form-item &#123;</span><br><span class="line">	position: relative;</span><br><span class="line">	width: 360px;</span><br><span class="line">	margin: 0 auto;</span><br><span class="line">	padding-bottom: 30px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.form-item input &#123;</span><br><span class="line">	width: 288px;</span><br><span class="line">	height: 48px;</span><br><span class="line">	padding-left: 70px;</span><br><span class="line">	border: 1px solid #fff;</span><br><span class="line">	border-radius: 25px;</span><br><span class="line">	font-size: 18px;</span><br><span class="line">	color: #fff;</span><br><span class="line">	background-color: transparent;</span><br><span class="line">	outline: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.form-item button &#123;</span><br><span class="line">	width: 360px;</span><br><span class="line">	height: 50px;</span><br><span class="line">	border: 0;</span><br><span class="line">	border-radius: 25px;</span><br><span class="line">	font-size: 18px;</span><br><span class="line">	color: #1f6f4a;</span><br><span class="line">	outline: none;</span><br><span class="line">	cursor: pointer;</span><br><span class="line">	background-color: #fff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#username &#123;</span><br><span class="line">	background: url(images/emil.png) 20px 14px no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#password &#123;</span><br><span class="line">	background: url(images/password.png) 23px 11px no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.tip &#123;</span><br><span class="line">	display: none;</span><br><span class="line">	position: absolute;</span><br><span class="line">	left: 20px;</span><br><span class="line">	top: 52px;</span><br><span class="line">	font-size: 14px;</span><br><span class="line">	color: #f50;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.reg-bar &#123;</span><br><span class="line">	width: 360px;</span><br><span class="line">	margin: 20px auto 0;</span><br><span class="line">	font-size: 14px;</span><br><span class="line">	overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.reg-bar a &#123;</span><br><span class="line">	color: #fff;</span><br><span class="line">	text-decoration: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.reg-bar a:hover &#123;</span><br><span class="line">	text-decoration: underline;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.reg-bar .reg &#123;</span><br><span class="line">	float: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.reg-bar .forget &#123;</span><br><span class="line">	float: right;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.dowebok ::-webkit-input-placeholder &#123;</span><br><span class="line">	font-size: 18px;</span><br><span class="line">	line-height: 1.4;</span><br><span class="line">	color: #fff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.dowebok :-moz-placeholder &#123;</span><br><span class="line">	font-size: 18px;</span><br><span class="line">	line-height: 1.4;</span><br><span class="line">	color: #fff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.dowebok ::-moz-placeholder &#123;</span><br><span class="line">	font-size: 18px;</span><br><span class="line">	line-height: 1.4;</span><br><span class="line">	color: #fff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.dowebok :-ms-input-placeholder &#123;</span><br><span class="line">	font-size: 18px;</span><br><span class="line">	line-height: 1.4;</span><br><span class="line">	color: #fff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@media screen and (max-width: 500px) &#123;</span><br><span class="line">	* &#123;</span><br><span class="line">		box-sizing: border-box;</span><br><span class="line">	&#125;</span><br><span class="line">	.dowebok &#123;</span><br><span class="line">		position: static;</span><br><span class="line">		width: auto;</span><br><span class="line">		height: 300px;</span><br><span class="line">		margin: 0 30px;</span><br><span class="line">		border: 0;</span><br><span class="line">		border-radius: 0;</span><br><span class="line">	&#125;</span><br><span class="line">	.form-item &#123;</span><br><span class="line">		width: auto;</span><br><span class="line">	&#125;</span><br><span class="line">	.form-item input, .form-item button, .reg-bar &#123;</span><br><span class="line">		width: 100%;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&lt;form action=&quot;&lt;%=basePath%&gt;UserLoginServlet?choose=register&quot;</span><br><span class="line">		method=&quot;post&quot;&gt;</span><br><span class="line">		&lt;div class=&quot;dowebok&quot;&gt;</span><br><span class="line">			&lt;div class=&quot;form-item&quot; style=&quot;margin-top: 120px;&quot;&gt;</span><br><span class="line">				&lt;input id=&quot;username&quot; type=&quot;text&quot; autocomplete=&quot;off&quot;</span><br><span class="line">					placeholder=&quot;用户名&quot; name=&quot;username&quot;&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;div class=&quot;form-item&quot;&gt;</span><br><span class="line">				&lt;input id=&quot;password&quot; type=&quot;text&quot; autocomplete=&quot;off&quot;</span><br><span class="line">					placeholder=&quot;注册密码&quot; name=&quot;password&quot;&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">			&lt;div class=&quot;form-item&quot;&gt;</span><br><span class="line">				&lt;input id=&quot;phone&quot; type=&quot;text&quot; autocomplete=&quot;off&quot; </span><br><span class="line">				    placeholder=&quot;性别&quot; name=&quot;verification&quot;&gt;</span><br><span class="line"></span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;div class=&quot;form-item&quot;&gt;</span><br><span class="line">				&lt;button id=&quot;submit&quot;&gt;注 册&lt;/button&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;div class=&quot;reg-bar&quot;&gt;</span><br><span class="line">				&lt;a class=&quot;reg&quot; href=&quot;index.jsp&quot;&gt;已有账号，去登录！&lt;/a&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;script src=&quot;images/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">		&lt;script&gt;</span><br><span class="line">			$(function() &#123;</span><br><span class="line">				$(&apos;input&apos;).val(&apos;&apos;)</span><br><span class="line">				$(&apos;#submit&apos;).on(&apos;click&apos;, function() &#123;</span><br><span class="line">					$(&apos;.tip&apos;).show()</span><br><span class="line">				&#125;)</span><br><span class="line">			&#125;)</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line">	&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>登录页面login.jsp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</span><br><span class="line">&lt;%</span><br><span class="line">	String path = request.getContextPath();</span><br><span class="line">	String basePath = request.getScheme() + &quot;://&quot; + request.getServerName() + &quot;:&quot; + request.getServerPort()</span><br><span class="line">			+ path + &quot;/&quot;;</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;登录页面&lt;/title&gt;</span><br><span class="line">&lt;base href=&quot;&lt;%=basePath%&gt;&quot;&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;pragma&quot; content=&quot;no-cache&quot;&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;cache-control&quot; content=&quot;no-cache&quot;&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;expires&quot; content=&quot;0&quot;&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;keywords&quot; content=&quot;keyword1,keyword2,keyword3&quot;&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;description&quot; content=&quot;This is my page&quot;&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styles.css&quot;&gt;</span><br><span class="line">	--&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">* &#123;</span><br><span class="line">	margin: 0;</span><br><span class="line">	padding: 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">html &#123;</span><br><span class="line">	height: 100%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">body &#123;</span><br><span class="line">	height: 100%;</span><br><span class="line">	background: #fff url(images/backgroud.png) 50% 50% no-repeat;</span><br><span class="line">	background-size: cover;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.dowebok &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	left: 50%;</span><br><span class="line">	top: 50%;</span><br><span class="line">	width: 430px;</span><br><span class="line">	height: 550px;</span><br><span class="line">	margin: -300px 0 0 -215px;</span><br><span class="line">	border: 1px solid #fff;</span><br><span class="line">	border-radius: 20px;</span><br><span class="line">	overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.logo &#123;</span><br><span class="line">	width: 104px;</span><br><span class="line">	height: 104px;</span><br><span class="line">	margin: 50px auto 80px;</span><br><span class="line">	background: url(images/login.png) 0 0 no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.form-item &#123;</span><br><span class="line">	position: relative;</span><br><span class="line">	width: 360px;</span><br><span class="line">	margin: 0 auto;</span><br><span class="line">	padding-bottom: 30px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.form-item input &#123;</span><br><span class="line">	width: 288px;</span><br><span class="line">	height: 48px;</span><br><span class="line">	padding-left: 70px;</span><br><span class="line">	border: 1px solid #fff;</span><br><span class="line">	border-radius: 25px;</span><br><span class="line">	font-size: 18px;</span><br><span class="line">	color: #fff;</span><br><span class="line">	background-color: transparent;</span><br><span class="line">	outline: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.form-item button &#123;</span><br><span class="line">	width: 360px;</span><br><span class="line">	height: 50px;</span><br><span class="line">	border: 0;</span><br><span class="line">	border-radius: 25px;</span><br><span class="line">	font-size: 18px;</span><br><span class="line">	color: #1f6f4a;</span><br><span class="line">	outline: none;</span><br><span class="line">	cursor: pointer;</span><br><span class="line">	background-color: #fff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#username &#123;</span><br><span class="line">	background: url(images/emil.png) 20px 14px no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#password &#123;</span><br><span class="line">	background: url(images/password.png) 23px 11px no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.tip &#123;</span><br><span class="line">	display: none;</span><br><span class="line">	position: absolute;</span><br><span class="line">	left: 20px;</span><br><span class="line">	top: 52px;</span><br><span class="line">	font-size: 14px;</span><br><span class="line">	color: #f50;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.reg-bar &#123;</span><br><span class="line">	width: 360px;</span><br><span class="line">	margin: 20px auto 0;</span><br><span class="line">	font-size: 14px;</span><br><span class="line">	overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.reg-bar a &#123;</span><br><span class="line">	color: #fff;</span><br><span class="line">	text-decoration: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.reg-bar a:hover &#123;</span><br><span class="line">	text-decoration: underline;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.reg-bar .reg &#123;</span><br><span class="line">	float: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.reg-bar .forget &#123;</span><br><span class="line">	float: right;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.dowebok ::-webkit-input-placeholder &#123;</span><br><span class="line">	font-size: 18px;</span><br><span class="line">	line-height: 1.4;</span><br><span class="line">	color: #fff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.dowebok :-moz-placeholder &#123;</span><br><span class="line">	font-size: 18px;</span><br><span class="line">	line-height: 1.4;</span><br><span class="line">	color: #fff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.dowebok ::-moz-placeholder &#123;</span><br><span class="line">	font-size: 18px;</span><br><span class="line">	line-height: 1.4;</span><br><span class="line">	color: #fff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.dowebok :-ms-input-placeholder &#123;</span><br><span class="line">	font-size: 18px;</span><br><span class="line">	line-height: 1.4;</span><br><span class="line">	color: #fff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@media screen and (max-width: 500px) &#123;</span><br><span class="line">	* &#123;</span><br><span class="line">		box-sizing: border-box;</span><br><span class="line">	&#125;</span><br><span class="line">	.dowebok &#123;</span><br><span class="line">		position: static;</span><br><span class="line">		width: auto;</span><br><span class="line">		height: 10px;</span><br><span class="line">		margin: 0 30px;</span><br><span class="line">		border: 0;</span><br><span class="line">		border-radius: 0;</span><br><span class="line">	&#125;</span><br><span class="line">	.logo &#123;</span><br><span class="line">		margin: 50px auto;</span><br><span class="line">	&#125;</span><br><span class="line">	.form-item &#123;</span><br><span class="line">		width: auto;</span><br><span class="line">	&#125;</span><br><span class="line">	.form-item input, .form-item button, .reg-bar &#123;</span><br><span class="line">		width: 100%;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;center&gt;</span><br><span class="line">		&lt;form action=&quot;&lt;%=basePath%&gt;UserLoginServlet?choose=login&quot;</span><br><span class="line">			method=&quot;post&quot;&gt;</span><br><span class="line">			&lt;div class=&quot;dowebok&quot;&gt;</span><br><span class="line">				&lt;div class=&quot;form-item&quot; style=&quot;margin-top: 150px;&quot;&gt;</span><br><span class="line">					&lt;input id=&quot;username&quot; type=&quot;text&quot; autocomplete=&quot;off&quot;</span><br><span class="line">						placeholder=&quot;姓名&quot; name=&quot;username&quot;;&gt;</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;form-item&quot;&gt;</span><br><span class="line">					&lt;input id=&quot;password&quot; type=&quot;password&quot; autocomplete=&quot;off&quot;</span><br><span class="line">						placeholder=&quot;登录密码&quot; name=&quot;password&quot;&gt;</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">				&lt;div class=&quot;form-item&quot;&gt;</span><br><span class="line">					&lt;button id=&quot;submit&quot; &gt;登 录&lt;/button&gt;</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;reg-bar&quot;&gt;</span><br><span class="line">					&lt;a class=&quot;reg&quot; href=&quot;register.jsp&quot;&gt;立即注册&lt;/a&gt; &lt;a class=&quot;forget&quot;</span><br><span class="line">						href=&quot;forget.jsp&quot;&gt;忘记密码&lt;/a&gt;</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;script src=&quot;images/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">			&lt;script&gt;</span><br><span class="line">				$(function() &#123;</span><br><span class="line">					$(&apos;input&apos;).val(&apos;&apos;)</span><br><span class="line">					$(&apos;#submit&apos;).on(&apos;click&apos;, function() &#123;</span><br><span class="line">						$(&apos;.tip&apos;).show()</span><br><span class="line">					&#125;)</span><br><span class="line">				&#125;)</span><br><span class="line">			&lt;/script&gt;</span><br><span class="line">		&lt;/form&gt;</span><br><span class="line">	&lt;/center&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>忘记密码页面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;</span><br><span class="line">	pageEncoding=&quot;UTF-8&quot;%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">&lt;meta name=&quot;viewport&quot;</span><br><span class="line">	content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;&gt;</span><br><span class="line">&lt;title&gt;忘记密码&lt;/title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">* &#123;</span><br><span class="line">	margin: 0;</span><br><span class="line">	padding: 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">html &#123;</span><br><span class="line">	height: 100%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">body &#123;</span><br><span class="line">	height: 100%;</span><br><span class="line">	background: #fff url(images/backgroud.png) 50% 50% no-repeat;</span><br><span class="line">	background-size: cover;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.dowebok &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	left: 50%;</span><br><span class="line">	top: 50%;</span><br><span class="line">	width: 430px;</span><br><span class="line">	height: 400px;</span><br><span class="line">	margin: -300px 0 0 -215px;</span><br><span class="line">	border: 1px solid #fff;</span><br><span class="line">	border-radius: 20px;</span><br><span class="line">	overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.logo &#123;</span><br><span class="line">	width: 104px;</span><br><span class="line">	height: 104px;</span><br><span class="line">	margin: 50px auto 80px;</span><br><span class="line">	background: url(images/login.png) 0 0 no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.form-item &#123;</span><br><span class="line">	position: relative;</span><br><span class="line">	width: 360px;</span><br><span class="line">	margin: 0 auto;</span><br><span class="line">	padding-bottom: 50px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.form-item input &#123;</span><br><span class="line">	width: 288px;</span><br><span class="line">	height: 48px;</span><br><span class="line">	padding-left: 70px;</span><br><span class="line">	border: 1px solid #fff;</span><br><span class="line">	border-radius: 25px;</span><br><span class="line">	font-size: 18px;</span><br><span class="line">	color: #fff;</span><br><span class="line">	background-color: transparent;</span><br><span class="line">	outline: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.form-item button &#123;</span><br><span class="line">	width: 360px;</span><br><span class="line">	height: 50px;</span><br><span class="line">	border: 0;</span><br><span class="line">	border-radius: 25px;</span><br><span class="line">	font-size: 18px;</span><br><span class="line">	color: #1f6f4a;</span><br><span class="line">	outline: none;</span><br><span class="line">	cursor: pointer;</span><br><span class="line">	background-color: #fff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#username &#123;</span><br><span class="line">	background: url(images/emil.png) 20px 14px no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#password &#123;</span><br><span class="line">	background: url(images/password.png) 23px 11px no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.tip &#123;</span><br><span class="line">	display: none;</span><br><span class="line">	position: absolute;</span><br><span class="line">	left: 20px;</span><br><span class="line">	top: 52px;</span><br><span class="line">	font-size: 14px;</span><br><span class="line">	color: #f50;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.reg-bar &#123;</span><br><span class="line">	width: 360px;</span><br><span class="line">	margin: 20px auto 0;</span><br><span class="line">	font-size: 14px;</span><br><span class="line">	overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.reg-bar a &#123;</span><br><span class="line">	color: #fff;</span><br><span class="line">	text-decoration: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.reg-bar a:hover &#123;</span><br><span class="line">	text-decoration: underline;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.reg-bar .reg &#123;</span><br><span class="line">	float: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.reg-bar .forget &#123;</span><br><span class="line">	float: right;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.dowebok ::-webkit-input-placeholder &#123;</span><br><span class="line">	font-size: 18px;</span><br><span class="line">	line-height: 1.4;</span><br><span class="line">	color: #fff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.dowebok :-moz-placeholder &#123;</span><br><span class="line">	font-size: 18px;</span><br><span class="line">	line-height: 1.4;</span><br><span class="line">	color: #fff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.dowebok ::-moz-placeholder &#123;</span><br><span class="line">	font-size: 18px;</span><br><span class="line">	line-height: 1.4;</span><br><span class="line">	color: #fff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.dowebok :-ms-input-placeholder &#123;</span><br><span class="line">	font-size: 18px;</span><br><span class="line">	line-height: 1.4;</span><br><span class="line">	color: #fff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@media screen and (max-width: 500px) &#123;</span><br><span class="line">	* &#123;</span><br><span class="line">		box-sizing: border-box;</span><br><span class="line">	&#125;</span><br><span class="line">	.dowebok &#123;</span><br><span class="line">		position: static;</span><br><span class="line">		width: auto;</span><br><span class="line">		height: auto;</span><br><span class="line">		margin: 0 30px;</span><br><span class="line">		border: 0;</span><br><span class="line">		border-radius: 0;</span><br><span class="line">	&#125;</span><br><span class="line">	.logo &#123;</span><br><span class="line">		margin: 50px auto;</span><br><span class="line">	&#125;</span><br><span class="line">	.form-item &#123;</span><br><span class="line">		width: auto;</span><br><span class="line">	&#125;</span><br><span class="line">	.form-item input, .form-item button, .reg-bar &#123;</span><br><span class="line">		width: 100%;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;form</span><br><span class="line">		action=&quot;$&#123;pageContext.request.contextPath &#125;/UserLoginServlet?choose=forget&quot;</span><br><span class="line">		method=&quot;post&quot;&gt;</span><br><span class="line">		&lt;div class=&quot;dowebok&quot;&gt;</span><br><span class="line">			&lt;div class=&quot;form-item&quot;&gt;</span><br><span class="line">				&lt;input id=&quot;username&quot; name = &quot;username&quot;  type=&quot;text&quot; autocomplete=&quot;off&quot;</span><br><span class="line">					placeholder=&quot;忘记的账号&quot; style=&quot;margin-top: 50px;&quot;&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;div class=&quot;form-item&quot;&gt;</span><br><span class="line">				&lt;input id=&quot;password&quot; name=&quot;password&quot; type=&quot;password&quot; autocomplete=&quot;off&quot;</span><br><span class="line">					placeholder=&quot;重置密码&quot;&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;div class=&quot;form-item&quot;&gt;</span><br><span class="line">				&lt;button id=&quot;submit&quot;&gt;去 登 录&lt;/button&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			</span><br><span class="line">	&lt;/form&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;script src=&quot;images/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">		$(function() &#123;</span><br><span class="line">			$(&apos;input&apos;).val(&apos;&apos;)</span><br><span class="line">			$(&apos;#submit&apos;).on(&apos;click&apos;, function() &#123;</span><br><span class="line">				$(&apos;.tip&apos;).show()</span><br><span class="line">			&#125;)</span><br><span class="line">		&#125;)</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+	
+	</div>
+	
+	<div id="current-post-cover" data-scr="/img/ju.jpg"></div>
+
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">Related post</div>
+				<div>Comment</div>
+				<div>Share</div>
+			</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);">To Top</a>
+		
+			<a href="/2019/11/05/Jsp九大内置对象/" title="Jsp九大内置对象" rel="prev">
+				&laquo;Pre post
+			</a>
+		
+		
+			<a href="/2019/11/01/Cookie对象常用方法/" title="Cookie对象常用方法" rel="next">
+				Next post&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+			</div>	
+		</div>
+		
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/20/EL表达式/" title="EL表达式">
+								EL表达式			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 20日, 2019				
+							</p>
+							<p class="relate-post-content">
+								EL（Expression Language） 是为了使JSP写起来更加简单。表达式语言的灵感来自于 ECMAScript 和 XPath 表达式语言，它提供了在 JSP 中简化表达式的方法，让Jsp的代码更加简化。以MVC模式设计程...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/20/EL表达式/" title="EL表达式">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="EL表达式"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/15/Vue-js中前端知识点/" title="Vue.js中前端知识点">
+								Vue.js中前端知识点			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 15日, 2019				
+							</p>
+							<p class="relate-post-content">
+								1.框架和库的区别：框架：framework 有着自己的语法特点、都有对应的各个模块库 library 专注于一点
+框架的好处：
+12341.提到代码的质量，开发速度2.提高代码的复用率3.降低模块之间的耦合度（高内聚低耦合）
+
+UI...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/15/Vue-js中前端知识点/" title="Vue.js中前端知识点">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="Vue.js中前端知识点"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/11/Java-Servlet简介/" title="Java Servlet简介">
+								Java Servlet简介			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 11日, 2019				
+							</p>
+							<p class="relate-post-content">
+								一、了解Servlet的概念Servlet定义
+Servlet是基于Java技术的Web组件，由容器管理并产生动态的内容。Servlet引擎作为WEB服务器的扩展提供支持Servlet的功能。Servlet与客户端通过Servlet容...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/11/Java-Servlet简介/" title="Java Servlet简介">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="Java Servlet简介"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/05/Jsp九大内置对象/" title="Jsp九大内置对象">
+								Jsp九大内置对象			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 5日, 2019				
+							</p>
+							<p class="relate-post-content">
+								JSP九大内置对象详解JSP内置对象(9个内置对象):1.PageContext  javax.servlet.jsp.PageContext    JSP的页面容器    
+2.request       javax.servlet...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/05/Jsp九大内置对象/" title="Jsp九大内置对象">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="Jsp九大内置对象"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/01/Cookie对象常用方法/" title="Cookie对象常用方法">
+								Cookie对象常用方法			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 1日, 2019				
+							</p>
+							<p class="relate-post-content">
+								JSP中创建使用Cookie一 语法创建Cookie对象1Cookie newCookie = new Cookie(String key,object value);
+
+
+
+写入Cookie对象1responce.addCookie...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/01/Cookie对象常用方法/" title="Cookie对象常用方法">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="Cookie对象常用方法"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/10/29/JDBC连接数据库/" title="JDBC连接数据库">
+								JDBC连接数据库			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 29日, 2019				
+							</p>
+							<p class="relate-post-content">
+								1.导入jar包  mysql-connector-java-5.1.37-bin
+1.1 项目下新建文件夹libs（和src同级）。
+
+1.2 复制mysql-connector-java-5.1.37-bin。
+
+1.3 右键，A...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/10/29/JDBC连接数据库/" title="JDBC连接数据库">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="JDBC连接数据库"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/10/28/AJAX请求/" title="AJAX请求">
+								AJAX请求			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 28日, 2019				
+							</p>
+							<p class="relate-post-content">
+								AJAX的意思就是异步的JavaScript和XML。简而言之，它是使用XMLHttpRequest对象与服务器端通信的脚本语言。它可以发送及接收各种格式的信息，包括JSON、XML、HTML和文本文件。AJAX最为吸引人的就是它的“...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/10/28/AJAX请求/" title="AJAX请求">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="AJAX请求"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/10/27/jsp页面组成/" title="jsp页面组成">
+								jsp页面组成			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 27日, 2019				
+							</p>
+							<p class="relate-post-content">
+								Jsp页面元素构成jsp页面组成部分：指令  注释  脚本  声明  表达式  jsp页面生命周期
+一.指令JSP指令用来设置整个JSP页面相关的属性
+指令可以有多个属性，以键值对的形式表示，并用逗号隔开，语法格式为：
+1&lt;%@...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/10/27/jsp页面组成/" title="jsp页面组成">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="jsp页面组成"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/10/26/Request案例代码/" title="Request案例代码">
+								Request案例代码			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 26日, 2019				
+							</p>
+							<p class="relate-post-content">
+								request对象request对象封装了由客户端生成的HTTP请求的所有细节，主要包括HTTP头信息、系统信息、请求方式和请求参数等。通过request对象提供的相应方法可以处理客户端浏览器提交的HTTP请求中的各项参数。
+requ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/10/26/Request案例代码/" title="Request案例代码">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="Request案例代码"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/10/25/MySQL知识点总结/" title="MySQL知识点总结">
+								MySQL知识点总结			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 25日, 2019				
+							</p>
+							<p class="relate-post-content">
+								一.关于数据库操作1.创建数据库1create database 数据库名称;
+
+2.删除数据库1drop database  数据库名称;
+
+
+
+3.查看数据库1show databases;
+
+4.进入数据库1use  数据库名称...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/10/25/MySQL知识点总结/" title="MySQL知识点总结">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="MySQL知识点总结"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+		</ul>
+	
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know !!!-->
+			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+			
+		
+		
+	
+
+</div>
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-share">
+	
+	
+
+		
+			
+			<!-- socialShare share -->
+			<div class="social-share"></div>
+
+<!--  css & js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+			
+		
+		
+	
+</div>
+
+
+			</div>
+		</div>	
+	</div>
+	</div>
+</div>
+
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+
+<!-- show math formula -->
+
+
+
+	 
+	<script src="/plugin/clipboard/clipboard.js"></script>
+	<script>
+		// Copy code !
+	    function codePreprocessing() {
+	        $("#article-content .highlight").each(function() {
+
+	            $(this).wrap('<div id="post-code"></div>');
+
+	        })
+
+	        $("#article-content #post-code").each(function() {
+
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            var temp = $(this).next().attr('class'),
+	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+
+	            $(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+
+	        });
+	    }
+
+		function codeCopy() {
+		    $('#article-content #post-code').each(function(i) {
+		        var codeCopyId = 'codeCopy-' + i;
+
+		        var codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+
+		    
+			var clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn copy-status');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');
+			    
+			});
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		
+
+		}
+
+		if ($('.layout-post').length) {
+		    codePreprocessing();
+		    codeCopy();
+		} 
+	</script>
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+<script type="text/javascript">
+	var titleID = $('.article-title a'),
+		imageID = $('.article-content img'),
+		videoID = $('.article-content video');
+
+	var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+	imageID.each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+	});
+
+	videoID.each(function() {
+		var videoPath = $(this).attr('src');
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+	});
+	//TODO：支持html5 video
+
+	if($('#layout-post').length) {
+		$('[data-fancybox="gallery"]').fancybox({
+			loop: true,
+			buttons: [
+				"zoom",
+				"share",
+				"slideShow",
+				"fullScreen",
+				//"download",
+				"thumbs",
+				"close"
+			],
+			protect: false
+		});
+	}
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2017 - 2019, content by king. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+		
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+
+		<span id="busuanzi_container_page_pv">
+	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+		</span>
+
+	
+
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- set '1' to show motto in all pages! -->
+
+	<script src="/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+
+<!-- love effect -->
+
+	<script src="/plugin/love/love.js"></script>
+
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;"  name="TOTOP" class="fa fa-arrow-up" ></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+
+	
+	
+	
+	
+ 
+
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/js/resizediv.js"></script>
+<script src="/js/main.js"></script>
+	</body>	
+</html>
