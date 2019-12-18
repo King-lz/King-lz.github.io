@@ -1,0 +1,1375 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      JSP总结 | pink
+    
+  </title>
+  <meta name="author" content="king">
+  <meta name="keywords" content>
+  <meta name="description" content>
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/Annie.css">
+  
+  <!-- jquery -->
+	<script src="/js/jquery.min.js"></script>
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script>
+</head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="normal" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/img/logo.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">Home</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">Archive</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">Category</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">Tag</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">About</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">Gallery</a>
+		</li>
+	
+
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
+
+			
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<style type="text/css">
+	.header-date {
+		font-size: 1.6rem;
+		color: #fff;
+		position: absolute;
+		bottom: 5px;
+		right: 1rem;
+		writing-mode: tb-rl;
+	}	
+	
+	.header-date a {
+		border-bottom: none;
+	}
+
+	@media only screen and (max-width: 768 ) {
+		.header-date {
+			font-size: 1rem;
+		}			
+	}
+</style>
+<div class="header-date">
+	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow" ></a>
+	<span id="Beijing_z43d"></span>
+</div>
+<script src="//widget.time.is/zh.js"></script>
+<script>
+	time_is_widget.init({
+		Beijing_z43d:{
+			template:"DATE", 
+			date_format:"year年 monthname dnum日"
+		}
+	});
+</script>
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">Catalog</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			Current post&nbsp;:&nbsp;《JSP总结》
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">Home</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">Archive</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">Category</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">Tag</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">About</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">Gallery</a>
+		</li>
+	
+
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+	<div class="article-title">
+		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+		
+	<a href="/2019/12/18/JSP总结/" itemprop="url">
+		JSP总结
+	</a>
+
+	</div>
+
+	<div class="article-meta">
+		<span>
+			<i class="fa fa-calendar"></i>
+			
+
+
+	Posted on
+
+	<a href="/2019/12/18/JSP总结/" itemprop="url">
+		<time datetime="2019-12-18T02:25:21.000Z" itemprop="datePublished">
+	  		2019-12-18
+	  </time>
+	</a>
+	&nbsp;
+
+
+
+
+
+			
+
+
+
+
+	Updated on
+
+	<a href="/2019/12/18/JSP总结/" itemprop="url">
+		<time datetime="2019-12-18T02:25:21.000Z" itemprop="dateUpdated">
+	  		2019-12-18
+	  </time>
+	</a> 
+
+
+
+		</span>
+		<span>
+			<i class="fa fa-tags"></i>
+					
+		</span>
+		
+		
+
+
+
+	</div>
+
+	<div class="article-content" id="article-content">
+		<p>JSP总结</p>
+<p>JSP 定义：<br>    1)Java Server Page, Java EE 组件，本质上是 Servlet。<br>    2)运行在 Web Container.接收 Http Request,生成 Http Response(默认协议是 Http 请求和响应)<br>    3)JSP 使得我们能够分离页面的静态 HTML 和动态部分——我们需要的技术。<br>    4)使页面可以混和html代码、Java代码以及JSP标签；允许访问组件</p>
+<a id="more"></a>
+
+<p>Servlet的缺陷(JSP出现的原因)：<br>    1)写静态页面必须部署后才能看到效果，很难控制页面的外观。<br>    2)从技术角度来说Servlet是Java代码和HTML静态代码的混合代码。<br>    3)从市场竞争角度来说，微软推出了ASP产品。</p>
+<p>JSP的改进：<br>    1)JSP是标签式的文本文件(区Servlet是Java文件)<br>    2)JSP不需要编译(其实是由服务器监测JSP文件的变化，再将其翻译成 Servlet 代码)<br>      服务器对其进行编译并在第一次请求时创建一个Servlet实例。所以，第一次访问JSP页面时会后延迟<br>    3)JSP不用写配置文件<br>    4)JSP以静态代码为主，Java代码为辅。Servlet反之。<br>    5)是J2EE蓝图的一部分(Servlet、JSP以及EJB是J2EE的三大组件)<br>    JSP从本质上来说内核还是Servlet，但与Servlet不是替代关系而是一种互补的关系。<br>    JSP适合于写显示层的动态页面，而Servlet则适合写控制层的业务控制(页面转发)。<br>    JSP往纯标签方向发展，Servlet往纯代码方向发展，他们以Servlet内核(请求响应式的工作方式)往两个方向发展。</p>
+<p>基本语法<br>一、JSP的声明(statement)<br>   用来定义在产生的类文件中的类的属性和方法(成员变量)。可声明类(即是内部类)。<br>   由于servlet是工作在多线程环境下，所以尽量不要在service方法体外声明成员变量。<br>   &lt;%!…..%&gt;  //声明时要加”!”，属于类成员，最先加载，可写于任何位置；不加则是脚本的局部变量，必须调用前写。<br>   如：  &lt;%!String hello=”Hello, World!”;%&gt;  //变量的声明<br>        &lt;%=hello%&gt;   //变量的调用<br>        &lt;%! private int counter=0;  public int count(){ return ++counter;} %&gt; //函数的声明<br>        </p><h1>&lt;%=count()%&gt;</h1> //函数的调用<br>   声明规则：<br>    1) JSP中声明的变量和方法对应于Servlet中的实例方法和实例变量。这些将被同时请求该页面的所有用户所共享;<br>    2) 在使用变量或方法前须先定义(不是说声明变量的位置在页面中要处于使用变量的前面，而是指变量不声明不能使用);<br>    3) 声明的变量或方法的作用域为当前页面或包含的页面;<br>    4) 语句间以分号分隔。<p></p>
+<p>二、JSP代码段(Scriptlet)<br>      &lt;% java代码 %&gt;<br>   是一段可以在处理请求时间执行的Java代码。可以产生输出，也可以是一些流程控制语句。<br>   在代码段中定义的变量为service方法中的局部变量。<br>   1._jspService()中的局部代码：<br>      &lt;%  System.out.println(“Hi,I like JSP.”); %&gt;   //在控制台打印出，网页上没显示<br>      &lt;%  out.println(“Hi,I like JSP.”); %&gt;          //打印在网页上<br>      &lt;%  Connection conn=DriverManager.getConnection();  Statement st=conn.createStatement();<br>        String sql=”select * from users”;               ResultSet rs=st.executeQuery(sql);<br>         //……<br>       %&gt;<br>    问：能否在JSP脚本里定义方法？<br>    答：不能！ //脚本相当于方法，不能在方法里定义方法<br>       &lt;%!public void helloworld(){}%&gt;  //可以声明方法<br>       &lt;% public void helloworld(){}%&gt;  //编译出错；脚本不能定义方法<br>   2.比较:<br>        &lt;%! int i=100;%&gt;     //成员变量<br>        &lt;%  int i=101;%&gt;     //_jspService()方法中的局部变量<br>        &lt;%=i%&gt;  //同一文件里，局部变量优先<br>   3.脚本小程序规则：<br>     1) 你使用的脚本语言决定了脚本小程序的规则;<br>     2) 语句间以分号分隔;<br>     3) 可以使用默认的对象、import进的类、declaration声明的方法和对象以及useBean tag中声明的对象。</p>
+<p>三、JSP表达式(expression)<br>       &lt;%=……%&gt;   // “=”号<br>   在JSP请求处理阶段计算他的值，表达式生成的代码是Service方法中的一个代码片断。<br>   JSP对于声明的处理：1、计算表达式的值<br>                   2、将值转换成String<br>                   3、用out.println发送标签；把数据输出至页面的当前位置<br>      &lt;%=”Hello,JSP world!”%&gt;     //out.println(“Hello,JSP world”);<br>      &lt;%=name%&gt;                   //&lt;%!String name=”GiGi”;%&gt; out.println(name);<br>      &lt;%=new java.util.Date()%&gt;   //out.println(new java.util.Date());<br>   表达式规则：<br>     1) 你使用的脚本语言决定了脚本小程序的规则;<br>     2) 执行的顺序为从左到右;<br>     3) 分号不能用于表达式。</p>
+<p>四、JSP指令(direction)<br>   指令用于从JSP发送信息到容器上。用来设置全局变量，声明类，要实现的方法和输出内容等。<br>   指令在JSP整个文件内有效。它为翻译阶段提供了全局信息。<br>       &lt;%@……%&gt;  // “@”符号<br>   指令包括：page、include、taglib<br>   1.page指令<br>        import、session、errorPage、isThreadSafe<br>     页面的语言、内容类型、字符集、页面编码<br>        &lt;%@page language=”java” contentType=”text/html; charset=gbk” pageEncoding=”gbk”%&gt;<br>        language：java唯一值，表示脚本中使用的编程语言<br>        contentType：设置了内容的类型和静态页面的编码 (告诉浏览器以什么编码显示)<br>        pageEncoding：页面本身的编码格式 (写页面时用的编码格式)<br>        上面的代码等价于servlet里： response.setContentType(“text/html; charset=gbk”);<br>     import：导入其他的包和类； 其中，JSP默认导入的包是java.lang.*<br>        &lt;%@page import=”java.util.Date”%&gt; //具体的包和类<br>        &lt;%@page import=”java.sql.*”%&gt;     //包下的所有类<br>        &lt;%@page import=”java.util.<em>, java.io.</em>, java.net.*”%&gt; //连写，逗号分隔<br>     Session：指示当前的jsp是否参与会话 (默认为true； 参与会话)<br>        通过指令使当前页面与session不可会话：    &lt;%@page session=”false”%&gt;<br>        session=”true”时，可用内建对象session直接访问会话，例如：<br>        &lt;%  session.setAttribute(“username”,”maxwell”);<br>            String name = (String)session.getAttribute(“username”); %&gt;<br>        &lt;%=name%&gt;<br>     errorPage：<br>        isErrorPage：Jsp页面中出现异常的处理方式<br>        对于有可能出现异常的页面：<br>            &lt;%@page errorPage=”error.jsp”%&gt; //异常时会跳转到处理异常的页面；这页面自己写<br>            在有可能异常的地方打印原因：  throw new Exception(“数据库连接出错”);<br>        对于处理异常的页面(error.jsp)里：<br>            &lt;%@page isErrorPage=”true”%&gt;，其中使用&lt;%=exception.getMessage() %&gt;把异常信息打印出来<br>     isThreadSafe——此属性已经不再使用(已废弃)<br>        当前Jsp页面是否线程安全    default—&gt;true<br>        &lt;%@page isThreadSafe=”true”%&gt;  //普通的Servlet,可以并发处理用户请求<br>        &lt;%@page isThreadSafe=”false”%&gt; //相当于Servlet实现了SingleThreadModel<br>   2.include指令<br>        把目标页面的内容包含到当前页面,产生页面叠加以后的输出效果 //相当于将两个页面合并；编译时就包含进来<br>        &lt;%@include file=”foot.jsp”%&gt; //可插入任意位置<br>   3.taglib指令<br>        留在JSTL里讲解。</p>
+<p>五、JSP中的注释<br>   1.java格式注释<br>      编译器会忽略掉此类注释中的内容(客户端的源码看不见)<br>      &lt;%– JSP注释；可多行 –%&gt;<br>      &lt;%// java 单行注释 %&gt;<br>      &lt;%/* java multi lines comments <em>/%&gt;<br>      &lt;%/**java 特有的注释</em>/%&gt;<br>   2.html风格注释<br>      编译器会执行此类注释中的代码(客户端的源码看得见)<br>      <!-- html风格注释 -->  等价于out.println(“<!-- html风格注释 -->“)<br>      这种注释方式不好的地方就是当页面注释信息太多的时候会增大服务器的负荷。<br>      还有注释信息需要在网络上传输，从而降低效率；内部程序员的测试数据一般不能写在这种注释中，以免泄露。</p>
+<p>六、动作(Action)<br>    &lt;jsp:actionName attributeName=attributeValue/&gt;<br>   JSP的动作包括：<br>     forward、include、useBean、setProperty、getProperty<br>   1.forward动作<br>     形式：&lt;jsp:forward page=”another.jsp”/&gt;<br>          等价于 Servlet中通过RequestDispatcher.forward();<br>     可以传参数<br>         &lt;jsp:forward  page=”another.jsp”&gt;<br>            &lt;jsp:param name=”name” value=”maxwell”/&gt;<br>            &lt;jsp:param name=”age” value=”20” /&gt;<br>         <br>   2.Include动作<br>     形式：&lt;jsp:include page=”another.jsp”/&gt;<br>          等价于 Servlet中通过RequestDispatcher.include();<br>      Include动作也可以传参数<br>          &lt;jsp:include  page=”b.jsp” flush=”true”&gt;<br>             &lt;jsp:param name=”name” value=”narci”/&gt;<br>          <br>      与&lt;%@include file=””%&gt;比较：<br>         include动作在运行期处理(include指令编译期)，jsp:include包含的是所包含URI的响应，而不是URI本身。<br>         这意味着：jsp:include 对所指出的 URI 进行解释，因而包含的是生成的响应。<br>         对于页面是静态内容，这没有太大的关系。但如果是动态内容，include动作可传参数。<br>      flush 属性<br>         flush 指示在读入包含内容之前是否清空任何现有的缓冲区。<br>         JSP 1.1 中需要 flush 属性，因此，如果代码中不用它，会得到一个错误。<br>         但是，在 JSP 1.2 中， flush 属性缺省为 false。<br>         建议：由于清空大多数时候不是一个重要的问题，因此，对于 JSP 1.1，将 flush 设置为 true；<br>              而对于 JSP 1.2 及更高版本，将其设置为 false 或不设置(用默认值)。</p>
+<p>JSP的生命周期<br>    1) 每一个JSP都会对应有一个servlet生成<br>    2) 在 %tomcat%/work/Catalina/localhost/工程名/org/apache/jsp 目录下可找到对应生成的 Servlet 文件<br>    3) 一般而言，每一个JSP对应的servlet都有如下的生命周期方法：</p>
+<p>一、 _jspInit()方法<br>    JSP容器第一次装载jsp文件时调用一次<br>    public void _jspInit(){……}</p>
+<p>二、 _jspService()方法<br>    每当服务器接收到对该jsp的请求，都需要调用一次该方法一次。<br>    public void _jspService(HttpServletRequest request, HttpServletResponse response)<br>       throws java.io.IOException, ServletException { ……}</p>
+<p>三、 _jspDestroy()方法<br>    jsp文件被修改时，JSP容器会销毁旧的jsp文件对应的对象，重新装载一次更新后的jsp文件的内容(只调用一次)。<br>    public void _jspDestroy(){……}</p>
+<p>JSP处理过程：JSP源文件处理分成二个阶段： </p>
+<p> 1) JSP页面转换阶段：<br>    页面被编译成一个Java类，所有的HTML标记和JSP标记都被转换创建一个Servlet。这时，脚本和表达式还没有被执行;<br> 2) 请求处理阶段：发生在服务器，将一个客户端请求指向JSP页面。<br>    一个请求对象创建、解析以及提交给编译好的JSP对应的servlet。<br>    当这个servlet处理请求的时候它执行先前在JSP中定义的处理脚本小程序和表达式。</p>
+<p>使用脚本代码的缺点和指导方针</p>
+<p> 1) 缺点：<br>    a. 过度使用脚本代码使用JSP页面混乱和难以维护;<br>    b. 脚本代码降低JSP二个主要的优点：软件重用和代码分开<br> 2) 指导方针：只在组件功能无能为力或需要有限的脚本时使用。</p>
+<p>day2<br>  POJO： Plain Old Java Object  –&gt; 简单传统的Java对象<br>  Java Bean： 组件、构件的规范(属性，提供get/set方法；还可包含其他方法)<br>JSP调用JavaBean<br>  通过引入JavaBean，JSP才能较好的把页面展示与业务逻辑分离。<br>  其中，业务逻辑放到后台的Java Bean中，减少JSP中的脚本代码，有利于程序的可维护性与可重用性。<br>一、Java Bean<br>     a.无参构造器(也是默认的构造方法)<br>     b.标准的getter、setter方法<br>     c.如要进行网络传输(支持RMI)，需实现Serializable接口<br>二、如何在JSP中使用JavaBean？<br>   1.定义Java Bean<br>     形式：&lt;jsp：useBean id = “BeanName” class = “className”  sope=”范围域”&gt;<br>        id   ——声明bean对象的标识符，方便其他地方使用<br>        class——bean对象的类型，注意要使用完全限定名<br>        scope——java bean对象的共享范围(page、request、session、application)<br>           page:当前页面范围(范围最小，生命周期最短)<br>           request:同一个请求范围 (forward,include)<br>           session:同一个会话(30分钟不使用，会自动结束)<br>           application:同一个应用(范围最大，生命周期最长)  ServletContext<br>     例如：  SuperGirl &lt;jsp:useBean id=”girl” class=”com.tarena.vo.SuperGirl” scope=”session”/&gt;<br>     等价于：&lt;% SuperGirl girl=(SuperGirl)session.getAttribute(“girl”);<br>           if(girl==null){<br>              girl = new SuperGirl(); //对应 id 和 class<br>              session.setAttribute(“girl”,girl);  //对应 scope 的值<br>           } %&gt;<br>     可以用表达式获得bean的值：  &lt;%=girl.getName();%&gt;<br>   2.对JavaBean的属性赋值<br>     形式：&lt;jsp:setProperty name=”JavaBean对象名” property=”JavaBean属性名” value=”属性值”/&gt;<br>        例子：   &lt;jsp:setProperty name=”girl” property=”name” value=”Lily”/&gt;<br>        等价于： &lt;% girl.setName(“Lily”);%&gt;<br>     可以嵌套JSP表达式：<br>        &lt;jsp:setProperty name=”girl” property=”name”<br>         value=’&lt;%=request.getParameter(“name”)%&gt;’/&gt;<br>     Java Bean中的属性名与form中输入域的名字保持一致的话，可以使用通配符<em>，一次设置所有字段的值。<br>        &lt;jsp:setProperty name=”” property=”</em>“/&gt;<br>   3.获取JavaBean的属性值<br>     形式：&lt;jsp:getProperty name=”” property=””/&gt;<br>        name：标识具体的Bean对象，这与<a href="jsp:useBean" target="_blank" rel="noopener">jsp:useBean</a>标准动作中的id值相匹配<br>        property：标识属性中的标识符。</p>
+<p>JSP中的异常处理<br>一、try/catch/finally/throws/throw<br>    // 在局部代码里处理异常。<br>二、errorPage, isErrorPage<br>    // 在整个页面处理异常。<br>   1.errorPage<br>     形如： &lt;%@page errorPage=”error.jsp”%&gt;<br>     表示：需要错误处理的页面<br>   2.isErrorPage<br>     形如： &lt;%@page isErrorPage=”true”%&gt;<br>     指示：错误页面。其中，有一个隐式对象exception可用： &lt;%=exception%&gt;<br>          产生(隐含)内建对象exception,可通过它获得异常信息<br>          &lt;%=exception.getMessage() %&gt; //把异常信息打印出来<br>三、声明的方式处理异常<br>    // 在整个应用处理异常。(范围比前两种更大)<br>   1.配置： 在web.xml进行配置异常处理<br>      …… <error-page><br>           <exception-type>java.lang.ArithmeticException</exception-type><br>           <location>/MathError.jsp</location><br>         </error-page><br>         <error-page><br>           <error-code>404</error-code><br>           <location>/404.jsp</location><br>         </error-page>  ……<br>   2.复习：Java中的异常——有2种<br>     受查异常(Checked Exception)<br>     非受查异常(Unchecked Exception)  Java中的RuntimeException及其子类是不需要处理的(try/catch)<br>        因为所有的RuntimeException总是可以通过优化代码来避免，因此，这种异常被称为”Unchecked Exception”。<br>   3.思考：<br>     三种异常处理方式同时启动用，那个优先级高？ 作用域越小，优先级越高。<br>   注意：要使得页面自动跳转到错误页面，必须关闭浏览器的”显示友好HTTP错误信息”选项。<br>      public void _jspService(HttpServletRequest request, HttpServletResponse response)<br>        throws java.io.IOException, ServletException { /<em>只处理这两种兼容的异常</em>/ …… }</p>
+<p>安全的系统(企业级应用)：<br>   1.身份认证(合法用户)  –登录<br>   2.授权(静态)        –定义权限<br>   3.访问控制(动态)     –比较<br>   4.安全审计(日志)     –修复bug (只有敏感的部门需要)<br>JAAS实现安全<br>   JAAS——Java Authentication and Authorization Service<br>   (Java认证(Authentication)与授权(Authorization)服务)<br>   是Java EE规范之一，实现Java EE应用程序安全性的一个重要途径<br>   (要求：会使用，不必深入理解)<br>一、网络安全的4大要素<br>   认证——抵御假冒者(用户身份的合法性)<br>   授权——合法用户拥有的权限<br>   机密性——防止关键数据落入其他人手中<br>   数据完整性——抵御窃听者(篡改私有数据)<br>二、对于Http应用是如何进行认证的(Web端的认证方法)？<br>   四种安全认证： (http协议)basic, form, digest, certificate(证书) + ssl<br>   HttpMonitor监控受限资源的访问<br>三、容器是如何完成认证与授权的呢？<br>   图示(容器做了些什么事情)<br>   (容器的角度)<br>四、声明式安全以及分工<br>   Servlet的开发者<br>   应用的管理员<br>   部署人员</p>
+<p>五、实战<br>  1.定义新用户与角色<br>    在Tomcat服务器中定义：    %TOMCAT_HOME%/conf/tomcat-user.xml<br>     <?xml version='1.0' encoding='utf-8'?><br>     <tomcat-users><br>      <role rolename="manager"><br>        <role rolename="admin"><br>        <user username="maxwell" password="123" roles="admin,manager"><br>        <user username="lily" password="iloveyou" roles="manager"><br>     </user></user></role></role></tomcat-users><br>    为什么tomcat可以使用tomcat-users.xml作为它保存用户和角色信息的文件？原因是在server.xml中，有以下配置：<br>     <resource name="UserDatabase" auth="Container" type="org.apache.catalina.UserDatabase" description="User database that can be updated and saved" factory="org.apache.catalina.users.MemoryUserDatabaseFactory" pathname="conf/tomcat-users.xml"><br>     在DD中指定角色，则需在 web.xml 中配置：<br>     <security-role><br>        <description><br>        <role-name>admin</role-name><br>     </description></security-role><br>   2.声明安全性约束(指明受限资源)<br>     在DD中加入<security-constraint>元素，其中包含了：<br>       Web资源集合：<web-resource-collection><br>       其中包含了url资源以及http方法。<br>     授权约束：<auth-constraint><br>      <security-constraint><br>        <display-name>Constraint-all</display-name><br>        <web-resource-collection><br>           <web-resource-name>all-resources</web-resource-name><br>           <description><br>           <url-pattern>/admin/＊</url-pattern>    //被授权访问的目录和文件<br>           <url-pattern>/security/＊</url-pattern><br>           <http-method>GET</http-method><br>           <http-method>POST</http-method><br>        </description></web-resource-collection><br>        <auth-constraint><br>           <description><br>           <role-name>admin</role-name><br>        </description></auth-constraint><br>      </security-constraint></auth-constraint></web-resource-collection></security-constraint></resource></p>
+<pre><code>要注意的规则：
+ 不要认为：资源本身受到约束；其实，是资源 + Http方法组合受到约束
+ 如果配置中不指定&lt;http-method&gt;，说明所有的方法(Get,Post,Trace,Head,Delete,Put,Options等)都受约束；
+ 当指定了具体的&lt;http-method&gt;，那么约束只针对该方法，其他的http方法都不在约束之内；
+ &lt;auth-constraint&gt;定义的是哪些角色可以做出受约束的请求；而不是定义访问&lt;web-resource-collection&gt;
+ 没有&lt;auth-constraint&gt;：任何角色都能访问；   空的&lt;auth-constraint /&gt;任何角色都不能访问；
+ 对于不同的&lt;security-constraint&gt;，指定的url资源&lt;url-pattern&gt;在相同方法上定义了不同的&lt;auth-constrain&gt;，则存在合并规则。
+
+问题：为什么要设置&lt;auth-constraint /&gt;元素，使得任何角色的任何人都不能访问受限资源呢？其意义何在？
+   为了保护资源，只允许内部跳转去访问</code></pre><p>   3.选择认证方式<br>     如果是BASIC认证：则无需指定Form表单的action。<br>     <login-config><br>         <auth-method>BASIC</auth-method><br>         <realm-name>UserDatabaseRealm</realm-name><br>     </login-config><br>     如果是FORM认证：<br>     <login-config><br>       <auth-method>FORM</auth-method><br>       <form-login-config><br>          <form-login-page>/logon/loginForm.jsp</form-login-page><br>          <form-error-page>/logon/loginErrorForm.jsp</form-error-page><br>       </form-login-config><br>     </login-config></p>
+<pre><code>对于Form表单认证
+ action的值，用户名、密码字段的名称都是固定的(规范) 
+ &lt;form method=&quot;POST&quot; action=&quot;j_security_check&quot;&gt;      
+   &lt;input type=&quot;text&quot; name=&quot;j_username&quot;&gt;      
+   &lt;input type=&quot;password&quot; name=&quot;j_password&quot;&gt;      
+   &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; name=&quot;B1&quot;&gt;
+ &lt;/form&gt;
+标准的表单提交(固定不变)：
+ action：j_security_check
+ name:j_username
+ password:j_password</code></pre><p>Day3<br>内容要点： 1.隐含对象 2.欢迎文件 3 MVC</p>
+<hr>
+<p>一、隐含对象<br> 1.什么是隐含对象(9个)？<br>   ————JSP中的隐含对象:不用我们手工去创建的对象<br>   类型                    对象名            功能</p>
+<hr>
+<p>   JspWriter              out              往浏览器写内容<br>   HttpServletRequest     request          Http请求对象.<br>   HttpServletResponse    response         Http响应对象<br>   PageContext            pageContext      JSP的页面上下文<br>   HttpSession            session          会话对象<br>   ServletContext         application      应用上下文<br>   ServletConfig          config           JSP的ServletConfig<br>   Object                 page             页面实现类的对象(例如：this)<br>   Exception              exception        含有指令&lt;%@page isErrorPage=”true”%&gt;</p>
+<p> 2.范围对象<br>   其中，有4个是范围对象： pageContext,request,session,application<br>   对应<a href="jsp:useBean/" target="_blank" rel="noopener">jsp:useBean/</a>指令的scope分别是：page,reqeust,session,application<br>   也就是说，指定不同scope的bean对象(Java Bean)会被绑定到不同的范围对象中<br>   // 选择范围对象的原则：作用域的范围越小越好；因为作用域小的生命周期短，有利于性能提高。<br>   例如：&lt;jsp:useBean id=”stu” class=”vo.Student” scope=”page”/&gt;<br>   表示stu对象被绑定到javax.servlet.jsp.PageContext对象(pageContext)中，其等价的代码<br>   &lt;%    Student stu = pageContext.getAttribute(“stu”);<br>         if(stu==null) {<br>          stu=new Student();<br>          pageContext.setAttribute(“stu”,stu);<br>   }%&gt;</p>
+<p>   1)pageContext对象：<br>     每一个jsp页面对应着一个pageContext。一般地，在实际应用中，主要是使用它来存取属性。<br>     另外，pageContext对象能够存取其他隐含对象。<br>    a.pageContext对象存取其他隐含对象属性的方法，此时需要指定范围的参数。<br>      Object getAttribute(String name, int scope)<br>      Enumeration getAttributeNamesInScope(int scope)<br>      void removeAttribute(String name, int scope)<br>      void setAttribute(String name, Object value, int scope)<br>     其中，范围参数有四个，分别代表四种范围：<br>      PAGE_SCOPE、REQUEST_SCOPE、SESSION_SCOPE、APPLICATION_SCOPE<br>    b.PageContext对象取得其他隐含对象的方法<br>      Exception getException()           回传目前网页的异常，不过此网页要为error page，<br>      JspWriter getOut()                 回传目前网页的输出流，例如：out<br>      Object getPage()                   回传目前网页的Servlet 实体(instance)，例如：page<br>      ServletRequest getRequest()        回传目前网页的请求，例如：request<br>      ServletResponse getResponse()      回传目前网页的响应，例如：response<br>      ServletConfig getServletConfig()   回传目前此网页的ServletConfig 对象，例如：config<br>      ServletContext getServletContext() 回传目前此网页的执行环境(context)，例如：application<br>      HttpSession getSession()           回传和目前网页有联系的会话(session)，例如：session<br>    c.PageContext对象提供取得属性的方法<br>      Object getAttribute(String name, int scope)    回传name 属性(范围为scope；类型为Object)<br>      Enumeration getAttributeNamesInScope(int scope)<br>                                       回传所有属性范围为scope 的属性名称，回传类型为Enumeration<br>      int getAttributesScope(String name)回传属性名称为name 的属性范围<br>      void removeAttribute(String name)  移除属性名称为name 的属性对象<br>      void removeAttribute(String name, int scope)   移除属性名称为name，范围为scope 的属性对象<br>      void setAttribute(String name, Object value, int scope)<br>                                       指定属性对象的名称为name、值为value、范围为scope<br>      Object findAttribute(String name)  寻找在所有范围中属性名称为name 的属性对象</p>
+<p>   2)request 对象<br>     request 对象包含所有请求的信息，<br>     如：请求的来源、标头、cookies和请求相关的参数值等等。<br>     request 对象实现javax.servlet.http.HttpServletRequest接口的，<br>     所提供的方法可以将它分为四大类：<br>     (1)储存和取得属性方法；<br>      void setAttribute(String name, Object value)      设定name属性的值为value<br>      Enumeration getAttributeNamesInScope(int scope)   取得所有scope 范围的属性<br>      Object getAttribute(String name)   取得name 属性的值<br>      void removeAttribute(String name)  移除name 属性的值<br>     (2)取得请求参数的方法<br>      String getParameter(String name)   取得name 的参数值<br>      Enumeration getParameterNames()    取得所有的参数名称<br>      String [] getParameterValues(String name)    取得所有name 的参数值<br>      Map getParameterMap()              取得一个要求参数的Map<br>     (3)能够取得请求HTTP 标头的方法<br>      String getHeader(String name)      取得name 的标头<br>      Enumeration getHeaderNames()       取得所有的标头名称<br>      Enumeration getHeaders(String name) 取得所有name 的标头<br>      int getIntHeader(String name)      取得整数类型name 的标头<br>      long getDateHeader(String name)    取得日期类型name 的标头<br>      Cookie [] getCookies()             取得与请求有关的cookies<br>     (4)其他的方法<br>      String getContextPath()            取得Context 路径(即站台名称)<br>      String getMethod()                 取得HTTP 的方法(GET、POST)<br>      String getProtocol()               取得使用的协议 (HTTP/1.1、HTTP/1.0 )<br>      String getQueryString()            取得请求的参数字符串，不过，HTTP的方法必须为GET<br>      String getRequestedSessionId()     取得用户端的Session ID<br>      String getRequestURI()             取得请求的URL，但是不包括请求的参数字符串<br>      String getRemoteAddr()             取得用户的IP 地址<br>      String getRemoteHost()             取得用户的主机名称<br>      int getRemotePort()                取得用户的主机端口<br>      String getRemoteUser()             取得用户的名称<br>      void getCharacterEncoding(String encoding)    设定编码格式，用来解决窗体传递中文的问题</p>
+<pre><code>3)session 对象
+ session对象表示目前个别用户的会话(session)状况。
+ session对象实现javax.servlet.http.HttpSession接口，HttpSession接口所提供的方法
+  long getCreationTime()             取得session产生的时间，单位是毫秒
+  String getId()                     取得session 的ID
+  long getLastAccessedTime()         取得用户最后通过这个session送出请求的时间
+  long getMaxInactiveInterval()      取得最大session不活动的时间，若超过这时间，session 将会失效
+  void invalidate()                  取消session 对象，并将对象存放的内容完全抛弃
+  boolean isNew()                    判断session 是否为&quot;新&quot;的会话
+  void setMaxInactiveInterval(int interval)   
+                                   设定最大session不活动的时间，若超过这时间，session 将会失效
+4)application对象
+ application对象最常被使用在存取环境的信息。
+ 因为环境的信息通常都储存在ServletContext中，所以常利用application对象来存取ServletContext中的信息。
+ application 对象实现javax.servlet.ServletContext 接口，ServletContext接口容器所提供的方法
+  int getMajorVersion()              取得Container主要的Servlet API版本
+  int getMinorVersion()              取得Container次要的Servlet API 版本
+  String getServerInfo()             取得Container的名称和版本
+  String getMimeType(String file)    取得指定文件的MIME 类型
+  ServletContext getContext(String uripath)        取得指定Local URL的Application context
+  String getRealPath(String path)    取得本地端path的绝对路径
+  void log(String message)           将信息写入log文件中
+  void log(String message, Throwable throwable)    将stack trace 所产生的异常信息写入log文件中</code></pre><p> 3.其他对象：<br>    1)page 对象<br>     page对象代表JSP本身，更准确地说page对象是当前页面转换后的Servlet类的实例。<br>     从转换后的Servlet类的代码中，可以看到这种关系： Object page = this;<br>     在JSP页面中，很少使用page对象。<br>    2)response 对象<br>     response 对象主要将JSP 处理数据后的结果传回到客户端。<br>     response 对象是实现javax.servlet.http.HttpServletResponse 接口。response对象所提供的方法。<br>    a.设定表头的方法<br>      void addCookie(Cookie cookie)                新增cookie<br>      void addDateHeader(String name, long date)   新增long类型的值到name标头<br>      void addHeader(String name, String value)    新增String类型的值到name标头<br>      void addIntHeader(String name, int value)    新增int类型的值到name标头<br>      void setDateHeader(String name, long date)   指定long类型的值到name标头<br>      void setHeader(String name, String value)    指定String类型的值到name标头<br>      void setIntHeader(String name, int value)    指定int类型的值到name标头<br>    b.设定响应状态码的方法<br>      void sendError(int sc)                       传送状态码(status code)<br>      void sendError(int sc, String msg)           传送状态码和错误信息<br>      void setStatus(int sc)                       设定状态码<br>    c.用来URL 重写(rewriting)的方法<br>      String encodeRedirectURL(String url)         对使用sendRedirect()方法的URL予以编码<br>    3)out 对象<br>     out对象的类型是javax.servlet.jsp.JspWriter，该类从java.io.Writer类派生，以字符流的形式输出数据。<br>     out对象实际上是PrintWriter对象的带缓冲的版本(在out对象内部使用PrintWriter对象来输出数据)，<br>     可以通过page指令的buffer属性来调整缓冲区的大小，默认的缓冲区是8kb。<br>     out 对象能把结果输出到网页上。<br>     out主要是用来控制管理输出的缓冲区(buffer)和输出流(output stream)。<br>      void clear( )               清除输出缓冲区的内容<br>      void clearBuffer( )         清除输出缓冲区的内容<br>      void close( )               关闭输出流，清除所有的内容<br>      int getBufferSize( )        取得目前缓冲区的大小(KB)<br>      int getRemaining( )         取得目前使用后还剩下的缓冲区大小(KB)<br>      boolean isAutoFlush( )      回传true表示缓冲区满时会自动清除；false表示不会自动清除并且产生异常处理<br>    4)exception对象<br>     若要使用exception 对象时，必须在page 指令中设定：&lt;%@ page isErrorPage=”true” %&gt;才能使用。<br>     exception提供的三个方法：<br>      getMessage()<br>      getLocalizedMessage()<br>      printStackTrace(new java.io.PrintWriter(out))<br>    5)config 对象<br>     config 对象里存放着一些Servlet 初始的数据结构。<br>     config 对象实现于javax.servlet.ServletConfig 接口，它共有下列四种方法：<br>      public String getInitParameter(name)<br>      public java.util.Enumeration getInitParameterNames( )<br>      public ServletContext getServletContext()<br>      public Sring getServletName()</p>
+<p>例子：<br>1.范围对象比较<br>&lt;% pageContext 或request 或session 或application.setAttribute(“name”, “maxwell”);<br>   pageContext.setAttribute(“sex”, “m”);<br>%&gt;</p>
+<p>2.输出对象out<br>&lt;%out.println(“Hello JSP!”);%&gt;<br>&lt;%System.out.println(“Hello JSP!”);%&gt;<br>getBufferSize() //tomcat default:12k<br>getRemaining()<br>flush()<br>clearBuffer()</p>
+<p>3.request对象<br>request:<br>getProtocol()<br>getMethod()<br>getHeader(“User-Agent”)<br>getCookies()<br>getRequestURI()<br>getRequestURL()<br>getContextPath()<br>getServletPath()<br>getPathInfo()<br>getQueryString()<br>isRequestedSessionIdFromCookie()<br>isRequestedSessionIdFromURL()<br>isRequestedSessionIdValid()<br>getLocalPort(),getRemotePort()<br>getRequestDispatcher(),setCharacterEncoding(),getInputStream()</p>
+<p>4.session对象<br>session:<br>getId()<br>isNew()<br>invalidate()<br>setMaxInactiveInterval(10)</p>
+<p>5.响应对象<br>response:<br>sendRedirect(“third.jsp”)<br>sendError(404, “400 Error!”)<br>6.应用对象<br>application:<br>log(“some body visit our website…”);<br>getMajorVersion()<br>getMinorVersion()<br>getServerInfo()<br>getRequestDispatcher(),getResourceAsStream(),getInitParameter()</p>
+<p>pageContext:<br>getAttribute(“name”)</p>
+<p>config:<br>getInitParameter(“classNo”)<br>getServletName()</p>
+<p>page:<br>getClass()</p>
+<hr>
+<p>二、欢迎文件</p>
+<p> 1.缺省情况下,一个Web App中的  index.html, index.htm, index.jsp  可作为默认的欢迎文件.<br>   当用户请求没有指明要访问的资源时,Web Container会用欢迎文件响应客户端请求.<br> 2.手工设置欢迎文件：<br>   web.xml<br>   找welcome.jsp，没找到，继续往下找<br>   <welcome-file-list><br>     <welcome-file>/welcome.jsp</welcome-file><br>     <welcome-file>/welcome1.jsp</welcome-file><br>     <welcome-file>/welcome2.jsp</welcome-file><br>   </welcome-file-list></p>
+<p>三、MVC<br> MVC:    Model-View-Controller (用户交互过程：输入、处理、输出)<br> WEB应用的MVC；优化Web App的结构,使用MVC模式<br> Model 1:    JSP + JavaBean(EJB)<br> Model 2:    Servlet + JSP + JavaBean(EJB)——&gt;MVC</p>
+<p>体系结构</p>
+<p>设计模式<br>  具体问题提出具体的解决办法</p>
+<p>习惯用法</p>
+<p>Day4<br>内容要点： 1 实现文件上传  2 数据验证  3 分页实现</p>
+<hr>
+<p>一、文件上传<br>1.表单形式</p>
+<form action method="POST" enctype="multipart/form-data">
+  file:<input type="file" name="file"><br>
+  <input type="submit">
+</form>
+
+<p>2.使用HttpMonitor工具：<br>查看文件上传时，请求的内容。</p>
+<p>3.服务器端对上传文件的处理<br>例子<br>fileupload<br>处理步骤(待补充)</p>
+<p>知识点：<br>1)通过HttpServletRequest来传送文件内容<br>2)处理request头，字符串的分析<br>3)java.io.File API的使用</p>
+<hr>
+<p>二、数据验证</p>
+<p>如何完成Web App中的数据验证工作</p>
+<p>1)客户端校验：<br>输入域不能为空，只能是数字，数据长度大于5等等<br>JavaScript客户端完成(验证框架，负责客户端方面的验证)</p>
+<p>2)服务器端校验：<br>例如：后台数据库要求提交数据唯一性<br>Java服务器端完成(没有现成的框架，因为不同的项目有不同的业务规则)</p>
+<p>重点：<br>1)分清楚什么情况下使用客户端校验，什么情况下使用服务器端校验</p>
+<hr>
+<p>三、数据分页<br>查询数据库时，如果满足条件的记录很多，该如何返回给页面?<br>1.客户端分页<br>  同样地，使用html/javascript等技术处理。甚至可以封装成组件<br>2.服务器端分页<br>  非常重要的，在实际项目中非常需要————性能问题。<br>这需要结合JDBC/Hibernate/TopLink/EJB等技术实现。</p>
+<p>查询分页<br>  1)一次性从数据库中查出所有信息，在内存中作分页(缓存)<br>      特点：速度非常快,消耗资源大(内存?)</p>
+<p>  2)分多次查询数据库，一次查询的数据量就是一个页面可以显示的数据量<br>      特点：消耗资源少，相对来说速度慢</p>
+<p>  3)折衷的方案(一次只取n页，1&lt;n&lt;总页数)(部分缓存)<br>      特点：中庸之道(实现中，置换算法教难)</p>
+<p>常见的分页处理方法：定义如下几个参数<br>rows:数据库表中记录总行数   select count(*) from 表名;<br>  totalPage：总页数     (导出属性：可以由其他属性计算而得) int totalPage = rows / size + 1;<br>size：每页显示的记录数目    可定制，可写死<br>curPageNo：当前页         客户端决定<br>  startRowNo：当前页在数据库中的起始行号(导出属性)        int startRowNo = (curPageNo -1 ) * size;</p>
+<p>练习：<br>重新改造Usermanager例子中的查询所有的用户的功能(使用分页)</p>
+<p>Day5<br>内容要点：  1 EL   2 JSTL</p>
+<hr>
+<p>一、EL(Expression Language—-表达式语言)<br> 为网页美工而设，跟java语句相似；尽量减少java程序的依赖(不能要求美工使用java)<br> 1.语法<br>   表达式          vs.    EL表达式语言(JSP2.0)<br>   &lt;%=name%&gt;     &lt;=&gt;       ${name}<br> 2.文字<br>   在 EL 表达式中，数字、字符串、布尔值和 null 都可以被指定为文字值(常量)。<br>   字符串可以用单引号或双引号定界。布尔值被指定为 true 和 false 。<br>  例子：<br>   表达式                              值</p>
+<hr>
+<p>   ${-168.18}                         -168.18<br>   ${3.8e-18}                         3.8e-18           //科学计数法<br>   ${3.14159265}                      3.14159265<br>   ${“Hello JSP EL!”}                 Hello JSP EL!     等价于 &lt;%=”Hello JSP EL!”%&gt;<br>   ${‘Hello JSP EL…’}               Hello JSP EL…<br>   ${true}  //can be TRUE?            true<br>   ${false} //can be FALSE?           false<br>   ${str==null}                       true              //布尔值的表达式</p>
+<p> 3.EL 运算符<br>   类别               运算符</p>
+<hr>
+<p>   算术运算符        +、  -、  *、  /(或 div)、    %(或 mod)<br>   关系运算符        ==(或 eq)、    !=(或 ne)、    &lt;(或 lt)<br>                 &gt;(或 gt)、     &lt;=(或 le)、    &gt;=(或 ge)<br>   逻辑运算符        &amp;&amp;(或 and)、   ||(或 or)、    !(或 not)<br>   验证运算符        empty<br>     其中，empty 判断一个变量是否为null或是否包含有效数据:<br>     if(name==null||name.equlas(“”))  等价于  ${empty name} -&gt;    true<br>  例子：<br>    表达式                              值</p>
+<hr>
+<pre><code>${3+5.1}                           8.1
+${&quot;Hello&quot;+&quot;,Tarena!&quot;}              报错！  // EL的&quot;+&quot;没有字符串连接功能
+${5*2}                             10
+${9.3/3}                           3.1
+${9.3 div 3}                       3.1
+${8 div 0}                         Infinity // 表示无穷大
+${9%2}                             1
+${9 mod 2}                         1
+${8*6&gt;68?&quot;Yes&quot;:&quot;No&quot;}               No   //三目表达式</code></pre><p>   &lt;% String name=””;<br>    request.setAttribute(“name”,name);      //如果没有 setAttribute ，则必定是空<br>   %&gt;<br>    ${empty name}                      true //对范围对象内的变量或对象进行判空</p>
+<p> 4.变量和JavaBean属性数据输出<br>   表达式语言输出变量，是到范围对象(pageContext,request,session,application)中查找相应属性。<br>   而非直接在页面中查找实例或局部变量。<br>  表达式语言查找变量的顺序是:<br>   pageContext -&gt; request -&gt; session-&gt;application， 所有范围都未找到时，赋值null</p>
+<p> 5.存取器<br>   []    -&gt;输出对象属性值，输出数组或集合中对应索引值<br>   .     -&gt;输出对象属性值<br>  例子：<br>   &lt;% SuperGirl girl = new SuperGirl();   girl.setName(“Alice”);<br>      session.setAttribute(“girl”,girl);  %&gt;  //一定要有这句，设置成范围对象<br>   ${girl[“name”]}<br>   ${girl[‘name’]}   //拿属性时，单引跟双引等价<br>   ${girl.name}      //这种方法同样可以</p>
+<p>   &lt;%  List aList = new ArrayList();<br>       aList.add(“China”);  aList.add(girl);  aList.add(168.18);<br>       session.setAttribute(“aList”, aList); %&gt;<br>   ${aList[0]}   //使用下标来取值 “China”<br>   ${aList[1]}   //取得对象的引用地址  还可以嵌套：${aList[1][‘name’]}<br>   ${aList[3]}   //下标越界，不会报错；只是取不出值</p>
+<p>   &lt;%  Map map = new HashMap();<br>       map.put(“name”, “Kitty”);  map.put(“age”, “25”);  map.put(“date”, new Date());<br>       map.put(“aList”, aList);<br>       session.setAttribute(“map”, map); %&gt;<br>   ${map.date}     ${map[“date”]}     //这两个等效<br>   ${map.aList[0]} ${map[“aList”][0]} //这两个也等效<br>   ${map.aList[1][name]}              //嵌套取值</p>
+<p> 6.隐含对象<br>   el提供了自己的一套隐含对象，方便在页面内对各种常用数据信息的访问.<br>    EL隐藏对象                         JSP隐藏对象</p>
+<hr>
+<pre><code>pageScope                         pageContext
+requestScope                      request
+sessionScope                      session
+applicationScope                  appication
+
+param：               request.getParameter() 
+paramValues：         在提交表单里，有多个输入域同名getParameterValues
+header：              request.getHeader() 按照key-value的形式取出；value:是一个String类型的值
+headerValues          按照key-value的方式取出，但是headerValues里面的value是一个String类型的数组
+cookie                request.getCookies() 
+initParam             context param</code></pre><p>  例子：<br>    1)超女登记信息<br>      enroll.html<br>      <form action="index.jsp" method="post"><br>        <table border="1"><br>        <tr><td>姓名：</td><br>            <td><input type="text" name="name"></td></tr><br>        <tr><td>年龄：</td><br>            <td><input type="text" name="age"></td></tr><br>        <tr><td>城市：</td><br>            <td><input type="text" name="city"></td>  </tr><br>        <tr><td align="center" colspan="2"><input type="submit" value="提交"></td></tr><br>        </table><br>      </form></p>
+<pre><code>  index.jsp
+  &lt;jsp:useBean id=&quot;SuperGirl&quot; class=&quot;vo.SuperGirl&quot; scope=&quot;page&quot;&gt;&lt;/jsp:useBean&gt;
+  &lt;jsp:setProperty name=&quot;SuperGirl&quot; property=&quot;name&quot; value=&quot;${param.name}&quot;/&gt;
+  &lt;jsp:setProperty name=&quot;SuperGirl&quot; property=&quot;age&quot;  value=&quot;${param.age}&quot;/&gt;
+  &lt;jsp:setProperty name=&quot;SuperGirl&quot; property=&quot;city&quot; value=&quot;${param.city}&quot;/&gt;
+  &lt;table border=&quot;1&quot;&gt;   &lt;% //把设置输出出来 %&gt;
+    &lt;tr&gt;&lt;td&gt;姓名：&lt;/td&gt; 
+        &lt;td&gt;${SuperGirl.name}&lt;/td&gt;&lt;/tr&gt; 
+    &lt;tr&gt;&lt;td&gt;年龄：&lt;/td&gt; 
+        &lt;td&gt;${SuperGirl.age}&lt;/td&gt;&lt;/tr&gt;  
+    &lt;tr&gt;&lt;td&gt;城市：&lt;/td&gt; 
+        &lt;td&gt;${SuperGirl.city}&lt;/td&gt;&lt;/tr&gt;  
+  &lt;/table&gt;
+
+2)范围对象
+  &lt;%  pageContext.setAttribute(&quot;name&quot;, &quot;page&quot;);
+    request.setAttribute(&quot;name&quot;, &quot;request&quot;);
+    session.setAttribute(&quot;name&quot;, &quot;session&quot;); 
+    application.setAttribute(&quot;name&quot;, &quot;application&quot;); %&gt;
+
+  ${name}    // pageContext -&gt; request -&gt; session-&gt;application
+  ${pageScope.name}
+  ${requestScope.name}
+  ${sessionScope.name}
+  ${applicationScope.name}
+
+3)paramValues
+  在enroll.html加入： 兴趣
+    &lt;table&gt;
+  &lt;input type=&quot;checkbox&quot; name=&quot;habit&quot; value=&quot;Reading&quot;/&gt;读书
+  &lt;input type=&quot;checkbox&quot; name=&quot;habit&quot; value=&quot;Game&quot;/&gt;游戏
+  &lt;input type=&quot;checkbox&quot; name=&quot;habit&quot; value=&quot;Music&quot;/&gt;音乐
+    &lt;/table&gt;
+  //提交后，获取输入内容
+  ${paramValues.habit[0]}
+  ${paramValues.habit[1]}
+  ${paramValues.habit[2]}
+
+4)initParam
+  web.xml
+  ...
+  &lt;context-param&gt;
+    &lt;param-name&gt;server&lt;/param-name&gt;
+    &lt;param-value&gt;Tomcat5.5&lt;/param-value&gt;
+  &lt;/context-param&gt;
+  ...
+  ${initParam.server}
+
+5)header
+  ${header[&quot;host&quot;]} 
+  ${header[&quot;accept&quot;]} 
+  ${header[&quot;user-agent&quot;]}</code></pre><p> 7.可以自由设置是否支持表达式语言<br>   &lt;%@page isELIgnored=”false”%&gt; : default:false  可以使用EL，改成 true 之后，写EL就会报错</p>
+<p>   配置web.xml也可达到同样的效果(同时存在，那种起作用？)<br>   (禁用脚本和EL)  默认都是false<br>   …<br>   <jsp-config><br>     <jsp-property-group><br>       <url-pattern>*.jsp</url-pattern><br>       <el-ignored>true</el-ignored>               //设置成所有jsp文件都禁用EL<br>       <scripting-invalid>true</scripting-invalid> //设置成禁用脚本<br>     </jsp-property-group><br>   </jsp-config><br>   ….<br>   页面的page指令设置isELIgnored属性的优先级比web.xml中<el-ignored>设置的高(当然是范围小的生效)</el-ignored></p>
+<hr>
+<p>二、JSTL(JSP Standard Tag Library )<br> 减少java代码，简化页面编写；功能封装，提高可重用性<br> 1.如何使用JSTL<br>   1)对于Java EE之前(即J2EE规范1.4及之前版本)<br>     a、复制jstl的jar包(jstl.jar,standard.jar)到/WEB-INF/lib<br>     b、在使用jstl功能的jsp页面中增加指令<br>        &lt;%@taglib prefix=”c” uri=”<a href="http://java.sun.com/jsp/jstl/core&quot;%&gt;" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/core&quot;%&gt;</a>   //核心标签库<br>        &lt;%@taglib prefix=”x” uri=”<a href="http://java.sun.com/jsp/jstl/xml&quot;%&gt;" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/xml&quot;%&gt;</a><br>        &lt;%@taglib prefix=”fmt” uri=”<a href="http://java.sun.com/jsp/jstl/fmt&quot;%&gt;" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/fmt&quot;%&gt;</a><br>        &lt;%@taglib prefix=”sql” uri=”<a href="http://java.sun.com/jsp/jstl/sql&quot;%&gt;" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/sql&quot;%&gt;</a>  //数据库标签库<br>        &lt;%@taglib prefix=”fn” uri=”<a href="http://java.sun.com/jsp/jstl/functions&quot;%&gt;" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/functions&quot;%&gt;</a><br>        //prefix 表前缀(可改，但通常按这写的用)； uri 指向标签库的入口<br>   2)Java EE规范把jstl作为规范的一部分<br>     所以现在的jstl-1.2已经包含了原来的jstl.jar , standard.jar</p>
+<p> 2.core:核心标签库<br>   一般用途<br>   在JSTL中，一般用途的标签主要是指具有输出，设置变量，和错误处理等功能的标签，他们在jsp中使用比较频繁，它们有：</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>a、&lt;c:set&gt;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>语法：&lt;c:set value=”value” var=”varName” [scope= “{page</td>
+</tr>
+<tr>
+<td>&lt;c:set value=”value” target=”target” property=”propertyName”/ &gt;</td>
+</tr>
+<tr>
+<td>这个标签用于在某个范围(page,request,session,application)里面设置特定的值</td>
+</tr>
+<tr>
+<td>(默认为page)，或者设置某个已经存在的javabean的属性。</td>
+</tr>
+<tr>
+<td>例子：</td>
+</tr>
+<tr>
+<td>&lt;c:set var=”counter” value=”200”/&gt;</td>
+</tr>
+<tr>
+<td>${counter}//输出</td>
+</tr>
+</tbody></table>
+<pre><code>&lt;c:set var=&quot;tarena&quot;&gt;Tarena It Traning Ltd.&lt;/c:set&gt;
+${tarena}</code></pre><p>   可以指定范围，默认是page<br>    &lt;c:set value=”20” var=”maxIdelTime” scope=”session”/&gt;<br>    ${maxIdelTime}</p>
+<p>   设置JavaBean的值<br>    &lt;jsp:useBean id=”girl” class=”vo.SuperGirl”/&gt;<br>    &lt;c:set value=”Shirly” target=”${girl}” property=”name”/&gt;<br>    <td>girl.name</td><br>    <td>${girl.name}</td></p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>b、&lt;c:remove&gt;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>语法：</td>
+</tr>
+<tr>
+<td>&lt;c:remove var=”varName” [scope= “{page</td>
+</tr>
+<tr>
+<td>它的作用是删除某个变量或者属性。</td>
+</tr>
+<tr>
+<td>例子：</td>
+</tr>
+<tr>
+<td>&lt;c:set value=”10000” var=”maxUser” scope=”application”/&gt;</td>
+</tr>
+<tr>
+<td>&lt;c:set value=”10” var=”count” scope=”session”/&gt;</td>
+</tr>
+<tr>
+<td>&lt;c:set value=”10” var=”count”/&gt;</td>
+</tr>
+<tr>
+<td>${maxUser}</td>
+</tr>
+<tr>
+<td>${count}</td>
+</tr>
+<tr>
+<td>&lt;c:remove var=”maxUser” scope=”application”/&gt;</td>
+</tr>
+<tr>
+<td>&lt;c:remove var=”count” scope=”session”/&gt;</td>
+</tr>
+<tr>
+<td>${maxUser}</td>
+</tr>
+<tr>
+<td>${count}</td>
+</tr>
+</tbody></table>
+<hr>
+<table>
+<thead>
+<tr>
+<th>c、&lt;c:out&gt;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>语法：&lt;c:out value=”value” [escapeXml]=”{true</td>
+</tr>
+<tr>
+<td>注意:escapeXml的作用是是否将代码交给xml解析器解释，true为交给xml解析器解释(默认)，false为交给浏览器解释。</td>
+</tr>
+<tr>
+<td>default 定义缺省值。</td>
+</tr>
+</tbody></table>
+<p>  例子：<br>    &lt;c:set var=”sessionZhang3” value=”zhang3-s” scope=”session”/&gt;<br>    &lt;c:set var=”table” value=”<table><tr><td>sessionZhang</td></tr></table>“ scope=”page”/&gt;<br>    &lt;c:set var=”requestZhang3” value=”zhang3-r” scope=”request”/&gt;<br>    &lt;c:out value=”以下输出前面设置的属性<br>“ escapeXml=”false”/&gt;</p>
+<pre><code>&lt;td colspan=2&gt;
+    &lt;c:out value=&quot;${sessionZhang3}&quot;/&gt;&lt;br&gt;
+    &lt;c:out value=&quot;${table}&quot; escapeXml=&quot;false&quot; /&gt;&lt;br&gt;//输出表格；escapeXml=&quot;true&quot;时只显示字符串
+    &lt;c:out value=&quot;${requestZhang3}&quot;/&gt;&lt;br&gt;
+    &lt;c:out value=&quot;${nodefined}&quot; default=&quot;没有nodefined这个变量&quot;/&gt;
+&lt;/td&gt;</code></pre><hr>
+<table>
+<thead>
+<tr>
+<th>d、&lt;c:catch&gt;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>它的作用是捕捉由嵌套在它里面的标签所抛出来的异常。类似于&lt;%try{}catch{}%&gt;</td>
+</tr>
+<tr>
+<td>语法：&lt;c:catch [var=”varName”]&gt;nested actions</td>
+</tr>
+<tr>
+<td>例子：</td>
+</tr>
+<tr>
+<td>&lt;c:catch var=”error”&gt;&lt;% Integer.parseInt(“abc”); %&gt;</td>
+</tr>
+<tr>
+<td>&lt;% try{ Integer.parseInt(“abc”); }catch(Exception error) {  } %&gt; //等价</td>
+</tr>
+</tbody></table>
+<pre><code>&lt;c:out value=&quot;${error}&quot;/&gt;
+&lt;c:out value=&quot;${error.message}&quot;/&gt;
+&lt;c:out value=&quot;${error.cause}&quot;/&gt;</code></pre><h2 id="控制语句："><a href="#控制语句：" class="headerlink" title="  控制语句："></a>  控制语句：</h2><h2 id="a、-lt-c-if-gt"><a href="#a、-lt-c-if-gt" class="headerlink" title="  a、 &lt;c:if&gt;"></a>  a、 &lt;c:if&gt;</h2><p>  语法：<br>    &lt;c:if test=”testCondition” var=”varName”<br>    [scope=”{page|request|session|application}”]&gt;<br>       Body内容<br>      // 注：没有 else<br>  例子：<br>     &lt;c:set var=”age” value=”16”/&gt;<br>     &lt;c:if test=”${age&lt;18}”&gt;<br>        </p><h1 align="center">您尚未成年，不能进入游戏中心！</h1><br>     <p></p>
+<hr>
+<h2 id="b、-lt-c-choose-gt"><a href="#b、-lt-c-choose-gt" class="headerlink" title="  b、&lt;c:choose&gt;"></a>  b、&lt;c:choose&gt;</h2><p>  例子：<br>    &lt;c:set var=”tax” value=”5000” /&gt;<br>    &lt;c:choose&gt;<br>         &lt;c:when test=”${tax &lt;=0}”&gt;<br>              您今年没有纳税！<br>         <br>         &lt;c:when test=”${tax&lt;=1000&amp;&amp;tax&gt;0}”&gt;<br>           您今年缴纳的税款为${tax},加油！<br>         <br>         &lt;c:when test=”${tax&lt;=3000&amp;&amp;tax&gt;1000}”&gt;<br>           您今年缴纳的税款为${tax},再接再励哦！<br>         <br>         &lt;c:otherwise&gt;<br>           您今年纳税超过了3000元，多谢您为国家的繁荣富强作出了贡献！<br>         <br>     </p>
+<hr>
+<h2 id="c、-lt-c-forEach-gt-循环"><a href="#c、-lt-c-forEach-gt-循环" class="headerlink" title="  c、&lt;c:forEach&gt; 循环"></a>  c、&lt;c:forEach&gt; 循环</h2><p>  语法： &lt;c:forEach [var=”varName”] items=”collection”  [varStatus=”varStatusName”]<br>         [begin=”begin”] [end=”end”] [step=”step”]&gt;<br>           Body 内容<br>        <br>   items：需要迭代的集合；var：迭代时取集合里的值；<br>  例子：<br>    &lt;%  List aList=new ArrayList();<br>        aList.add(“You”);       aList.add(“are”);   aList.add(“a”);<br>        aList.add(“beautiful”); aList.add(“girl”);<br>        request.setAttribute(“aList”,aList);  %&gt;<br>    <center> <table border="1"><br>       &lt;c:forEach var=”word” items=”${aList}”&gt;<br>         <tr><td>${word }</td></tr><br>       <br>    </table> </center></p>
+<pre><code>&lt;c:forEach items=&apos;${header}&apos; var=&apos;h&apos;&gt;
+   &lt;tr&gt;
+     &lt;td&gt;&lt;li&gt;Header name:&lt;c:out value=&quot;${h.key}&quot;/&gt;&lt;/li&gt;&lt;/td&gt;
+     &lt;td&gt;&lt;li&gt;Header value:&lt;c:out value=&quot;${h.value}&quot;/&gt;&lt;/li&gt;&lt;/td&gt;
+   &lt;/tr&gt;
+&lt;/c:forEach&gt;</code></pre><p>  另外一种用法： (类似 for 循环)<br>   &lt;c:forEach var=”count” begin=”10” end=”100” step=”10”&gt;<br>       <tr><td><br>         &lt;c:out value=”${count}”/&gt;<br><br>       </td></tr><br>   </p>
+<h2 id="URL"><a href="#URL" class="headerlink" title="  URL"></a>  URL</h2><table>
+<thead>
+<tr>
+<th>a、&lt;c:import&gt;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>相当于<a href="jsp:include" target="_blank" rel="noopener">jsp:include</a></td>
+</tr>
+<tr>
+<td>&lt;c:import url=”footer.jsp” charEncoding=”GBK”&gt;</td>
+</tr>
+<tr>
+<td>&lt;c:param name=”name” value=”Java”/&gt;</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<table>
+<thead>
+<tr>
+<th>b、&lt;c:url&gt;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>用于构造URL，主要的用途是URL的重写。</td>
+</tr>
+<tr>
+<td>&lt;c:url var=”footer1” value=”footer.jsp”/&gt;</td>
+</tr>
+<tr>
+<td>&lt;c:url var=”footer2” value=”footer.jsp” scope=”page”&gt;</td>
+</tr>
+<tr>
+<td>&lt;c:param name=”name” value=”Sofie”/&gt;</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>&lt;c:out value=”${footer1}”/&gt;</td>
+</tr>
+<tr>
+<td>&lt;c:out value=”${footer2}”/&gt;</td>
+</tr>
+</tbody></table>
+<pre><code>&lt;c:url var=&quot;next&quot; value=&quot;next.jsp&quot;/&gt;
+&lt;a href=&quot;${next}&quot;&gt;next&lt;/a&gt;&lt;br&gt;
+   等价于
+&lt;a href=&quot;&lt;c:url value=&apos;next.jsp&apos;/&gt;&quot;&gt;next&lt;/a&gt; //在 Html 里可嵌套 JSTL</code></pre><hr>
+<table>
+<thead>
+<tr>
+<th>c、&lt;c:redirect&gt;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>//等价于 <a href="jsp:forward" target="_blank" rel="noopener">jsp:forward</a></td>
+</tr>
+<tr>
+<td>&lt;c:redirect url=”${footer2}”/&gt;</td>
+</tr>
+<tr>
+<td>例如：</td>
+</tr>
+<tr>
+<td>&lt;c:url var=”next” value=”next.jsp”/&gt;</td>
+</tr>
+<tr>
+<td>&lt;c:redirect url=”${next}”/&gt;</td>
+</tr>
+</tbody></table>
+<p> 3.SQL<br>   <a href="sql:setDataSource" target="_blank" rel="noopener">sql:setDataSource</a><br>   <a href="sql:query" target="_blank" rel="noopener">sql:query</a><br>   <a href="sql:update" target="_blank" rel="noopener">sql:update</a><br>   <a href="sql:param" target="_blank" rel="noopener">sql:param</a></p>
+<pre><code>&lt;!-- 设置数据源 --&gt;
+&lt;%@page contentType=&quot;text/html; charset=GBK&quot;%&gt;
+&lt;%@taglib uri=&quot;http://java.sun.com/jsp/jstl/core&quot; prefix=&quot;c&quot;%&gt;
+&lt;%@taglib uri=&quot;http://java.sun.com/jsp/jstl/sql&quot; prefix=&quot;sql&quot;%&gt;
+  &lt;sql:setDataSource   var=&quot;ds&quot;  driver=&quot;com.mysql.jdbc.Driver&quot; 
+   url=&quot;jdbc:mysql://localhost:3306/tarena&quot; 
+   user=&quot;root&quot; password=&quot;11111111&quot; /&gt;</code></pre><p>  a、查询<br>    &lt;sql:query var=”rs” dataSource=”${ds}” sql=”select * from users” &gt;<br>    &lt;c:forEach var=”user” items=”${rs.rows}”&gt;<br>        <tr><br>          <td>${user.userid}</td><br>          <td>${user.username}</td><br>          <td>${user.password}</td><br>          <td>${user.role}</td><br>        </tr><br>    </p>
+<p>  b、插入记录<br>    &lt;sql:update dataSource=”${ds}” sql=”insert into users values(101,’maxwell’,’123’,’admin’)”<br>     var=”i”&gt;<br>    <hr>插入${i}条记录.</p>
+<p>  c、更新记录<br>    &lt;sql:update dataSource=”${ds}”<br>     sql=”UPDATE users SET username=’Gavin King’ WHERE userid=101” var=”i”&gt;<br>    <hr>更新${i}条记录.</p>
+<p> <a href="sql:param" target="_blank" rel="noopener">sql:param</a><br>  作用：设置sql语句中”?”表示的占位符号的值。<br> &lt;sql:update dataSource=”${ds}” sql=”UPDATE users SET username=? WHERE userid=?” var=”i”&gt;<br>    &lt;sql:param value=”Rod Johnson” /&gt; //设第一个问号<br>    &lt;sql:param value=”100” /&gt;         //设第二个问号<br>  <br>  参数等价于<br>  //pstmt.setString(1,”Rod Johnson”);<br>  //pstmt.setInt(2,100); </p>
+	
+	</div>
+	
+	<div id="current-post-cover" data-scr="/img/ju.jpg"></div>
+
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">Related post</div>
+				<div>Comment</div>
+				<div>Share</div>
+			</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);">To Top</a>
+		
+		
+			<a href="/2019/11/20/EL表达式/" title="EL表达式" rel="next">
+				Next post&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+			</div>	
+		</div>
+		
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/20/EL表达式/" title="EL表达式">
+								EL表达式			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 20日, 2019				
+							</p>
+							<p class="relate-post-content">
+								EL（Expression Language） 是为了使JSP写起来更加简单。表达式语言的灵感来自于 ECMAScript 和 XPath 表达式语言，它提供了在 JSP 中简化表达式的方法，让Jsp的代码更加简化。以MVC模式设计程...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/20/EL表达式/" title="EL表达式">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="EL表达式"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/15/Vue-js中前端知识点/" title="Vue.js中前端知识点">
+								Vue.js中前端知识点			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 15日, 2019				
+							</p>
+							<p class="relate-post-content">
+								1.框架和库的区别：框架：framework 有着自己的语法特点、都有对应的各个模块库 library 专注于一点
+框架的好处：
+12341.提到代码的质量，开发速度2.提高代码的复用率3.降低模块之间的耦合度（高内聚低耦合）
+
+UI...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/15/Vue-js中前端知识点/" title="Vue.js中前端知识点">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="Vue.js中前端知识点"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/13/jsp登录注册/" title="jsp登录注册">
+								jsp登录注册			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 13日, 2019				
+							</p>
+							<p class="relate-post-content">
+								  注册页面register.jsp
+  
+
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/13/jsp登录注册/" title="jsp登录注册">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="jsp登录注册"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/11/Java-Servlet简介/" title="Java Servlet简介">
+								Java Servlet简介			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 11日, 2019				
+							</p>
+							<p class="relate-post-content">
+								一、了解Servlet的概念Servlet定义
+Servlet是基于Java技术的Web组件，由容器管理并产生动态的内容。Servlet引擎作为WEB服务器的扩展提供支持Servlet的功能。Servlet与客户端通过Servlet容...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/11/Java-Servlet简介/" title="Java Servlet简介">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="Java Servlet简介"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/05/Jsp九大内置对象/" title="Jsp九大内置对象">
+								Jsp九大内置对象			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 5日, 2019				
+							</p>
+							<p class="relate-post-content">
+								JSP九大内置对象详解JSP内置对象(9个内置对象):1.PageContext  javax.servlet.jsp.PageContext    JSP的页面容器    
+2.request       javax.servlet...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/05/Jsp九大内置对象/" title="Jsp九大内置对象">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="Jsp九大内置对象"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/11/01/Cookie对象常用方法/" title="Cookie对象常用方法">
+								Cookie对象常用方法			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十一月 1日, 2019				
+							</p>
+							<p class="relate-post-content">
+								JSP中创建使用Cookie一 语法创建Cookie对象1Cookie newCookie = new Cookie(String key,object value);
+
+
+
+写入Cookie对象1responce.addCookie...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/11/01/Cookie对象常用方法/" title="Cookie对象常用方法">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="Cookie对象常用方法"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/10/29/JDBC连接数据库/" title="JDBC连接数据库">
+								JDBC连接数据库			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 29日, 2019				
+							</p>
+							<p class="relate-post-content">
+								1.导入jar包  mysql-connector-java-5.1.37-bin
+1.1 项目下新建文件夹libs（和src同级）。
+
+1.2 复制mysql-connector-java-5.1.37-bin。
+
+1.3 右键，A...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/10/29/JDBC连接数据库/" title="JDBC连接数据库">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="JDBC连接数据库"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/10/28/AJAX请求/" title="AJAX请求">
+								AJAX请求			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 28日, 2019				
+							</p>
+							<p class="relate-post-content">
+								AJAX的意思就是异步的JavaScript和XML。简而言之，它是使用XMLHttpRequest对象与服务器端通信的脚本语言。它可以发送及接收各种格式的信息，包括JSON、XML、HTML和文本文件。AJAX最为吸引人的就是它的“...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/10/28/AJAX请求/" title="AJAX请求">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="AJAX请求"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/10/27/jsp页面组成/" title="jsp页面组成">
+								jsp页面组成			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 27日, 2019				
+							</p>
+							<p class="relate-post-content">
+								Jsp页面元素构成jsp页面组成部分：指令  注释  脚本  声明  表达式  jsp页面生命周期
+一.指令JSP指令用来设置整个JSP页面相关的属性
+指令可以有多个属性，以键值对的形式表示，并用逗号隔开，语法格式为：
+1&lt;%@...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/10/27/jsp页面组成/" title="jsp页面组成">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="jsp页面组成"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/10/26/Request案例代码/" title="Request案例代码">
+								Request案例代码			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								十月 26日, 2019				
+							</p>
+							<p class="relate-post-content">
+								request对象request对象封装了由客户端生成的HTTP请求的所有细节，主要包括HTTP头信息、系统信息、请求方式和请求参数等。通过request对象提供的相应方法可以处理客户端浏览器提交的HTTP请求中的各项参数。
+requ...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/10/26/Request案例代码/" title="Request案例代码">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/ju.jpg" alt="Request案例代码"/>
+							</a>
+						</div>
+					</li>											
+			
+			
+		</ul>
+	
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know !!!-->
+			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+			
+		
+		
+	
+
+</div>
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-share">
+	
+	
+
+		
+			
+			<!-- socialShare share -->
+			<div class="social-share"></div>
+
+<!--  css & js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+			
+		
+		
+	
+</div>
+
+
+			</div>
+		</div>	
+	</div>
+	</div>
+</div>
+
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+	
+
+
+<!-- show math formula -->
+
+
+
+	 
+	<script src="/plugin/clipboard/clipboard.js"></script>
+	<script>
+		// Copy code !
+	    function codePreprocessing() {
+	        $("#article-content .highlight").each(function() {
+
+	            $(this).wrap('<div id="post-code"></div>');
+
+	        })
+
+	        $("#article-content #post-code").each(function() {
+
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            var temp = $(this).next().attr('class'),
+	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+
+	            $(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+
+	        });
+	    }
+
+		function codeCopy() {
+		    $('#article-content #post-code').each(function(i) {
+		        var codeCopyId = 'codeCopy-' + i;
+
+		        var codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+
+		    
+			var clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn copy-status');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');
+			    
+			});
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		
+
+		}
+
+		if ($('.layout-post').length) {
+		    codePreprocessing();
+		    codeCopy();
+		} 
+	</script>
+
+
+
+
+
+<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+<script src="/plugin/fancybox/jquery.fancybox.js"></script>
+
+<script type="text/javascript">
+	var titleID = $('.article-title a'),
+		imageID = $('.article-content img'),
+		videoID = $('.article-content video');
+
+	var postTitle = titleID.text() ? titleID.text() : "No post title!";
+
+	imageID.each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+	});
+
+	videoID.each(function() {
+		var videoPath = $(this).attr('src');
+
+		//给每个匹配的<img>元素打包, 即添加父元素<a>
+		$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+	});
+	//TODO：支持html5 video
+
+	if($('#layout-post').length) {
+		$('[data-fancybox="gallery"]').fancybox({
+			loop: true,
+			buttons: [
+				"zoom",
+				"share",
+				"slideShow",
+				"fullScreen",
+				//"download",
+				"thumbs",
+				"close"
+			],
+			protect: false
+		});
+	}
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2017 - 2019, content by king. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+		
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+
+		<span id="busuanzi_container_page_pv">
+	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+		</span>
+
+	
+
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- set '1' to show motto in all pages! -->
+
+	<script src="/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+
+<!-- love effect -->
+
+	<script src="/plugin/love/love.js"></script>
+
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;"  name="TOTOP" class="fa fa-arrow-up" ></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+
+	
+	
+	
+	
+ 
+
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/js/resizediv.js"></script>
+<script src="/js/main.js"></script>
+	</body>	
+</html>
